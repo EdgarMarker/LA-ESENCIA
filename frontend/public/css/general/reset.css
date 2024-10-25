@@ -3,15 +3,15 @@
 :root {
 
     /* Base color */
-    --color-primary: #099d5b;
-    --color-secondary: #121926;
-    --color-accent: #72ebad;
+    --color-primary: #942525;
+    --color-secondary: #6E1414;
+    --color-accent: #E8A030;
 
-    --color-primary-light: #12db80;
-    --color-secondary-light: #242b39;
+    --color-primary-light: #942525;
+    --color-secondary-light: #6E1414;
     
-    --color-primary-dark: #065b35;
-    --color-secondary-dark: #0a0e16;
+    --color-primary-dark: #942525;
+    --color-secondary-dark: #6E1414;
 
     --color-white: #f5f5f5;
     --color-black: #222222;

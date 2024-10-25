@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
 
 
   // Filtro para crear un srcset de imágenes
-  eleventyConfig.addNunjucksFilter("srcset", function(images) {
+  eleventyConfig.addNunjucksFilter("srcset", function (images) {
     return images.map(image => `${image.srcset}`).join(", ");
   });
   
@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig) {
 
 
   // Filtro para formatear fechas
-  eleventyConfig.addFilter("date", (dateObj, format = "d 'de' LLLL 'de' yyyy") => {
+  eleventyConfig.addFilter('date', (dateObj, format = "d 'de' LLLL 'de' yyyy") => {
     if (typeof dateObj === "string") {
       dateObj = DateTime.fromISO(dateObj);
     } else {
@@ -80,6 +80,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       output: "public",
-    },
-  };
+      includes: "_includes",
+    },
+  };
 };

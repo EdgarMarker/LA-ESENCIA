@@ -1,23 +1,205 @@
-#section__hero{
-    background-color: var(--color-secondary);
-    padding-top: calc(60px + 5%);
-    h1{
-        color: var(--color-accent);
-    }
-    h2{
-        color: var(--color-white);
-    }
-    h2 strong{
-        color: var(--color-primary-light);
-        font-weight: unset;
-    }
-    p{
-        color: var(--color-white);
-        font-size: var(--size-md);
-    }
+#section__hero {
+  background-color: var(--color-secondary);
+  padding: 0;
+  .flex__row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex__column {
+    display: flex;
+    flex-direction: column;
+  }
+  .text__align__c {
+    text-align: center;
+  }
+  h1 {
+    color: var(--color-accent);
+  }
+  h2 {
+    color: var(--color-white);
+  }
+  h2 strong {
+    color: var(--color-primary-light);
+    font-weight: unset;
+  }
+  p {
+    color: var(--color-white);
+    font-size: var(--size-md);
+  }
+  .column__2__hero {
+    padding-top: calc(60px);
+    position: relative;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .btn__hero__container {
+    display: flex;
+  }
+  .img__hero {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
-#section__productos .column__1{
-    border-top: 1px solid #ccc;
-    padding-top: 5%;
+#section__intro {
+  position: relative;
+  picture {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#section__activity {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+}
+
+#section__divider {
+  min-height: 100vh;
+  position: relative;
+  img {
+    object-fit: cover;
+  }
+}
+
+#section__concept {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  .concept__picture__concept1 {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    height: 100%;
+  }
+  .concept__picture__concept2 {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    height: 100%;
+  }
+}
+
+#section__placeToBe {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  padding: 0 10%;
+  ul {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10% 0;
+  }
+
+  li {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+  }
+  li picture {
+    aspect-ratio: 1;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  li:nth-child(1) {
+    position: relative;
+  }
+  li:nth-child(1) picture {
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+  }
+  li:nth-child(3) picture {
+    width: 75%;
+    height: 75%;
+    align-self: flex-end;
+  }
+  li:nth-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  li:nth-child(4) picture {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+#section__location {
+  background-color: var(--color-secondary);
+  padding: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  h2,
+  p,
+  h4 {
+    color: var(--color-white);
+  }
+  div {
+    div:nth-child(2) {
+      position: relative;
+    }
+  }
+  a {
+    width: 40px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#section__iWant {
+  padding: 5% 5%;
+  background-color: #efece8;
+  div {
+    position: relative;
+  }
+  .iWantCard {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    padding: 5%;
+    right: 0%;
+    bottom: -20%;
+    transform: translate(0%, 0%);
+    display: flex;
+    flex-direction: column;
+    picture{
+        width: 32px;
+        aspect-ratio: 1;
+        align-self: center;
+    }
+    a{
+        margin: 0;
+        width: fit-content;
+    }
+  }
+}
+
+#section__productos .column__1 {
+  border-top: 1px solid #ccc;
+  padding-top: 5%;
 }

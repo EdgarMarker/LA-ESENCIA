@@ -106,6 +106,7 @@ h3{
     font-size: var(--size-md);
     line-height: 1.2;
     margin-bottom: 20px;
+    color: var(--color-accent);
 }
 
 h4{
@@ -153,6 +154,11 @@ ol:where([role="list"]) {
     text-transform: uppercase;
     font-size: var(--size-xs);
     cursor: pointer;
+}
+
+div > h2 > strong{
+    padding-left: 0.25em;
+    font-style: italic;
 }
 
 /*  Layout globals  */
@@ -450,7 +456,9 @@ section{
     }
 }
 
-
+.text__align__c{
+    text-align: center;
+}
 
 
 
