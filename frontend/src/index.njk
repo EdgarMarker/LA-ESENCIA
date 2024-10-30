@@ -76,33 +76,245 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
     </div>
   </section>
+
   <section id="section__introDivider">
-    <div class="column__1">
-
-        <picture>
-          {% for format, images in item.introDivider.logo %}
-              <source srcset="{{ images | srcset }}" sizes="(max-width: 1920px) 100vw, 1920px" type="image/{{ format }}"/>
-          {% endfor %}
-          <img src="{{ item.introDivider.logo.svg[0].url }}" alt="{{ producto.mainImage.alt }}"/>
-        </picture>
-
-      <div class="images__container">
-
-
-        {% for image in item.introDivider.img %}
-              <li class="splide__slide">
+    <div class="column__1 flex__align__c flex__justify__c">
+      <picture class="introDivider__logo">
+        {% for format, images in item.introDivider.logo %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img
+          src="{{ item.introDivider.logo.svg[0].url }}"
+          alt="{{ producto.mainImage.alt }}"
+        />
+      </picture>
+    </div>
+    
+      <div class="column__2">
+        <!-- Primer carrusel vertical -->
+        <div class="splide col__left" id="carousel-1">
+          <div class="splide__track width__100">
+            <ul class="splide__list images__container" role="list">
+              {% for image in item.introDivider.slide1 %}
+              <li class="splide__slide pad__right__5">
                 <picture>
                   {% for format, images in image %}
-                    <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}">
+                  <source
+                    srcset="{{ images | srcset }}"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/{{ format }}" />
                   {% endfor %}
-                <img src="{{ image.webp[0].url }}" alt="{{ producto.gallery.altText }}"></picture>
+                  <img
+                    src="{{ image.webp[0].url }}"
+                    alt="{{ producto.gallery.altText }}"
+                  />
+                </picture>
               </li>
-        {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Segundo carrusel vertical -->
+        <div class="splide col__right" id="carousel-2">
+          <div class="splide__track width__100">
+            <ul class="splide__list images__container" role="list">
+              {% for image in item.introDivider.slide2 %}
+              <li class="splide__slide pad__left__5">
+                <picture>
+                  {% for format, images in image %}
+                  <source
+                    srcset="{{ images | srcset }}"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/{{ format }}" />
+                  {% endfor %}
+                  <img
+                    src="{{ image.webp[0].url }}"
+                    alt="{{ producto.gallery.altText }}"
+                  />
+                </picture>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
 
-
+  <section id="section__discoverPueblito" class="pad__tb__5 pad__lr__5">
+    <div class="column__2">
+      <div class="col__left">
+        <div>{{ item.discoverPueblito.h2 | safe}}</div>
+        <h3>{{ item.discoverPueblito.h3 }}</h3>
+        <div>{{ item.discoverPueblito.description | safe }}</div>
+        <a href="#" class="btn">Descubre Pueblito</a>
+      </div>
+      <div class="col__right">
+        <ul role="list" class="flex">
+          {% for image in item.discoverPueblito.img %}
+          <li class="splide__slide pad__left__5">
+            <picture>
+              {% for format, images in image %} 
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}" />
+              {% endfor %}
+              <img
+                src="{{ image.webp[0].url }}"
+                alt="{{ producto.gallery.altText }}"
+            /></picture>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </section>
 
+  <section id="section__placeToBe" class="fadeInOut">
+    <div class="column__1">
+      <div class="width__100">
+          {{ item.toBeH2 | safe }}
+        </div>  
+        <ul role='list'>
+            {% for gallery in item.toBeImg %}
+          <li>
+            <picture>
+              {% for format, images in gallery %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ gallery.webp[0].url }}"
+                alt="{{ gallery.alt.alt }}"
+              />
+            </picture>
+          </li>
+            {% endfor %}
+        </ul>
+  </section>
+
+  <section id="section__location">
+    <div class="column__1 flex__align__c">
+      <div class="width__100">{{item.location.h2 | safe}}</div>
+      <h3>{{item.location.h3}}</h3>
+      <div class="width__45">{{item.location.description | safe}}</div>
+      <a href="" class="btn">Abrir en google maps</a>
+    </div>
+    <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
+  </section>
+
+  <section id="section__discoverBenefits" class="pad__all__5">
+    <div class="column__1 flex__justify__c flex__align__c">
+      <picture class="discoverBenefits__logo">
+        {% for format, images in item.discoverBenefits.logo %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img
+          src="{{ item.discoverBenefits.logo.svg[0].url }}"
+          alt="{{ producto.mainImage.alt }}"
+        />
+      </picture>
+      <div>{{item.discoverBenefits.h2 | safe}}</div>
+      <div>{{item.discoverBenefits.description | safe}}</div>
+      <a href="" class="btn">Descubre los beneficios</a>
+    </div>
+    <div class="blackDisplayOverlay"></div>
+    <picture class="discoverBenefits__img">
+      {% for format, images in item.discoverBenefits.img %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1920px) 100vw, 1920px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img
+        src="{{ item.discoverBenefits.img.svg[0].url }}"
+        alt="{{ producto.mainImage.alt }}"
+      />
+    </picture>
+  </section>
+  <section id="section__recentArticles" class="pad__all__5">
+    <div class="column__1 flex__align__c">
+      <div>{{item.recentArticles.h2 | safe}}</div>
+      
+      <div class="splide" id="carousel-3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.recentArticles.articles %}
+            <li class="splide__slide">
+              <div class="card__articulo">
+                {% include "post-card.njk" %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+  
+      <a href="/blog" class="btn">Ver todos los artículos</a>
+    </div>
+  </section>
+  
+  
   {% endfor %}
 </div>
+{% include 'formSection.njk' %}
+{% include 'footer.njk' %}
+
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var main1 = new Splide('#carousel-1', {
+      direction: 'ltr',
+      type: 'loop',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+      autoplay: true,
+    });
+    main1.mount();
+
+    var main2 = new Splide('#carousel-2', {
+      direction: 'ltr',
+      type: 'loop',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+      autoplay: true,
+    })
+    main2.mount();
+
+    let main3 = new Splide('#carousel-3', {
+      direction: 'ttb', 
+    height: '50vh',
+    perPage: 1,
+    gap: '2rem',
+    arrows: false,
+    pagination: true,
+    wheel: false, 
+    breakpoints: {
+      768: {
+        height: '500px',
+      }
+    },
+    })
+    main3.mount();
+  })
+</script>

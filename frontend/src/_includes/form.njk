@@ -1,0 +1,147 @@
+<form
+  id="form"
+  class="column__1 flex__justify__c form"
+  method="post"
+  action="/submit-form"
+  onsubmit="return validateForm()"
+>
+  <div class="column__2 width__100 pad__bottom__2">
+    <div class="col__left pad__right__5">
+      <label for="nombre" class="width__100 pad__bottom__2">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Ingresa tu nombre"
+        class="width__100 pad__all__2"
+        required
+      />
+    </div>
+    <div class="col__right">
+      <label for="telefono" class="width__100 pad__bottom__2">Teléfono</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        placeholder="Ingresa tu teléfono"
+        class="width__100 pad__all__2"
+        required
+      />
+    </div>
+  </div>
+  <div class="column__2 width__100 pad__bottom__2">
+    <div class="col__left pad__right__5">
+      <label for="email" class="width__100 pad__bottom__2"
+        >Correo electrónico</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Ingresa tu correo electrónico"
+        class="width__100 pad__all__2"
+        required
+      />
+    </div>
+    <div class="col__right">
+      <label for="desarrollo-interes" class="width__100 pad__bottom__2"
+        >Interés en La Esencia</label
+      >
+      <select
+        id="desarrollo-interes"
+        name="desarrollo-interes"
+        class="width__100 pad__all__2"
+        required
+      >
+        <option value="">Selecciona una opción</option>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+      </select>
+    </div>
+  </div>
+  <label for="comentarios" class="width__100 pad__bottom__2"
+    >Comentarios (opcional)</label
+  >
+  <textarea
+    id="comentarios"
+    name="comentarios"
+    placeholder="Ingresa tus comentarios"
+    class="width__100 pad__all__2 pad__bottom__2"
+  ></textarea>
+  <button type="submit" class="btn btn__secondary" style="margin-top: 20px">
+    ENVIAR MENSAJE
+  </button>
+</form>
+<style>
+  /* Estilos generales del formulario */
+  .form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Estilos para las etiquetas */
+  .form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  /* Estilos para los inputs */
+  .form input,
+  .form select,
+  .form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  /* Estilos específicos para el textarea */
+  .form textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  /* Estilos para el select */
+  .form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+  }
+</style>
+
+<script>
+  function validateForm() {
+    // Sanitize user input
+    var nombre = document.getElementById("nombre").value.trim();
+    var telefono = document.getElementById("telefono").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var desarrolloInteres = document
+      .getElementById("desarrollo-interes")
+      .value.trim();
+    var comentarios = document.getElementById("comentarios").value.trim();
+    // Check for script injection
+    if (
+      /<[^>]+>/.test(nombre) ||
+      /<[^>]+>/.test(telefono) ||
+      /<[^>]+>/.test(email) ||
+      /<[^>]+>/.test(ciudad) ||
+      /<[^>]+>/.test(desarrolloInteres) ||
+      /<[^>]+>/.test(etapaDecision) ||
+      /<[^>]+>/.test(comentarios)
+    ) {
+      alert("No se permiten etiquetas HTML en los campos del formulario.");
+      return false;
+    }
+    // Submit the form
+    return true;
+  }
+</script>

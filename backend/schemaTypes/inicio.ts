@@ -1,3 +1,5 @@
+import {validation} from 'sanity'
+
 interface ArrayValidationRule {
   max: (n: number) => any
   error: (message: string) => any
@@ -25,6 +27,29 @@ export default {
       title: 'Separador de introducción',
     },
     {
+      name: 'discover',
+      title: 'Descubre Pueblito',
+    },
+    {
+      name: 'toBe',
+      title: 'Divisor galleria',
+    },
+    {
+      name: 'discoverBenefits',
+      title: 'Descubre los Beneficios',
+    },
+    {
+      name: 'article',
+      title: 'Artículos',
+    },
+    {
+      name: 'location',
+      title: 'Ubicación',
+    },
+
+
+
+    {
       name: 'activity',
       title: 'Actividades',
     },
@@ -35,14 +60,6 @@ export default {
     {
       name: 'concept',
       title: 'Concepto',
-    },
-    {
-      name: 'toBe',
-      title: 'Para estar',
-    },
-    {
-      name: 'location',
-      title: 'Ubicación',
     },
     {
       name: 'iWant',
@@ -165,16 +182,171 @@ export default {
           },
         },
         {
-          name: 'img',
-          title: 'Imágenes del carrousel',
+          name: 'slide1',
+          title: 'Imágenes del carrousel lado izquierdo',
           type: 'array',
           of: [{type: 'image'}],
           options: {
             layout: 'grid',
           },
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).warning('Se han rebasado los 3 elementos recomendados'),
+        },
+        {
+          name: 'slide2',
+          title: 'Imágenes del carrousel lado derecho',
+          type: 'array',
+          of: [{type: 'image'}],
+          options: {
+            layout: 'grid',
+          },
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).warning('Se han rebasado los 3 elementos recomendados'),
         },
       ],
     },
+    {
+      name: 'discoverPueblito',
+      title: 'Pueblito',
+      type: 'object',
+      group: 'discover',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'h3',
+          title: 'Subtítulo indicador',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'img',
+          title: 'Imágenes de sección',
+          type: 'array',
+          of: [{type: 'image'}],
+        },
+      ],
+    },
+    {
+      name: 'toBeH2',
+      title: 'Título principal para la sección de divisor con galleria',
+      description:
+        '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+      type: 'blockContent',
+      group: 'toBe',
+    },
+    {
+      name: 'toBeImg',
+      title: 'Galleria de imágenes',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+        layout: 'grid',
+      },
+      group: 'toBe',
+      validation: (Rule: ArrayValidationRule) =>
+        Rule.max(6).error('No se pueden agregar más de 6 imágenes'),
+    },
+    {
+      name: 'discoverBenefits',
+      title: 'Beneficios',
+      type: 'object',
+      group: 'discoverBenefits',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'img',
+          title: 'Imagen fondo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'logo',
+          title: 'Logo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          }
+        }
+      ],
+    },
+    {
+      name: 'recentArticles',
+      title: 'Artículos recientes',
+      type: 'object',
+      group: 'article',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'articles',
+          title: 'Artículos',
+          type: 'array',
+          of: [{type: 'reference', to: {type: 'post'}}],
+          options: {
+            layout: 'grid',
+          },
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(5).warning('Se han rebasado los 5 elementos recomendados'),
+        },
+      ]
+    },
+    {
+      name: 'location',
+      title: 'Sección de ubicación',
+      group: 'location',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',  
+          type: 'blockContent',
+        },
+        {
+          name: 'h3',
+          title: 'Subtítulo indicador',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+      ]
+    },
+
+
+
+
     {
       name: 'activityH3',
       title: 'Subtítulo indicador para las actividades',
@@ -263,26 +435,6 @@ export default {
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'toBeH2',
-      title: 'Título principal para la sección de TO BE',
-      description:
-        '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-      type: 'blockContent',
-      group: 'toBe',
-    },
-    {
-      name: 'toBeImg',
-      title: 'Galleria de imagen para la sección para estar',
-      type: 'array',
-      of: [{type: 'image'}],
-      options: {
-        layout: 'grid',
-      },
-      group: 'toBe',
-      validation: (Rule: ArrayValidationRule) =>
-        Rule.max(6).error('No se pueden agregar más de 6 imágenes'),
     },
     {
       name: 'locationH3',

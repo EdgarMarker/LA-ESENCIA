@@ -73,36 +73,6 @@
     </picture>
     {% endif %}
   </section>
-
-  <section id="section__placeToBe" class="fadeInOut">
-    <div class="column__1">
-      <div>
-        <div>
-          {{ item.toBeH2 | safe }}
-        </div>
-      </div>   
-        <ul role='list'>
-            {% for gallery in item.toBeImg %}
-          <li>
-            <picture>
-              {% for format, images in gallery %}
-              <source
-                srcset="{{ images | srcset }}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                type="image/{{ format }}"
-              />
-              {% endfor %}
-              <img
-                src="{{ gallery.webp[0].url }}"
-                alt="{{ gallery.alt.alt }}"
-              />
-            </picture>
-          </li>
-            {% endfor %}
-        </ul>
-    </div>
-  </section>
-
   <section id="section__location" class="fadeInOut">
     <div class="column__2">
       <div class="col__left">

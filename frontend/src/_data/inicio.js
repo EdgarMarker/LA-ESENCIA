@@ -12,10 +12,57 @@ module.exports = async function () {
        "media": asset->{url},
          "alt": asset->{altText}
      },
-     img[]{
+     slide1[]{
+       "media": asset->{url},
+       "alt": asset->{altText}
+     },
+     slide2[]{
        "media": asset->{url},
        "alt": asset->{altText}
      }
+   },
+   discoverPueblito{
+    h2,
+    h3,
+    description,
+    img[]{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    }
+   },
+   discoverBenefits{
+    h2,
+    description,
+    logo{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
+    img{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    }
+   },
+    
+   recentArticles{
+    h2,
+    articles[]->{
+      title,
+      slug,
+      excerpt,
+      publishedAt,
+      "categories": categories[]->title,
+      "categoriesSlug": categories[]->slug,
+      mainImage{
+        "media": asset->{url},
+        "alt": asset->{altText}
+      }
+    }
+   },
+
+   location{
+    h2,
+    h3,
+    description,
    },
     heroH2[]{
       ...,

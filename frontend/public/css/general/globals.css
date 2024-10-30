@@ -102,6 +102,15 @@ h2{
     margin-bottom: 20px;
 }
 
+div{
+    h2:first-child{
+        margin: 0
+    }
+    h2:last-child strong{
+        border-bottom: 1px solid var(--color-accent);
+    }
+}
+
 h3{
     font-size: var(--size-md);
     line-height: 1.2;
@@ -300,7 +309,8 @@ section{
 
 
 /*  Flexbox  */
-
+.flex{ display: flex; }
+.flex-col{flex-direction: column;}
 .flex__align__c { align-items: center; }
 .flex__align__e { align-items: flex-end; }
 .flex__align__s { align-items: stretch; }
@@ -417,6 +427,53 @@ section{
     }
 }
 
+.card__articulo{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    .column__2, .col__left, .col__right{
+        height: 100%;
+    }
+    .col__left{
+        padding-right: 5%;
+        a, picture, img{
+            height: 100%;
+        }
+    }
+    .col__right{
+        justify-content: center;
+        h2{
+            width: fit-content !important;
+        }
+        .btn_post{
+            display: flex;
+            background-color: none;
+
+        }
+        .btn_post::after{
+            content: "＞";
+            display: block;
+            color: var(--color-accent);
+        }
+    }
+    .splide__arrow--prev {
+        top: 0;
+        transform: rotate(-90deg);
+    }
+}
+
+.blackDisplayOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
 #section__404{
     min-height: 60vh;
     h2{

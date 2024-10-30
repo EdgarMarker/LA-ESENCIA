@@ -56,36 +56,93 @@
     }
   }
 }
-
-#section__activity {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  position: relative;
+#section__introDivider{
+  .column__1{
+    .introDivider__logo{
+      max-width: 50px;
+      aspect-ratio: 1/1;
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .column__2{
+    .col__left{
+      padding-right: 5%;
+      ul{
+        width: 100%;
+        li{
+          padding: 0 !important;
+          width: 100%;
+          height: auto;
+          picture{ 
+            position: relative; 
+            width: 100%; 
+            height: auto; 
+            img{
+              height: 50vh;
+              position: relative;
+              width: 100%;
+              object-fit: cover;
+          }}
+        }
+      }
+    }
+    .col__right{
+      padding-left: 5%;
+      ul{
+        width: 100%;
+        li{
+          padding: 0 !important;
+          width: 100%;
+          height: auto;
+          picture{ 
+            position: relative; 
+            width: 100%; 
+            height: auto; 
+            img{
+              height: 50vh;
+              position: relative;
+              width: 100%;
+              object-fit: cover;
+          }}
+        }
+      }
+    }
+  }
+    
 }
 
-#section__divider {
-  min-height: 100vh;
-  position: relative;
-  img {
-    object-fit: cover;
+#section__discoverPueblito{
+  .col__left{
+    justify-content: center;
+    padding-right: 5%;
   }
-}
-
-#section__concept {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  position: relative;
-  .concept__picture__concept1 {
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    height: 100%;
-  }
-  .concept__picture__concept2 {
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    height: 100%;
+  ul{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    li{
+      padding: 0 !important;
+      display: flex;
+      justify-content: center;
+      picture{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 2/3;
+        img{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
 
@@ -94,6 +151,10 @@
   padding-bottom: 5%;
   position: relative;
   padding: 0 10%;
+  h2{
+    width: 100%;
+    text-align: center;
+  }
   ul {
     width: 100%;
     height: 100%;
@@ -144,29 +205,102 @@
   }
 }
 
+#section__discoverBenefits{
+  min-height: 80vh;
+  position: relative;
+  .column__1{
+    z-index: 2;
+  }
+  h2{
+    width: 100%;
+  }
+  h2, p{
+    text-align: center;
+    color: var(--color-white)
+  }
+  .discoverBenefits__logo{
+    max-width: 50px;
+    aspect-ratio: 1/1;
+    position: relative;
+    img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  picture{
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+   }
+  }
+}
+#section__recentArticles{
+  h2{
+    text-align: center;
+    width: 100%;
+  }
+  .btn{
+    margin-top: 2.5%;
+  }
+  .splide__pagination__page.is-active{
+    background: var(--color-accent) !important;
+  }
+}
 #section__location {
-  background-color: var(--color-secondary);
-  padding: 5%;
+  background: url('../assets/img/bg_noise_mapa.jpg');
+  h2, h3{
+    width: 100%;
+    text-align: center;
+  }
+  .width__45{
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+#section__activity {
   padding-top: 5%;
   padding-bottom: 5%;
   position: relative;
-  h2,
-  p,
-  h4 {
-    color: var(--color-white);
+}
+
+#section__divider {
+  min-height: 100vh;
+  position: relative;
+  img {
+    object-fit: cover;
   }
-  div {
-    div:nth-child(2) {
-      position: relative;
-    }
-  }
-  a {
-    width: 40px;
-    aspect-ratio: 1;
+}
+
+#section__concept {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  .concept__picture__concept1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    z-index: -1;
+    left: 0;
+    height: 100%;
+  }
+  .concept__picture__concept2 {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    height: 100%;
   }
 }
 

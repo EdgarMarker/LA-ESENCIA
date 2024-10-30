@@ -1,8 +1,8 @@
 ---
 eleventyComputed:
-    title: "{{ posts[0].titleseo }}"
-    description: "{{ posts[0].descseo }}"
-    keywords: "{{ posts[0].keyseo }}"
+  title: "{{ posts[0].titleseo }}"
+  description: "{{ posts[0].descseo }}"
+  keywords: "{{ posts[0].keyseo }}"
 layout: base.njk
 pagination:
   data: collections.articulos
@@ -10,7 +10,6 @@ pagination:
   alias: articulo
 permalink: "/articulos/{{ articulo.slug.current }}/"
 ---
-
 <div data-barba="container" data-barba-namespace="articulo" data-css="articulo" data-js="articulo">
 
   <section id="section__hero" class="pad__lr__5 pad__top__10">
