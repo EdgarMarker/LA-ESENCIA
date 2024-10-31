@@ -1,5 +1,4 @@
 #section__hero {
-  background-color: var(--color-secondary);
   padding: 0;
   .flex__row {
     display: flex;
@@ -27,7 +26,6 @@
     font-size: var(--size-md);
   }
   .column__2__hero {
-    padding-top: calc(60px);
     position: relative;
     height: 100dvh;
     overflow: hidden;
@@ -248,11 +246,26 @@
     text-align: center;
     width: 100%;
   }
+  .splide{
+    margin-top: 2em;
+    -webkit-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+    box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+  }
+  .splide, .splide__track, .splide__list{
+    background-color: white;
+  }
   .btn{
     margin-top: 2.5%;
   }
   .splide__pagination__page.is-active{
     background: var(--color-accent) !important;
+  }
+  .splide__arrows--ttb .splide__arrow{
+    left: 96% !important;
+  }
+  .splide__pagination--ttb{
+    left: 92% !important;
   }
 }
 #section__location {

@@ -1,25 +1,58 @@
-<header id="header" class="pad__lr__5">
-    {% for marca in empresa %}
-    <div id="inner__header">
-        {#<a id="logo__main" href="/">
-            <img src="{{ marca.brandLogo.media.url }}" alt="{{ marca.brandName }} - {{ marca.brandIndustry }}" />
-        </a>#}
+<header id="header" class="">
+  {% for marca in empresa %}
+  <div id="inner__header">
+    {% include 'main-nav-izq.njk' %}
 
-        {% include 'main-nav.njk' %}
+    <a id="logo__main" href="/" class="circle-cut">
+    </a>
 
-        {#<a class="cta__msn" href="https://wa.me/521{{ marca.brandPhone }}" target="_blank">Mensaje</a>#}
+    {% include 'main-nav-der.njk' %}
 
-        <div id="mobile__trigger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div id="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <div id="mobile__menu">
-        {% include 'main-nav.njk' %}
-        <a class="cta__msn" href="https://wa.me/521{{ marca.brandPhone }}" target="_blank">Mensaje</a>
-    </div>
-    <div id="mobile__active"></div>
-    {% endfor %}
+  </div>
+  <div id="mobile__menu">
+    {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
+    <a
+      class="cta__msn"
+      href="https://wa.me/521{{ marca.brandPhone }}"
+      target="_blank"
+      >Mensaje</a
+    >
+  </div>
+  <div id="mobile__active"></div>
+  {% endfor %}
 </header>
+
+<style>
+    #inner__header {
+      background-color: transparent;
+      .nav__ul__left,
+      .nav__ul__right {
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: var(--color-secondary);
+      }
+      .circle-cut { 
+        --r: 80px;
+        width: 180px;
+        height: 60px; 
+        aspect-ratio: 180 / 60;
+        background: var(--color-secondary);
+        
+        mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+      }
+    }
+    #logo__main{
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    } 
+</style>

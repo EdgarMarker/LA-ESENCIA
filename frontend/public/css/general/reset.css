@@ -33,9 +33,25 @@
     /* Tipografías */
     --font-primary: primary;
     --font-secondary: primary;
+    --font-title: title;
+    --font-italic: italic;
 }
 
 /* Actualizar solo URL de las fuentes según convenga (convertir a formato woff) */
+
+/* Title Font */
+@font-face {
+    font-family: italic;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets/fonts/heatwood/Heatwood.ttf");
+}
+@font-face {
+    font-family: title;
+    font-style: italic;
+    font-weight: 400;
+    src: url(../../assets/fonts/formom/ZT\ Formom\ -\ OT/);
+}
 
 /* Primary Font */
 @font-face {

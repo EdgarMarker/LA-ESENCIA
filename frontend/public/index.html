@@ -29,12 +29,10 @@
     </div>
 </div>
 <div class="transition__top"></div>
-<div class="transition__bottom"></div> <header id="header" class="pad__lr__5">
-    
-    <div id="inner__header">
-        
-
-        <ul role="list" class="nav__ul">
+<div class="transition__bottom"></div> <header id="header" class="">
+  
+  <div id="inner__header">
+    <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="active" >
@@ -54,6 +52,20 @@
             </a>
         </li>
     
+</ul>
+
+    <a id="logo__main" href="/" class="circle-cut">
+      <picture">
+        
+        <img
+          src=""
+          alt=""
+        />
+      </picture>
+    </a>
+
+    <ul role="list" class="nav__ul nav__ul__right">
+    
         <li>
             <a href="/ubicación/" class="" >
                 Ubicación
@@ -72,19 +84,16 @@
             </a>
         </li>
     
-</ul> 
+</ul>
 
-        
-
-        <div id="mobile__trigger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div id="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <div id="mobile__menu">
-        <ul role="list" class="nav__ul">
+  </div>
+  <div id="mobile__menu">
+    <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="active" >
@@ -104,6 +113,8 @@
             </a>
         </li>
     
+</ul> <ul role="list" class="nav__ul nav__ul__right">
+    
         <li>
             <a href="/ubicación/" class="" >
                 Ubicación
@@ -122,12 +133,48 @@
             </a>
         </li>
     
-</ul> 
-        <a class="cta__msn" href="https://wa.me/5210" target="_blank">Mensaje</a>
-    </div>
-    <div id="mobile__active"></div>
-    
+</ul>
+    <a
+      class="cta__msn"
+      href="https://wa.me/5210"
+      target="_blank"
+      >Mensaje</a
+    >
+  </div>
+  <div id="mobile__active"></div>
+  
 </header>
+
+<style>
+    #inner__header {
+      background-color: transparent;
+      .nav__ul__left,
+      .nav__ul__right {
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: var(--color-secondary);
+      }
+      .circle-cut { 
+        --r: 80px;
+        width: 180px;
+        height: 60px; 
+        aspect-ratio: 180 / 60;
+        background: var(--color-secondary);
+        
+        mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+      }
+    }
+    #logo__main{
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    } 
+</style>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <main>
@@ -178,7 +225,7 @@
     </div>
   </section>
 
-  <section id="section__intro" class="pad__all__5 fadeInOut">
+  <section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
     <div class="column__2">
       <div class="col__left pad__right__5">
         
@@ -208,14 +255,15 @@
         <div>
           <h2>Un lugar vacacional con <strong>esencia</strong></h2>
         </div>
-        <h4>Lleno de cultura</h4>
+        <div class="accentDivider" style="width: 100px;"></div>
+        <h3>Lleno de cultura</h3>
         <p><p>Hospedate en La Esencia, el nuevo ícono turístico que convierte a Valladolid en la escapada perfecta para disfrutar de una experiencia resort mientras vives México.</p></p>
       </div>
     </div>
   </section>
 
-  <section id="section__introDivider">
-    <div class="column__1 flex__align__c flex__justify__c">
+  <section id="section__introDivider" class="pad__tb__10">
+    <div class="column__1 flex__align__c flex__justify__c pad__tb__5">
       <picture class="introDivider__logo">
         
         <source
@@ -338,10 +386,11 @@
       </div>
   </section>
 
-  <section id="section__discoverPueblito" class="pad__tb__5 pad__lr__5">
+  <section id="section__discoverPueblito" class="pad__tb__10 pad__left__10">
     <div class="column__2">
       <div class="col__left">
         <div><h2>Un lugar vacacional con <strong>esencia</strong></h2></div>
+        <div class="accentDivider"></div>
         <h3>Lleno de cultura</h3>
         <div><p>Hospédate en La esencia, el nuevo ícono turístico que convierte a Valladolid en la escapada perfecta para disfrutar de una experiencia resort mientras vives en México</p></div>
         <a href="#" class="btn">Descubre Pueblito</a>
@@ -392,7 +441,7 @@
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut">
+  <section id="section__placeToBe" class="fadeInOut pad__all__10">
     <div class="column__1">
       <div class="width__100">
           <h2>Perfecto para todo tipo de</h2><h2><strong>aventuras</strong></h2>
@@ -534,17 +583,18 @@
         </ul>
   </section>
 
-  <section id="section__location">
+  <section id="section__location" class="pad__top__10">
     <div class="column__1 flex__align__c">
       <div class="width__100"><h2>Un destino</h2><h2><strong>en conexión</strong></h2></div>
+      <div class="accentDivider"></div>
       <h3>Lleno de cultura</h3>
-      <div class="width__45"><p>Una ubicación privilegiada, con cercanía a los mejores lugares para vivir una experiencia cultural inigualable. Conecta con las raíces conecta con la esencia de México</p></div>
+      <div class="width__45 max1200"><p>Una ubicación privilegiada, con cercanía a los mejores lugares para vivir una experiencia cultural inigualable. Conecta con las raíces conecta con la esencia de México</p></div>
       <a href="" class="btn">Abrir en google maps</a>
     </div>
     <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
   </section>
 
-  <section id="section__discoverBenefits" class="pad__all__5">
+  <section id="section__discoverBenefits" class="pad__all__10">
     <div class="column__1 flex__justify__c flex__align__c">
       <picture class="discoverBenefits__logo">
         
@@ -566,7 +616,8 @@
         />
       </picture>
       <div><h2>Vive la auténtica</h2><p></p><h2><strong>esencia mexicana</strong></h2></div>
-      <div><p>Conviértete en un socio fundador y goza exclusivos beneficios</p></div>
+      <div class="accentDivider"></div>
+      <div class="max800"><p>Conviértete en un socio fundador y goza exclusivos beneficios</p></div>
       <a href="" class="btn">Descubre los beneficios</a>
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -590,7 +641,8 @@
       />
     </picture>
   </section>
-  <section id="section__recentArticles" class="pad__all__5">
+
+  <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
       <div><h2>Artículos Pensados</h2><h2><strong>para ti</strong></h2></div>
       
@@ -946,13 +998,16 @@
     </div>
   </section>
   
+   
   
+
   
-</div>
-<section>
-    <div class="column__2">
-        <div class="col__left">
-            <form
+<section id="formSection">
+  <div class="column__2">
+    <div class="col__left pad__all__5">
+      <div><h2>Contáctanos para</h2><h2><strong>vivir la esencia</strong></h2></div>
+      <div style="margin-top: 2em;"><p>Llena el formulario con tus dataos y uno de nuestros asesores te proporcionará toda la información sobre La Esencia.</p></div>
+      <form
   id="form"
   class="column__1 flex__justify__c form"
   method="post"
@@ -1024,7 +1079,7 @@
     class="width__100 pad__all__2 pad__bottom__2"
   ></textarea>
   <button type="submit" class="btn btn__secondary" style="margin-top: 20px">
-    ENVIAR MENSAJE
+    ENVIAR
   </button>
 </form>
 <style>
@@ -1032,7 +1087,6 @@
   .form {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
   }
 
   /* Estilos para las etiquetas */
@@ -1100,89 +1154,49 @@
   }
 </script>
 
-        </div>
     </div>
+    <div class="col__right">
+      <picture class="introDivider__logo">
+        
+        <source
+          srcset="/images/xEuXKj9x2n-300.jpeg 300w, /images/xEuXKj9x2n-600.jpeg 600w, /images/xEuXKj9x2n-900.jpeg 900w, /images/xEuXKj9x2n-1200.jpeg 1200w, /images/xEuXKj9x2n-1800.jpeg 1800w"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/jpeg"
+        />
+        
+        <source
+          srcset="/images/xEuXKj9x2n-300.webp 300w, /images/xEuXKj9x2n-600.webp 600w, /images/xEuXKj9x2n-900.webp 900w, /images/xEuXKj9x2n-1200.webp 1200w, /images/xEuXKj9x2n-1800.webp 1800w"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/webp"
+        />
+        
+        <img src="/images/xEuXKj9x2n-300.webp" alt="[object Object]" />
+      </picture>
+    </div>
+  </div>
 </section>
-<footer>
-    <div class="column__1 listado__x4">
-        <div class="footer__column">
-            <h2>Mapa del sitio</h2>
-            <ul role="list" class="nav__ul">
-    
-        <li>
-            <a href="/" class="active" >
-                Esencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/experiencia/" class="" >
-                Experiencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/socios/" class="" >
-                Socios
-            </a>
-        </li>
-    
-        <li>
-            <a href="/ubicación/" class="" >
-                Ubicación
-            </a>
-        </li>
-    
-        <li>
-            <a href="/blog/" class="" >
-                Blog
-            </a>
-        </li>
-    
-        <li>
-            <a href="/contacto/" class="" >
-                Contacto
-            </a>
-        </li>
-    
-</ul> 
-        </div>
-        <div class="footer__column">
-            <h2>Datos de contacto</h2>
-            
-                <li>T: <a class="tel__text" href="tel:+5210">0</a></li>
-                <li>C: <a href="mailto:0">0</a></li>
-                <li><a href="0" target="_blank">0</a></li>
-            
-        </div>
-        <div class="footer__column">
-            <h2>Síguenos</h2>
-            <ul>
-            
-                <li><a href="0" target="_blank">Facebook</a></li>
-                <li><a href="0" target="_blank">Instagram</a></li>
-            
-            </ul>
-        </div>
-        <div class="footer__column">
-            
-                <a class="logo__footer" href="/">
-                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/f1360f094f599337c9046609240d6f946d50cf08-5184x3888.jpg" alt="La esencia - 0" />
-                </a>
-            
-            
-                <a href="/0">Aviso de privacidad</a>
-            
-        </div>
-    </div>
-    <div id="inner__footer" class="column__1">
-        <span>
-            
-                La esencia
-            
-            © Todos los derechos reservados | Sitio web creado por <a href="https://marker.com.mx" target="_blank">MARKER branding</a></span>
-    </div>
-</footer>
+<style>
+  #formSection{
+    background: url('../assets/img/bg_cream.jpg');
+    picture{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+</style>
+
+
+
+
+
+</div>
 
 <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
@@ -1219,7 +1233,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     gap: '2rem',
     arrows: false,
     pagination: true,
-    wheel: false, 
+    wheel: false,
+    arrows: true,
     breakpoints: {
       768: {
         height: '500px',
@@ -1231,6 +1246,50 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </script>
 
         </main>
+        <footer>
+    <div class="column__1 listado__x4">
+        <div class="footer__column">
+            <h2>Mapa del sitio</h2>
+            <ul role="list" class="nav__ul">
+    
+</ul> 
+        </div>
+        <div class="footer__column">
+            <h2>Datos de contacto</h2>
+            
+                <li>T: <a class="tel__text" href="tel:+5210">0</a></li>
+                <li>C: <a href="mailto:0">0</a></li>
+                <li><a href="0" target="_blank">0</a></li>
+            
+        </div>
+        <div class="footer__column">
+            <h2>Síguenos</h2>
+            <ul>
+            
+                <li><a href="0" target="_blank">Facebook</a></li>
+                <li><a href="0" target="_blank">Instagram</a></li>
+            
+            </ul>
+        </div>
+        <div class="footer__column">
+            
+                <a class="logo__footer" href="/">
+                    <img src="" alt="La esencia - 0" />
+                </a>
+            
+            
+                <a href="/0">Aviso de privacidad</a>
+            
+        </div>
+    </div>
+    <div id="inner__footer" class="column__1">
+        <span>
+            
+                La esencia
+            
+            © Todos los derechos reservados | Sitio web creado por <a href="https://marker.com.mx" target="_blank">MARKER branding</a></span>
+    </div>
+</footer>
       </div>
     </div>
 

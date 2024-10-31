@@ -29,12 +29,10 @@
     </div>
 </div>
 <div class="transition__top"></div>
-<div class="transition__bottom"></div> <header id="header" class="pad__lr__5">
-    
-    <div id="inner__header">
-        
-
-        <ul role="list" class="nav__ul">
+<div class="transition__bottom"></div> <header id="header" class="">
+  
+  <div id="inner__header">
+    <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="" >
@@ -54,6 +52,20 @@
             </a>
         </li>
     
+</ul>
+
+    <a id="logo__main" href="/" class="circle-cut">
+      <picture">
+        
+        <img
+          src=""
+          alt=""
+        />
+      </picture>
+    </a>
+
+    <ul role="list" class="nav__ul nav__ul__right">
+    
         <li>
             <a href="/ubicación/" class="" >
                 Ubicación
@@ -72,19 +84,16 @@
             </a>
         </li>
     
-</ul> 
+</ul>
 
-        
-
-        <div id="mobile__trigger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div id="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <div id="mobile__menu">
-        <ul role="list" class="nav__ul">
+  </div>
+  <div id="mobile__menu">
+    <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="" >
@@ -104,6 +113,8 @@
             </a>
         </li>
     
+</ul> <ul role="list" class="nav__ul nav__ul__right">
+    
         <li>
             <a href="/ubicación/" class="" >
                 Ubicación
@@ -122,12 +133,48 @@
             </a>
         </li>
     
-</ul> 
-        <a class="cta__msn" href="https://wa.me/5210" target="_blank">Mensaje</a>
-    </div>
-    <div id="mobile__active"></div>
-    
+</ul>
+    <a
+      class="cta__msn"
+      href="https://wa.me/5210"
+      target="_blank"
+      >Mensaje</a
+    >
+  </div>
+  <div id="mobile__active"></div>
+  
 </header>
+
+<style>
+    #inner__header {
+      background-color: transparent;
+      .nav__ul__left,
+      .nav__ul__right {
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: var(--color-secondary);
+      }
+      .circle-cut { 
+        --r: 80px;
+        width: 180px;
+        height: 60px; 
+        aspect-ratio: 180 / 60;
+        background: var(--color-secondary);
+        
+        mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+      }
+    }
+    #logo__main{
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    } 
+</style>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <main>
@@ -200,6 +247,50 @@
 
 </div>
         </main>
+        <footer>
+    <div class="column__1 listado__x4">
+        <div class="footer__column">
+            <h2>Mapa del sitio</h2>
+            <ul role="list" class="nav__ul">
+    
+</ul> 
+        </div>
+        <div class="footer__column">
+            <h2>Datos de contacto</h2>
+            
+                <li>T: <a class="tel__text" href="tel:+5210">0</a></li>
+                <li>C: <a href="mailto:0">0</a></li>
+                <li><a href="0" target="_blank">0</a></li>
+            
+        </div>
+        <div class="footer__column">
+            <h2>Síguenos</h2>
+            <ul>
+            
+                <li><a href="0" target="_blank">Facebook</a></li>
+                <li><a href="0" target="_blank">Instagram</a></li>
+            
+            </ul>
+        </div>
+        <div class="footer__column">
+            
+                <a class="logo__footer" href="/">
+                    <img src="" alt="La esencia - 0" />
+                </a>
+            
+            
+                <a href="/0">Aviso de privacidad</a>
+            
+        </div>
+    </div>
+    <div id="inner__footer" class="column__1">
+        <span>
+            
+                La esencia
+            
+            © Todos los derechos reservados | Sitio web creado por <a href="https://marker.com.mx" target="_blank">MARKER branding</a></span>
+    </div>
+</footer>
       </div>
     </div>
 

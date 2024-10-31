@@ -47,7 +47,7 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__intro" class="pad__all__5 fadeInOut">
+  <section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
     <div class="column__2">
       <div class="col__left pad__right__5">
         {% if item.introImg1 %}
@@ -71,14 +71,15 @@ permalink: "/{{ page.fileSlug }}/"
         <div>
           {{ item.introH2 | safe }}
         </div>
-        <h4>{{ item.introH4 }}</h4>
+        <div class="accentDivider" style="width: 100px;"></div>
+        <h3>{{ item.introH4 }}</h3>
         <p>{{ item.introRichText | safe }}</p>
       </div>
     </div>
   </section>
 
-  <section id="section__introDivider">
-    <div class="column__1 flex__align__c flex__justify__c">
+  <section id="section__introDivider" class="pad__tb__10">
+    <div class="column__1 flex__align__c flex__justify__c pad__tb__5">
       <picture class="introDivider__logo">
         {% for format, images in item.introDivider.logo %}
         <source
@@ -145,10 +146,11 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
   </section>
 
-  <section id="section__discoverPueblito" class="pad__tb__5 pad__lr__5">
+  <section id="section__discoverPueblito" class="pad__tb__10 pad__left__10">
     <div class="column__2">
       <div class="col__left">
         <div>{{ item.discoverPueblito.h2 | safe}}</div>
+        <div class="accentDivider"></div>
         <h3>{{ item.discoverPueblito.h3 }}</h3>
         <div>{{ item.discoverPueblito.description | safe }}</div>
         <a href="#" class="btn">Descubre Pueblito</a>
@@ -175,7 +177,7 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut">
+  <section id="section__placeToBe" class="fadeInOut pad__all__10">
     <div class="column__1">
       <div class="width__100">
           {{ item.toBeH2 | safe }}
@@ -201,17 +203,18 @@ permalink: "/{{ page.fileSlug }}/"
         </ul>
   </section>
 
-  <section id="section__location">
+  <section id="section__location" class="pad__top__10">
     <div class="column__1 flex__align__c">
       <div class="width__100">{{item.location.h2 | safe}}</div>
+      <div class="accentDivider"></div>
       <h3>{{item.location.h3}}</h3>
-      <div class="width__45">{{item.location.description | safe}}</div>
+      <div class="width__45 max1200">{{item.location.description | safe}}</div>
       <a href="" class="btn">Abrir en google maps</a>
     </div>
     <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
   </section>
 
-  <section id="section__discoverBenefits" class="pad__all__5">
+  <section id="section__discoverBenefits" class="pad__all__10">
     <div class="column__1 flex__justify__c flex__align__c">
       <picture class="discoverBenefits__logo">
         {% for format, images in item.discoverBenefits.logo %}
@@ -227,7 +230,8 @@ permalink: "/{{ page.fileSlug }}/"
         />
       </picture>
       <div>{{item.discoverBenefits.h2 | safe}}</div>
-      <div>{{item.discoverBenefits.description | safe}}</div>
+      <div class="accentDivider"></div>
+      <div class="max800">{{item.discoverBenefits.description | safe}}</div>
       <a href="" class="btn">Descubre los beneficios</a>
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -245,7 +249,8 @@ permalink: "/{{ page.fileSlug }}/"
       />
     </picture>
   </section>
-  <section id="section__recentArticles" class="pad__all__5">
+
+  <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
       <div>{{item.recentArticles.h2 | safe}}</div>
       
@@ -267,11 +272,12 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
   
-  
+   
   {% endfor %}
+
+  {% include 'formSection.njk' %}
+
 </div>
-{% include 'formSection.njk' %}
-{% include 'footer.njk' %}
 
 <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
@@ -308,7 +314,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     gap: '2rem',
     arrows: false,
     pagination: true,
-    wheel: false, 
+    wheel: false,
+    arrows: true,
     breakpoints: {
       768: {
         height: '500px',

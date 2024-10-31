@@ -1,7 +1,4 @@
 [
-    { "name": "Esencia", "url": "/" },
-    { "name": "Experiencia", "url": "/experiencia/" },
-    { "name": "Socios", "url": "/socios/" },
     { "name": "Ubicación", "url": "/ubicación/" },
     { "name": "Blog", "url": "/blog/" },
     {"name": "Contacto", "url":"/contacto/"}

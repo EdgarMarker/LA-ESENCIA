@@ -1,7 +1,41 @@
-<section>
-    <div class="column__2">
-        <div class="col__left">
-            {% include "form.njk"%}
-        </div>
+{% for item in empresa %}
+<section id="formSection">
+  <div class="column__2">
+    <div class="col__left pad__all__5">
+      <div>{{ item.form.h2 | safe }}</div>
+      <div style="margin-top: 2em;">{{ item.form.description | safe }}</div>
+      {% include "form.njk"%}
     </div>
+    <div class="col__right">
+      <picture class="introDivider__logo">
+        {% for format, images in item.form.img %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img src="{{ item.form.img.webp[0].url }}" alt="{{ item.form.img }}" />
+      </picture>
+    </div>
+  </div>
 </section>
+<style>
+  #formSection{
+    background: url('../assets/img/bg_cream.jpg');
+    picture{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+</style>
+
+{% endfor %}
+

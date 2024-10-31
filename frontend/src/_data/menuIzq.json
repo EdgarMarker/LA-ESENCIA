@@ -1,0 +1,5 @@
+[
+    { "name": "Esencia", "url": "/" },
+    { "name": "Experiencia", "url": "/experiencia/" },
+    { "name": "Socios", "url": "/socios/" }
+]
