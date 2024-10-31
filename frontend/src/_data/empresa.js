@@ -12,20 +12,12 @@ module.exports = async function () {
         "alt": asset->{altText}
       },
     },
-    brandLogo{
-    "media": asset->{url},
-    "alt": asset->{altText}
-    },
     brandIndustry,
     brandTagLine,
     brandPhone,
     brandEmail,
     brandAddress,
     brandAddressUrl,
-    footLogo{
-    "media": asset->{url},
-    "alt": asset->{altText}
-    }
   }`);
 
   await Promise.all(data.map(processContent));

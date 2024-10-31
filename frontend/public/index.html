@@ -32,7 +32,23 @@
 <div class="transition__bottom"></div> <header id="header" class="">
   
   <div id="inner__header">
-    <ul role="list" class="nav__ul nav__ul__left">
+    <div class="mask">
+      <div class="mask-left"></div>
+      <div class="circle-cut"></div>
+      <div class="mask-right"></div>
+    </div>
+    <!--Mascara
+      -absoluta,
+      -los 3 elementos, 50% - 50px
+    -->
+    <!--
+      <picture>
+        
+        <img src="" alt=""/>
+      </picture>
+      -->
+    <div class="nav">
+      <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="active" >
@@ -54,17 +70,13 @@
     
 </ul>
 
-    <a id="logo__main" href="/" class="circle-cut">
-      <picture">
+      <a id="logo__main" href="/">
         
-        <img
-          src=""
-          alt=""
-        />
-      </picture>
-    </a>
+        <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
+        
+      </a>
 
-    <ul role="list" class="nav__ul nav__ul__right">
+      <ul role="list" class="nav__ul nav__ul__right">
     
         <li>
             <a href="/ubicación/" class="" >
@@ -85,6 +97,7 @@
         </li>
     
 </ul>
+    </div>
 
     <div id="mobile__trigger">
       <span></span>
@@ -146,33 +159,73 @@
 </header>
 
 <style>
-    #inner__header {
-      background-color: transparent;
-      .nav__ul__left,
-      .nav__ul__right {
-        width: 100%;
-        justify-content: space-evenly;
-        background-color: var(--color-secondary);
-      }
-      .circle-cut { 
-        --r: 80px;
-        width: 180px;
-        height: 60px; 
-        aspect-ratio: 180 / 60;
-        background: var(--color-secondary);
-        
-        mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+  #inner__header {
+    background-color: transparent;
+    max-height: 60px;
+    justify-content: space-between;
+    position: relative;
+
+    .mask {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 60px;
+      justify-content: space-between;
+      .mask-left,
+      .mask-right {
+        background: var(--bg-primary);
+        width: calc(50% - 50px);
       }
     }
-    #logo__main{
+    .nav{
+      width: 100%;
+      display: flex;
+      height: 60px;
+      justify-content: space-between;
       position: relative;
+      z-index: 5;
+    }
+    .nav__ul__left,
+    .nav__ul__right {
+      width: calc(50% - 50px);
+      justify-content: space-evenly;
+    }
+    #logo__main {
+      position: relative;
+      width: 180px;
+      height: 100%;
       img{
         position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        top: 50%;
       }
-    } 
+    }
+    .circle-cut {
+      --r: 80px;
+      width: 180px;
+      height: 60px;
+      aspect-ratio: 180 / 60;
+      background: var(--bg-primary);
+
+      mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+    }
+  }
+  #logo__main {
+    position: relative;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media (max-width: 1024px) {
+    .nav, .mask{
+      display: none !important;
+    }
+  }
 </style>
 
     <div id="smooth-wrapper">
@@ -187,13 +240,13 @@
 >
   
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    <div class="blackDisplayOverlay"></div>
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div
         class="col__left flex__justify__c width__45 flex__column flex__align__c"
       >
-        <h1>Terrenos en venta en yucatán</h1>
-        <div><p>Renta tu propiedad y genera ingresos</p></div>
-        <p>Cluster turísticos</p>
+        <h1>Desarrollo turístico en yucatán</h1>
+        <div><h2>el lugar que marcará</h2><h2><strong>tendencia</strong></h2></div>
         <div class="btn__hero__container">
           <a class="btn btn__hero">Quiero ser socio</a>
           <a class="btn btn__hero">Quiero saber más</a>
@@ -204,19 +257,19 @@
         <picture>
           
           <source
-            srcset="/images/xEuXKj9x2n-300.jpeg 300w, /images/xEuXKj9x2n-600.jpeg 600w, /images/xEuXKj9x2n-900.jpeg 900w, /images/xEuXKj9x2n-1200.jpeg 1200w, /images/xEuXKj9x2n-1800.jpeg 1800w"
+            srcset="/images/Qv8-8taVNW-300.jpeg 300w, /images/Qv8-8taVNW-600.jpeg 600w, /images/Qv8-8taVNW-900.jpeg 900w, /images/Qv8-8taVNW-1200.jpeg 1200w, /images/Qv8-8taVNW-1800.jpeg 1800w"
             sizes="(max-width: 1200px) 100vw, 1200px"
             type="image/jpeg"
           />
           
           <source
-            srcset="/images/xEuXKj9x2n-300.webp 300w, /images/xEuXKj9x2n-600.webp 600w, /images/xEuXKj9x2n-900.webp 900w, /images/xEuXKj9x2n-1200.webp 1200w, /images/xEuXKj9x2n-1800.webp 1800w"
+            srcset="/images/Qv8-8taVNW-300.webp 300w, /images/Qv8-8taVNW-600.webp 600w, /images/Qv8-8taVNW-900.webp 900w, /images/Qv8-8taVNW-1200.webp 1200w, /images/Qv8-8taVNW-1800.webp 1800w"
             sizes="(max-width: 1200px) 100vw, 1200px"
             type="image/webp"
           />
           
           <img
-            src="/images/xEuXKj9x2n-300.jpeg"
+            src="/images/Qv8-8taVNW-300.jpeg"
             alt=""
           />
         </picture>
@@ -441,7 +494,7 @@
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut pad__all__10">
+  <section id="section__placeToBe" class="fadeInOut">
     <div class="column__1">
       <div class="width__100">
           <h2>Perfecto para todo tipo de</h2><h2><strong>aventuras</strong></h2>
@@ -1004,7 +1057,7 @@
   
 <section id="formSection">
   <div class="column__2">
-    <div class="col__left pad__all__5">
+    <div class="col__left pad__all__10">
       <div><h2>Contáctanos para</h2><h2><strong>vivir la esencia</strong></h2></div>
       <div style="margin-top: 2em;"><p>Llena el formulario con tus dataos y uno de nuestros asesores te proporcionará toda la información sobre La Esencia.</p></div>
       <form
@@ -1085,7 +1138,6 @@
 <style>
   /* Estilos generales del formulario */
   .form {
-    max-width: 800px;
     margin: 0 auto;
   }
 
@@ -1177,7 +1229,12 @@
 </section>
 <style>
   #formSection{
-    background: url('../assets/img/bg_cream.jpg');
+    background: #D4CCC0;
+    h2{
+      strong{
+        text-wrap: nowrap;
+      }
+    }
     picture{
       width: 100%;
       height: 100%;
@@ -1273,10 +1330,12 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
         <div class="footer__column">
             
+                
                 <a class="logo__footer" href="/">
-                    <img src="" alt="La esencia - 0" />
+                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/f1360f094f599337c9046609240d6f946d50cf08-5184x3888.jpg" alt=" - " />
                 </a>
-            
+                
+    
             
                 <a href="/0">Aviso de privacidad</a>
             

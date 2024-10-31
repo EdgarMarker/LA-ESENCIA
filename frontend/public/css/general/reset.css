@@ -16,6 +16,9 @@
     --color-white: #f5f5f5;
     --color-black: #222222;
 
+    /* Custom bg */
+    --bg-primary: url('../../assets/img/bg_red.webp');
+
     /* Messages color */
     --color-success: #3ec43e;
     --color-error: #ff5151;
@@ -50,7 +53,7 @@
     font-family: title;
     font-style: italic;
     font-weight: 400;
-    src: url(../../assets/fonts/formom/ZT\ Formom\ -\ OT/);
+    src: url(../../assets/fonts/formom/ZT-Formom-WEB-TT/ZT-Formom.woff2);
 }
 
 /* Primary Font */

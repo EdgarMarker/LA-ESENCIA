@@ -1,5 +1,5 @@
 footer{
-    background-color: var(--color-secondary);
+    background: var(--bg-primary);
     padding: 5% 5% 50px;
 }
 

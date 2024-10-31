@@ -1,7 +1,7 @@
 {% for item in empresa %}
 <section id="formSection">
   <div class="column__2">
-    <div class="col__left pad__all__5">
+    <div class="col__left pad__all__10">
       <div>{{ item.form.h2 | safe }}</div>
       <div style="margin-top: 2em;">{{ item.form.description | safe }}</div>
       {% include "form.njk"%}
@@ -22,7 +22,12 @@
 </section>
 <style>
   #formSection{
-    background: url('../assets/img/bg_cream.jpg');
+    background: #D4CCC0;
+    h2{
+      strong{
+        text-wrap: nowrap;
+      }
+    }
     picture{
       width: 100%;
       height: 100%;

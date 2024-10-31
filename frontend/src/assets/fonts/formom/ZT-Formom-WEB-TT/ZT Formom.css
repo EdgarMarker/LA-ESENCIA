@@ -1,0 +1,12 @@
+/* Webfont: ZTFormom-Regular */@font-face {
+    font-family: 'ZTFormom';
+    src: url('ZT Formom.eot'); /* IE9 Compat Modes */
+    src: url('ZT Formom.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('ZT Formom.woff') format('woff'), /* Modern Browsers */
+         url('ZT Formom.woff2') format('woff2'), /* Modern Browsers */
+         url('ZT Formom.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

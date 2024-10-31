@@ -15,13 +15,13 @@ permalink: "/{{ page.fileSlug }}/"
 >
   {% for item in inicio %}
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    <div class="blackDisplayOverlay"></div>
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div
         class="col__left flex__justify__c width__45 flex__column flex__align__c"
       >
         <h1>{{ item.heroH1 }}</h1>
         <div>{{ item.heroH2 | safe }}</div>
-        <p>{{ item.heroP }}</p>
         <div class="btn__hero__container">
           <a class="btn btn__hero">{{ item.heroBtn1 }}</a>
           <a class="btn btn__hero">{{ item.heroBtn2 }}</a>
@@ -177,7 +177,7 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut pad__all__10">
+  <section id="section__placeToBe" class="fadeInOut">
     <div class="column__1">
       <div class="width__100">
           {{ item.toBeH2 | safe }}

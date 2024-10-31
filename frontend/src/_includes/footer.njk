@@ -22,11 +22,13 @@
             </ul>
         </div>
         <div class="footer__column">
-            {% for marca in empresa %}
+            
+                {% for marca in logosEmpresa %}
                 <a class="logo__footer" href="/">
                     <img src="{{ marca.footLogo.media.url }}" alt="{{ marca.brandName }} - {{ marca.brandIndustry }}" />
                 </a>
-            {% endfor %}
+                {% endfor %}
+    
             {% for item in aviso %}
                 <a href="/{{item.slug.current}}">Aviso de privacidad</a>
             {% endfor %}

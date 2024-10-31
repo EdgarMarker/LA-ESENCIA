@@ -1,5 +1,6 @@
 #section__hero {
   padding: 0;
+  position: relative;
   .flex__row {
     display: flex;
     flex-direction: row;
@@ -7,23 +8,16 @@
   .flex__column {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2; 
   }
   .text__align__c {
     text-align: center;
   }
-  h1 {
-    color: var(--color-accent);
-  }
-  h2 {
+  h1, h2, h2>strong{
     color: var(--color-white);
-  }
-  h2 strong {
-    color: var(--color-primary-light);
-    font-weight: unset;
-  }
-  p {
-    color: var(--color-white);
-    font-size: var(--size-md);
+    width: 100%;
+    text-align: center;
   }
   .column__2__hero {
     position: relative;
@@ -31,6 +25,7 @@
     overflow: hidden;
   }
   .btn__hero__container {
+    margin-top: 2em;
     display: flex;
   }
   .img__hero {
@@ -145,13 +140,13 @@
 }
 
 #section__placeToBe {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  background: var(--bg-primary);
   position: relative;
-  padding: 0 10%;
+  padding: 10%;
   h2{
     width: 100%;
     text-align: center;
+    color: var(--color-white);
   }
   ul {
     width: 100%;
@@ -251,6 +246,7 @@
     -webkit-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
     box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+    border: 10px solid white;
   }
   .splide, .splide__track, .splide__list{
     background-color: white;
@@ -349,4 +345,19 @@
 #section__productos .column__1 {
   border-top: 1px solid #ccc;
   padding-top: 5%;
+}
+
+
+
+@media (max-width: 768px){
+  #section__hero{
+    .column__2{
+      .col__right, picture, img{
+        height: 100%;
+        img{
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }

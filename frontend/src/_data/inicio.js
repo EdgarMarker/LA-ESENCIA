@@ -7,6 +7,7 @@ module.exports = async function () {
     descseo,
     keyseo,
     heroH1,
+    heroH2,
     introDivider{
      logo{
        "media": asset->{url},
