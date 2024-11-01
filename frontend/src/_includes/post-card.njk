@@ -40,9 +40,11 @@
       >
     </div>
 
-    <h2>
-      <a href="/articulos/{{ item.slug.current }}">{{ item.title }}</a>
-    </h2>
+    <a href="/articulos/{{ item.slug.current }}">
+      <h3>
+        {{ item.title }}
+      </h3>
+    </a>
 
     <p class="excerpt__p">{{ item.excerpt }}</p>
 

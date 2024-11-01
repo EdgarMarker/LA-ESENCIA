@@ -121,7 +121,9 @@ h3{
     font-size: var(--size-md);
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--color-accent);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 h4{

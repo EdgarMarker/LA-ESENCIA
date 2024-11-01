@@ -361,3 +361,31 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  #section__hero{
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+    }
+  }
+  #section__intro{
+    padding: 5%;
+    .col__left{
+      padding-right: 0;
+    }
+    h2{
+      width: 100%;
+    }
+  }
+  #section__introDivider{
+    .col__left, .col__right{
+      padding: 5%;
+    }
+  }
+  #section__discoverPueblito, #section__recentArticles{
+    padding: 5%;
+  }
+}
