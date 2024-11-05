@@ -162,6 +162,15 @@ export default {
       },
     },
     {
+      name: 'introImg2',
+      title: 'Imagen personalizada png para la introducción',
+      type: 'image',
+      group: 'intro',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'introDivider',
       title: 'Carrousel de introducción',
       type: 'object',

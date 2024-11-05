@@ -88,6 +88,10 @@ module.exports = async function () {
       "media": asset->{url},
       "alt": asset->{altText}
     },
+    introImg2{
+      "media": asset->{url},
+      "alt": asset->{altText}
+    },
     activityH3,
     activityH2,
     activityH4,

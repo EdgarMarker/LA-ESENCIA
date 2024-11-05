@@ -15,43 +15,43 @@ permalink: "/{{ page.fileSlug }}/"
 >
   {% for item in inicio %}
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
-    <div class="blackDisplayOverlay"></div>
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div
-        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      class="col__left flex__justify__c width__45 flex__column flex__align__c"
       >
-        <h1>{{ item.heroH1 }}</h1>
-        <div>{{ item.heroH2 | safe }}</div>
-        <div class="btn__hero__container">
-          <a class="btn btn__hero">{{ item.heroBtn1 }}</a>
-          <a class="btn btn__hero">{{ item.heroBtn2 }}</a>
-        </div>
-      </div>
-      <div class="col__right width__55 img__hero">
-        {% if item.heroImg %}
-        <picture>
-          {% for format, images in item.heroImg %}
-          <source
-            srcset="{{ images | srcset }}"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            type="image/{{ format }}"
-          />
-          {% endfor %}
-          <img
-            src="{{ item.heroImg.jpeg[0].url }}"
-            alt="{{ item.heroImgAlt }}"
-          />
-        </picture>
-        {% endif %}
+      <h1>{{ item.heroH1 }}</h1>
+      <div>{{ item.heroH2 | safe }}</div>
+      <div class="btn__hero__container">
+        <a class="btn btn__hero">{{ item.heroBtn1 }}</a>
+        <a class="btn btn__hero">{{ item.heroBtn2 }}</a>
       </div>
     </div>
-  </section>
+    <div class="col__right width__55 img__hero">
+      {% if item.heroImg %}
+      <picture>
+        {% for format, images in item.heroImg %}
+        <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img
+        src="{{ item.heroImg.jpeg[0].url }}"
+        alt="{{ item.heroImgAlt }}"
+        />
+      </picture>
+      {% endif %}
+    </div>
+    <div class="blackDisplayOverlayGradient"></div>
+  </div>
+</section>
 
-  <section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
-    <div class="column__2">
-      <div class="col__left pad__right__5">
-        {% if item.introImg1 %}
-        <picture class="intro__picture__concept2 width__30">
+<section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
+  <div class="column__2">
+    <div class="col__left pad__right__5">
+      {% if item.introImg1 %}
+      <picture class="intro__picture__bg width__30">
           {% for format, images in item.introImg1 %}
           <source
             srcset="{{ images | srcset }}"
@@ -61,6 +61,21 @@ permalink: "/{{ page.fileSlug }}/"
           {% endfor %}
           <img
             src="{{ item.introImg1.jpeg[0].url }}"
+            alt="{{ item.introImg1Alt }}"
+          />
+        </picture>
+        {% endif %}
+        {% if item.introImg2 %}
+      <picture class="intro__picture__custom width__30">
+          {% for format, images in item.introImg2 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 900px) 100vw, 900px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.introImg2.jpeg[0].url }}"
             alt="{{ item.introImg1Alt }}"
           />
         </picture>
