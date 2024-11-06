@@ -64,6 +64,7 @@ module.exports = async function () {
     h2,
     h3,
     description,
+    url
    },
     heroH2[]{
       ...,
@@ -115,21 +116,17 @@ module.exports = async function () {
       "alt": asset->{altText}
     },
     toBeH2,
-    toBeImg[]{
+    toBeImg1[]{
         "media": asset->{url},
         "alt": asset->{altText}
     },
-    locationH3,
-    locationH2,
-    locationH4,
-    locationRichText,
-    locationMapImg{
-      "media": asset->{url},
-      "alt": asset->{altText}
+    toBeImg2[]{
+        "media": asset->{url},
+        "alt": asset->{altText}
     },
-    locationPinImg{
-      "media": asset->{url},
-      "alt": asset->{altText}
+    toBeImg3[]{
+        "media": asset->{url},
+        "alt": asset->{altText}
     },
     iWantImg{
       "media": asset->{url},

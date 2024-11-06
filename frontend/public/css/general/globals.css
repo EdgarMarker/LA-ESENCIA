@@ -437,6 +437,23 @@ section{
     }
 }
 
+.diamondFigure{
+    width: 30px;
+    height: 150px;
+    position: relative;
+    top: 25%;
+    left: 97%;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 3;
+    img{
+        width: 30px;
+        aspect-ratio: 1;
+    }
+}   
+
 .card__articulo{
     background-color: white;
     width: 100%;

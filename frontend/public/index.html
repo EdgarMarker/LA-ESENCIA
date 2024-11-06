@@ -161,7 +161,6 @@
 <style>
   #inner__header {
     background-color: transparent;
-    max-height: 60px;
     justify-content: space-between;
     position: relative;
 
@@ -183,7 +182,6 @@
     .nav{
       width: 100%;
       display: flex;
-      height: 60px;
       justify-content: space-between;
       position: relative;
       z-index: 5;
@@ -192,24 +190,25 @@
     .nav__ul__right {
       width: calc(50% - 50px);
       justify-content: space-evenly;
+      height: 60px;
     }
     #logo__main {
+      position: absolute;
       position: relative;
-      width: 180px;
-      height: 100%;
+      width: 250px;
+      aspect-ratio: 1/1;
+      top: -40px;
       img{
-        position: absolute;
-        top: 44px;
+        width: 100%;
+        object-fit: contain;
       }
     }
     .circle-cut {
-      --r: 80px;
-      width: 180px;
-      height: 60px;
-      aspect-ratio: 180 / 60;
+      --r: 135px;
+      width: 270px;
       background: var(--bg-primary);
 
-      mask: radial-gradient(var(--r) at 50% 150%, #0000 calc(100% - 1px), #000);
+      mask: radial-gradient(var(--r) at 50% 240%, #0000 calc(100% - 1px), #000);
     }
   }
   #logo__main {
@@ -252,27 +251,11 @@
       </div>
     </div>
     <div class="col__right width__55 img__hero">
-      
-      <picture>
-        
-        <source
-        srcset="/images/Qv8-8taVNW-300.jpeg 300w, /images/Qv8-8taVNW-600.jpeg 600w, /images/Qv8-8taVNW-900.jpeg 900w, /images/Qv8-8taVNW-1200.jpeg 1200w, /images/Qv8-8taVNW-1800.jpeg 1800w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        type="image/jpeg"
-        />
-        
-        <source
-        srcset="/images/Qv8-8taVNW-300.webp 300w, /images/Qv8-8taVNW-600.webp 600w, /images/Qv8-8taVNW-900.webp 900w, /images/Qv8-8taVNW-1200.webp 1200w, /images/Qv8-8taVNW-1800.webp 1800w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        type="image/webp"
-        />
-        
-        <img
-        src="/images/Qv8-8taVNW-300.jpeg"
-        alt=""
-        />
-      </picture>
-      
+      <video mute loop autoplay>
+        <source src="./assets/video/bg_nosotros.mp4" type="video/mp4">
+        <source src="./assets/video/bg_nosotros.mp4" type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="blackDisplayOverlayGradient"></div>
   </div>
@@ -281,6 +264,17 @@
 <section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
   <div class="column__2">
     <div class="col__left pad__right__5">
+      <div class="diamondFigure">
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+      </div>
       
       <picture class="intro__picture__bg width__30">
           
@@ -361,11 +355,10 @@
     
       <div class="column__2">
         <!-- Primer carrusel vertical -->
-        <div class="splide col__left" id="carousel-1">
-          <div class="splide__track width__100">
-            <ul class="splide__list images__container" role="list">
+        <div class="col__left" id="carousel-1">
+            <ul class="images__container" role="list" id="home-left-intro-animation">
               
-              <li class="splide__slide pad__right__5">
+              <li class="pad__right__5">
                 <picture>
                   
                   <source
@@ -385,7 +378,7 @@
                 </picture>
               </li>
               
-              <li class="splide__slide pad__right__5">
+              <li class="pad__right__5">
                 <picture>
                   
                   <source
@@ -406,15 +399,13 @@
               </li>
               
             </ul>
-          </div>
         </div>
   
         <!-- Segundo carrusel vertical -->
-        <div class="splide col__right" id="carousel-2">
-          <div class="splide__track width__100">
-            <ul class="splide__list images__container" role="list">
+        <div class="col__right" id="carousel-2">
+            <ul class="images__container" role="list" id="home-right-intro-animation">
               
-              <li class="splide__slide pad__left__5">
+              <li class="pad__left__5">
                 <picture>
                   
                   <source
@@ -434,7 +425,7 @@
                 </picture>
               </li>
               
-              <li class="splide__slide pad__left__5">
+              <li class="pad__left__5">
                 <picture>
                   
                   <source
@@ -456,7 +447,6 @@
               
             </ul>
           </div>
-        </div>
       </div>
   </section>
 
@@ -467,9 +457,22 @@
         <div class="accentDivider"></div>
         <h3>Lleno de cultura</h3>
         <div><p>Hospédate en La esencia, el nuevo ícono turístico que convierte a Valladolid en la escapada perfecta para disfrutar de una experiencia resort mientras vives en México</p></div>
-        <a href="#" class="btn">Descubre Pueblito</a>
+        <!--
+          <a href="#" class="btn">Descubre Pueblito</a>
+          -->
       </div>
       <div class="col__right">
+        <div class="diamondFigure">
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+        </div>
         <ul role="list" class="flex">
           
           <li class="splide__slide pad__left__5">
@@ -521,8 +524,8 @@
           <h2>Perfecto para todo tipo de</h2><h2><strong>aventuras</strong></h2>
         </div>  
         <ul role='list'>
-            
           <li>
+            
             <picture>
               
               <source
@@ -542,9 +545,7 @@
                 alt=""
               />
             </picture>
-          </li>
             
-          <li>
             <picture>
               
               <source
@@ -564,9 +565,10 @@
                 alt=""
               />
             </picture>
-          </li>
             
+          </li>
           <li>
+            
             <picture>
               
               <source
@@ -586,9 +588,7 @@
                 alt=""
               />
             </picture>
-          </li>
             
-          <li>
             <picture>
               
               <source
@@ -608,9 +608,10 @@
                 alt=""
               />
             </picture>
-          </li>
             
+          </li>
           <li>
+            
             <picture>
               
               <source
@@ -630,9 +631,7 @@
                 alt=""
               />
             </picture>
-          </li>
             
-          <li>
             <picture>
               
               <source
@@ -652,8 +651,8 @@
                 alt=""
               />
             </picture>
-          </li>
             
+          </li>
         </ul>
   </section>
 
@@ -663,7 +662,7 @@
       <div class="accentDivider"></div>
       <h3>Lleno de cultura</h3>
       <div class="width__45 max1200"><p>Una ubicación privilegiada, con cercanía a los mejores lugares para vivir una experiencia cultural inigualable. Conecta con las raíces conecta con la esencia de México</p></div>
-      <a href="" class="btn">Abrir en google maps</a>
+      <a href="https://maps.app.goo.gl/PPPZAPwdFwGe9fPo6" target="_blank" class="btn">Abrir en google maps</a>
     </div>
     <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
   </section>
@@ -692,7 +691,9 @@
       <div><h2>Vive la auténtica</h2><p></p><h2><strong>esencia mexicana</strong></h2></div>
       <div class="accentDivider"></div>
       <div class="max800"><p>Conviértete en un socio fundador y goza exclusivos beneficios</p></div>
-      <a href="" class="btn">Descubre los beneficios</a>
+      <!--
+        <a href="" class="btn">Descubre los beneficios</a>
+        -->
     </div>
     <div class="blackDisplayOverlay"></div>
     <picture class="discoverBenefits__img">
@@ -718,6 +719,7 @@
 
   <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
+
       <div><h2>Artículos Pensados</h2><h2><strong>para ti</strong></h2></div>
       
       <div class="splide" id="carousel-3">
@@ -1077,8 +1079,9 @@
           </ul>
         </div>
       </div>
-  
-      <a href="/blog" class="btn">Ver todos los artículos</a>
+      <!--
+        <a href="/blog" class="btn">Ver todos los artículos</a>
+        -->
     </div>
   </section>
   
@@ -1306,25 +1309,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 " rel="stylesheet">
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var main1 = new Splide('#carousel-1', {
-      direction: 'ltr',
-      type: 'loop',
-      rewind: true,
-      pagination: false,
-      arrows: false,
-      autoplay: true,
-    });
-    main1.mount();
-
-    var main2 = new Splide('#carousel-2', {
-      direction: 'ltr',
-      type: 'loop',
-      rewind: true,
-      pagination: false,
-      arrows: false,
-      autoplay: true,
-    })
-    main2.mount();
 
     let main3 = new Splide('#carousel-3', {
       direction: 'ttb', 

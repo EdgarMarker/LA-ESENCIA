@@ -38,7 +38,7 @@
     --font-primary: "Montserrat", sans-serif;;
     --font-secondary: primary;
     --font-title: title;
-    --font-italic: italic;
+    --font-italic: parslay;
 }
 
 /* Actualizar solo URL de las fuentes según convenga (convertir a formato woff) */
@@ -59,10 +59,10 @@
 
 /* Primary Font */
 @font-face {
-    font-family: primary;
-    font-style: normal;
-    font-weight: 200;
-    src: url(/assets/fonts/lato/lato-thin.woff);
+    font-family: parslay;
+    font-style: italic;
+    font-weight: 400;
+    src: url(../../assets/fonts/parslay/Parslay.woff);
 }
 @font-face {
     font-family: primary;

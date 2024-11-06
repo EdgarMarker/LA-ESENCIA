@@ -27,21 +27,11 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
     </div>
     <div class="col__right width__55 img__hero">
-      {% if item.heroImg %}
-      <picture>
-        {% for format, images in item.heroImg %}
-        <source
-        srcset="{{ images | srcset }}"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        type="image/{{ format }}"
-        />
-        {% endfor %}
-        <img
-        src="{{ item.heroImg.jpeg[0].url }}"
-        alt="{{ item.heroImgAlt }}"
-        />
-      </picture>
-      {% endif %}
+      <video mute loop autoplay>
+        <source src="./assets/video/bg_nosotros.mp4" type="video/mp4">
+        <source src="./assets/video/bg_nosotros.mp4" type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
     </div>
     <div class="blackDisplayOverlayGradient"></div>
   </div>
@@ -50,6 +40,17 @@ permalink: "/{{ page.fileSlug }}/"
 <section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
   <div class="column__2">
     <div class="col__left pad__right__5">
+      <div class="diamondFigure">
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+        <div>
+          <img src="./assets/svg/redDiamond.svg" alt="">
+        </div>
+      </div>
       {% if item.introImg1 %}
       <picture class="intro__picture__bg width__30">
           {% for format, images in item.introImg1 %}
@@ -112,11 +113,10 @@ permalink: "/{{ page.fileSlug }}/"
     
       <div class="column__2">
         <!-- Primer carrusel vertical -->
-        <div class="splide col__left" id="carousel-1">
-          <div class="splide__track width__100">
-            <ul class="splide__list images__container" role="list">
+        <div class="col__left" id="carousel-1">
+            <ul class="images__container" role="list" id="home-left-intro-animation">
               {% for image in item.introDivider.slide1 %}
-              <li class="splide__slide pad__right__5">
+              <li class="pad__right__5">
                 <picture>
                   {% for format, images in image %}
                   <source
@@ -132,15 +132,13 @@ permalink: "/{{ page.fileSlug }}/"
               </li>
               {% endfor %}
             </ul>
-          </div>
         </div>
   
         <!-- Segundo carrusel vertical -->
-        <div class="splide col__right" id="carousel-2">
-          <div class="splide__track width__100">
-            <ul class="splide__list images__container" role="list">
+        <div class="col__right" id="carousel-2">
+            <ul class="images__container" role="list" id="home-right-intro-animation">
               {% for image in item.introDivider.slide2 %}
-              <li class="splide__slide pad__left__5">
+              <li class="pad__left__5">
                 <picture>
                   {% for format, images in image %}
                   <source
@@ -157,7 +155,6 @@ permalink: "/{{ page.fileSlug }}/"
               {% endfor %}
             </ul>
           </div>
-        </div>
       </div>
   </section>
 
@@ -168,9 +165,22 @@ permalink: "/{{ page.fileSlug }}/"
         <div class="accentDivider"></div>
         <h3>{{ item.discoverPueblito.h3 }}</h3>
         <div>{{ item.discoverPueblito.description | safe }}</div>
-        <a href="#" class="btn">Descubre Pueblito</a>
+        <!--
+          <a href="#" class="btn">Descubre Pueblito</a>
+          -->
       </div>
       <div class="col__right">
+        <div class="diamondFigure">
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+          <div>
+            <img src="./assets/svg/redDiamond.svg" alt="">
+          </div>
+        </div>
         <ul role="list" class="flex">
           {% for image in item.discoverPueblito.img %}
           <li class="splide__slide pad__left__5">
@@ -198,8 +208,8 @@ permalink: "/{{ page.fileSlug }}/"
           {{ item.toBeH2 | safe }}
         </div>  
         <ul role='list'>
-            {% for gallery in item.toBeImg %}
           <li>
+            {% for gallery in item.toBeImg1 %}
             <picture>
               {% for format, images in gallery %}
               <source
@@ -213,8 +223,42 @@ permalink: "/{{ page.fileSlug }}/"
                 alt="{{ gallery.alt.alt }}"
               />
             </picture>
-          </li>
             {% endfor %}
+          </li>
+          <li>
+            {% for gallery in item.toBeImg2 %}
+            <picture>
+              {% for format, images in gallery %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ gallery.webp[0].url }}"
+                alt="{{ gallery.alt.alt }}"
+              />
+            </picture>
+            {% endfor %}
+          </li>
+          <li>
+            {% for gallery in item.toBeImg3 %}
+            <picture>
+              {% for format, images in gallery %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ gallery.webp[0].url }}"
+                alt="{{ gallery.alt.alt }}"
+              />
+            </picture>
+            {% endfor %}
+          </li>
         </ul>
   </section>
 
@@ -224,7 +268,7 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="accentDivider"></div>
       <h3>{{item.location.h3}}</h3>
       <div class="width__45 max1200">{{item.location.description | safe}}</div>
-      <a href="" class="btn">Abrir en google maps</a>
+      <a href="{{item.location.url}}" target="_blank" class="btn">Abrir en google maps</a>
     </div>
     <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
   </section>
@@ -247,7 +291,9 @@ permalink: "/{{ page.fileSlug }}/"
       <div>{{item.discoverBenefits.h2 | safe}}</div>
       <div class="accentDivider"></div>
       <div class="max800">{{item.discoverBenefits.description | safe}}</div>
-      <a href="" class="btn">Descubre los beneficios</a>
+      <!--
+        <a href="" class="btn">Descubre los beneficios</a>
+        -->
     </div>
     <div class="blackDisplayOverlay"></div>
     <picture class="discoverBenefits__img">
@@ -267,6 +313,7 @@ permalink: "/{{ page.fileSlug }}/"
 
   <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
+
       <div>{{item.recentArticles.h2 | safe}}</div>
       
       <div class="splide" id="carousel-3">
@@ -282,8 +329,9 @@ permalink: "/{{ page.fileSlug }}/"
           </ul>
         </div>
       </div>
-  
-      <a href="/blog" class="btn">Ver todos los artículos</a>
+      <!--
+        <a href="/blog" class="btn">Ver todos los artículos</a>
+        -->
     </div>
   </section>
   
@@ -302,25 +350,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 " rel="stylesheet">
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var main1 = new Splide('#carousel-1', {
-      direction: 'ltr',
-      type: 'loop',
-      rewind: true,
-      pagination: false,
-      arrows: false,
-      autoplay: true,
-    });
-    main1.mount();
-
-    var main2 = new Splide('#carousel-2', {
-      direction: 'ltr',
-      type: 'loop',
-      rewind: true,
-      pagination: false,
-      arrows: false,
-      autoplay: true,
-    })
-    main2.mount();
 
     let main3 = new Splide('#carousel-3', {
       direction: 'ttb', 

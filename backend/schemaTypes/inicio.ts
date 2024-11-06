@@ -248,8 +248,8 @@ export default {
       group: 'toBe',
     },
     {
-      name: 'toBeImg',
-      title: 'Galleria de imágenes',
+      name: 'toBeImg1',
+      title: 'Galleria de imágenes primera parte',
       type: 'array',
       of: [{type: 'image'}],
       options: {
@@ -257,7 +257,31 @@ export default {
       },
       group: 'toBe',
       validation: (Rule: ArrayValidationRule) =>
-        Rule.max(6).error('No se pueden agregar más de 6 imágenes'),
+        Rule.max(2).error('No se pueden agregar más de 2 imágenes'),
+    },
+    {
+      name: 'toBeImg2',
+      title: 'Galleria de imágenes segunda parte',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+        layout: 'grid',
+      },
+      group: 'toBe',
+      validation: (Rule: ArrayValidationRule) =>
+        Rule.max(2).error('No se pueden agregar más de 2 imágenes'),
+    },
+    {
+      name: 'toBeImg3',
+      title: 'Galleria de imágenes tercera parte',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+        layout: 'grid',
+      },
+      group: 'toBe',
+      validation: (Rule: ArrayValidationRule) =>
+        Rule.max(2).error('No se pueden agregar más de 2 imágenes'),
     },
     {
       name: 'discoverBenefits',
@@ -344,6 +368,11 @@ export default {
           title: 'Descripción',
           type: 'blockContent',
         },
+        {
+          name: 'url',
+          title: 'Url google',
+          type: 'string'
+        }
       ]
     },
 
@@ -435,50 +464,6 @@ export default {
       title: 'Segnda imagen lateral para el concepto',
       type: 'image',
       group: 'concept',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'locationH3',
-      title: 'Subtítulo indicador para la locación',
-      type: 'string',
-      group: 'location',
-    },
-    {
-      name: 'locationH2',
-      title: 'Título principal para la locación',
-      description:
-        '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-      type: 'blockContent',
-      group: 'location',
-    },
-    {
-      name: 'locationH4',
-      title: 'Titulillo para descripción',
-      type: 'string',
-      group: 'location',
-    },
-    {
-      name: 'locationRichText',
-      title: 'Descripción para la locación',
-      type: 'blockContent',
-      group: 'location',
-    },
-    {
-      name: 'locationMapImg',
-      title: 'Imagen del mapa',
-      type: 'image',
-      group: 'location',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'locationPinImg',
-      title: 'Pin de mapa',
-      type: 'image',
-      group: 'location',
       options: {
         hotspot: true,
       },
