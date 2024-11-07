@@ -1,6 +1,54 @@
+#formSection{
+    background: #D4CCC0;
+    overflow: hidden;
+    .column__2{
+        .col__left{
+            h2{
+                strong{
+                  text-wrap: nowrap;
+                  font-size: 0.75em;
+                }
+            }
+            p{
+                margin-top: 50px;
+            }
+            &::before{
+                content:"";
+                width: 80%;
+                height: 80%;
+                position: absolute;
+                top: -10%;
+                right: 0;
+                background-image: url(/images/textura_manuscrito.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: 0;
+                filter: brightness(0.8);
+                pointer-events: none;
+                opacity: 0.4;
+            }
+        }
+        .col__right{
+            picture{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                img{
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+
+
 footer{
     background: var(--bg-primary);
-    padding: 5% 5% 50px;
+    padding: 10% 10% 50px;
 }
 
 .footer__column{
@@ -109,6 +157,15 @@ footer{
 /*  Tableta  */
 @media only screen and (max-width: 1024px) {
 
+    #formSection{
+        .col__left.pad__right__5{
+          padding: 0;
+        }
+        h2>strong{
+          text-wrap: balance;
+        }
+      }
+
     footer{
         background-color: var(--color-secondary);
         padding: 10% 5% 50px;
@@ -120,10 +177,6 @@ footer{
     }
 
 }
-
-
-
-
 
 
 

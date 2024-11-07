@@ -16,145 +16,128 @@ permalink: "/{{ page.fileSlug }}/"
   {% for item in inicio %}
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
     <div class="column__2 column__2__hero flex__row flex__justify__c">
-      <div
-      class="col__left flex__justify__c width__45 flex__column flex__align__c"
-      >
-      <h1>{{ item.heroH1 }}</h1>
-      <div>{{ item.heroH2 | safe }}</div>
-      <div class="btn__hero__container">
-        <a class="btn btn__hero">{{ item.heroBtn1 }}</a>
-        <a class="btn btn__hero">{{ item.heroBtn2 }}</a>
-      </div>
-    </div>
-    <div class="col__right width__55 img__hero">
-      <video mute loop autoplay>
-        <source src="./assets/video/bg_nosotros.mp4" type="video/mp4">
-        <source src="./assets/video/bg_nosotros.mp4" type="video/ogg">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="blackDisplayOverlayGradient"></div>
-  </div>
-</section>
-
-<section id="section__intro" class="pad__tb__10 pad__right__10 fadeInOut">
-  <div class="column__2">
-    <div class="col__left pad__right__5">
-      <div class="diamondFigure">
-        <div class="diamondImg"></div>
-        <div class="diamondImg"></div>
-        <div class="diamondImg"></div>
-      </div>
-      {% if item.introImg1 %}
-      <picture class="intro__picture__bg width__30">
-          {% for format, images in item.introImg1 %}
-          <source
-            srcset="{{ images | srcset }}"
-            sizes="(max-width: 900px) 100vw, 900px"
-            type="image/{{ format }}"
-          />
-          {% endfor %}
-          <img
-            src="{{ item.introImg1.jpeg[0].url }}"
-            alt="{{ item.introImg1Alt }}"
-          />
-        </picture>
-        {% endif %}
-        {% if item.introImg2 %}
-      <picture class="intro__picture__custom width__30">
-          {% for format, images in item.introImg2 %}
-          <source
-            srcset="{{ images | srcset }}"
-            sizes="(max-width: 900px) 100vw, 900px"
-            type="image/{{ format }}"
-          />
-          {% endfor %}
-          <img
-            src="{{ item.introImg2.jpeg[0].url }}"
-            alt="{{ item.introImg1Alt }}"
-          />
-        </picture>
-        {% endif %}
-      </div>
-      <div class="col__right flex__justify__c">
-        <h3 class="text__align__c">{{ item.introH3 }}</h3>
-        <div>
-          {{ item.introH2 | safe }}
+      <div class="col__left flex__justify__c width__45 flex__column flex__align__c">
+        <h1>{{ item.heroH1 }}</h1>
+        {{ item.heroH2 | safe }}
+        <div class="btn__hero__container">
+          <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
+          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
         </div>
-        <div class="accentDivider" style="width: 100px;"></div>
-        <h3>{{ item.introH4 }}</h3>
-        <p>{{ item.introRichText | safe }}</p>
       </div>
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
+          <source src="/images/inicio/esencia index hero.mp4" type="video/mp4">
+          Tu navegador no soporta este video
+        </video>
+      </div>
+      <div class="blackDisplayOverlayGradient"></div>
     </div>
   </section>
 
-  <section id="section__introDivider" class="pad__tb__10">
-    <div class="column__1 flex__align__c flex__justify__c pad__tb__5">
-      <picture class="introDivider__logo">
-        {% for format, images in item.introDivider.logo %}
-        <source
-          srcset="{{ images | srcset }}"
-          sizes="(max-width: 1920px) 100vw, 1920px"
-          type="image/{{ format }}"
-        />
-        {% endfor %}
-        <img
-          src="{{ item.introDivider.logo.svg[0].url }}"
-          alt="{{ producto.mainImage.alt }}"
-        />
-      </picture>
-    </div>
-    
-      <div class="column__2">
-        <!-- Primer carrusel vertical -->
-        <div class="col__left" id="carousel-1">
-            <ul class="images__container" role="list" id="home-left-intro-animation">
-              {% for image in item.introDivider.slide1 %}
-              <li class="pad__right__5">
-                <picture>
-                  {% for format, images in image %}
-                  <source
-                    srcset="{{ images | srcset }}"
-                    sizes="(max-width: 1200px) 100vw, 1200px"
-                    type="image/{{ format }}" />
-                  {% endfor %}
-                  <img
-                    src="{{ image.webp[0].url }}"
-                    alt="{{ producto.gallery.altText }}"
-                  />
-                </picture>
-              </li>
-              {% endfor %}
-            </ul>
-        </div>
-  
-        <!-- Segundo carrusel vertical -->
-        <div class="col__right" id="carousel-2">
-            <ul class="images__container" role="list" id="home-right-intro-animation">
-              {% for image in item.introDivider.slide2 %}
-              <li class="pad__left__5">
-                <picture>
-                  {% for format, images in image %}
-                  <source
-                    srcset="{{ images | srcset }}"
-                    sizes="(max-width: 1200px) 100vw, 1200px"
-                    type="image/{{ format }}" />
-                  {% endfor %}
-                  <img
-                    src="{{ image.webp[0].url }}"
-                    alt="{{ producto.gallery.altText }}"
-                  />
-                </picture>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-      </div>
-  </section>
-
-  <section id="section__discoverPueblito" class="pad__tb__10 pad__left__10">
+  <section id="section__intro">
     <div class="column__2">
       <div class="col__left">
+        <div class="diamondFigure">
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+        </div>
+        <div class="dual__img__wrapper" data-speed="1.2">
+          {% if item.introImg2 %}
+          <picture class="intro__picture__custom">
+            {% for format, images in item.introImg2 %}
+            <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
+            {% endfor %}
+            <img src="{{ item.introImg2.webp[0].url }}" alt="{{ item.introImg1Alt }}" />
+          </picture>
+          {% endif %}
+          {% if item.introImg1 %}
+          <picture class="intro__picture__bg">
+            {% for format, images in item.introImg1 %}
+            <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
+            {% endfor %}
+            <img src="{{ item.introImg1.webp[0].url }}" alt="{{ item.introImg1Alt }}" />
+          </picture>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col__right flex__justify__c fadeInOut">
+          <h3 class="text__align__c">{{ item.introH3 }}</h3>
+          <div>
+            {{ item.introH2 | safe }}
+          </div>
+          <div class="accentDivider" style="width: 100px;"></div>
+          <h3 class="post__title">{{ item.introH4 }}</h3>
+          <p>{{ item.introRichText | safe }}</p>
+      </div>
+    </div>
+    <div class="column__1">
+      <div class="greca"></div>
+    </div>
+  </section>
+
+
+  <section id="section__introDivider">
+    <div class="column__1 flex__align__c flex__justify__c pad__tb__5">
+      <div class="sello__wrapper">
+        <img src="{{item.introDivider.logo.url}}" />
+      </div>
+    </div>
+    
+    <div class="column__2">
+      <!-- Primer carrusel vertical -->
+      <div class="col__left" id="carousel-1">
+          <ul class="images__container" role="list" id="home-left-intro-animation">
+            {% for image in item.introDivider.slide1 %}
+            <li class="pad__right__5">
+              <picture>
+                {% for format, images in image %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  type="image/{{ format }}" />
+                {% endfor %}
+                <img
+                  src="{{ image.webp[0].url }}"
+                  alt="{{ producto.gallery.altText }}"
+                />
+              </picture>
+            </li>
+            {% endfor %}
+          </ul>
+      </div>
+  
+      <!-- Segundo carrusel vertical -->
+      <div class="col__right" id="carousel-2">
+          <ul class="images__container" role="list" id="home-right-intro-animation">
+            {% for image in item.introDivider.slide2 %}
+            <li class="pad__left__5">
+              <picture>
+                {% for format, images in image %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  type="image/{{ format }}" />
+                {% endfor %}
+                <img
+                  src="{{ image.webp[0].url }}"
+                  alt="{{ producto.gallery.altText }}"
+                />
+              </picture>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+  </section>
+
+
+
+
+  <section id="section__discoverPueblito">
+    <div class="column__2">
+      <div class="col__left fadeInOut">
         <div>{{ item.discoverPueblito.h2 | safe}}</div>
         <div class="accentDivider"></div>
         <h3>{{ item.discoverPueblito.h3 }}</h3>
@@ -191,10 +174,10 @@ permalink: "/{{ page.fileSlug }}/"
   </section>
 
   <section id="section__placeToBe">
-    <div class="column__1">
-        <div class="width__100 fadeInOut">
+    <div class="column__1 flex__align__c flex__justify__c fadeInOut">  
           {{ item.toBeH2 | safe }}
-        </div>  
+    </div>
+    <div class="column__1">
         <ul role='list' id="placeToBeGallery">
           <li id="placeToBeGalleryLi">
             {% for gallery in item.toBeImg1 %}
@@ -252,33 +235,23 @@ permalink: "/{{ page.fileSlug }}/"
 
   <section id="section__location" class="pad__top__10">
     <div class="column__1 flex__align__c fadeInOut">
-      <div class="width__100">{{item.location.h2 | safe}}</div>
+      {{item.location.h2 | safe}}
       <div class="accentDivider"></div>
       <h3>{{item.location.h3}}</h3>
       <div class="width__45 max1200">{{item.location.description | safe}}</div>
       <a href="{{item.location.url}}" target="_blank" class="btn">Abrir en google maps</a>
     </div>
-    <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
+    <div class="column__1 map__wrapper">
+      <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
+    </div>
   </section>
 
   <section id="section__discoverBenefits" class="pad__all__10">
-    <div class="column__1 flex__justify__c flex__align__c">
-      <picture class="discoverBenefits__logo fadeInOut">
-        {% for format, images in item.discoverBenefits.logo %}
-        <source
-          srcset="{{ images | srcset }}"
-          sizes="(max-width: 1920px) 100vw, 1920px"
-          type="image/{{ format }}"
-        />
-        {% endfor %}
-        <img
-          src="{{ item.discoverBenefits.logo.svg[0].url }}"
-          alt="{{ producto.mainImage.alt }}"
-        />
-      </picture>
-      <div class="fadeInOut">{{item.discoverBenefits.h2 | safe}}</div>
-      <div class="accentDivider fadeInOut"></div>
-      <div class="max800 fadeInOut">{{item.discoverBenefits.description | safe}}</div>
+    <div class="column__1 fadeInOut">
+      <img src="{{item.discoverBenefits.logo.url}}" />
+      {{item.discoverBenefits.h2 | safe}}
+      <div class="accentDivider"></div>
+      <div class="max800">{{item.discoverBenefits.description | safe}}</div>
       <!--
         <a href="" class="btn">Descubre los beneficios</a>
         -->
@@ -300,10 +273,10 @@ permalink: "/{{ page.fileSlug }}/"
   </section>
 
   <section id="section__recentArticles" class="pad__all__10">
-    <div class="column__1 flex__align__c">
-
-      <div class="fadeInOut">{{item.recentArticles.h2 | safe}}</div>
-      
+    <div class="column__1 flex__align__c flex__justify__c fadeInOut">
+      {{item.recentArticles.h2 | safe}}
+    </div>
+    <div class="column__1 recentblog__wrapper">
       <div class="splide" id="carousel-3">
         <div class="splide__track">
           <ul class="splide__list">

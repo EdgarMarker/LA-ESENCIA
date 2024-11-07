@@ -1,9 +1,19 @@
 // Btn ScrollTo:
-const heroBtn = document.querySelector("#section__hero .btn");
-heroBtn.addEventListener("click", () => {
+const heroBtn1 = document.querySelector("#btn__hero1");
+const heroBtn2 = document.querySelector("#btn__hero2");
+
+heroBtn1.addEventListener("click", () => {
   gsap.to(window, {
     duration: 0.5,
     scrollTo: "#section__intro",
+    ease: "power4.out",
+  });
+});
+
+heroBtn2.addEventListener("click", () => {
+  gsap.to(window, {
+    duration: 0.5,
+    scrollTo: "#formSection",
     ease: "power4.out",
   });
 });
@@ -65,7 +75,7 @@ function gsapSoloAnimations() {
     );
 
   //Intro Divider animation
-  const leftDivider = document.getElementById("home-left-intro-animation");
+  /*const leftDivider = document.getElementById("home-left-intro-animation");
   const rightDivider = document.getElementById("home-right-intro-animation");
 
   const tlIntro = gsap.timeline();
@@ -103,9 +113,73 @@ function gsapSoloAnimations() {
         });
       },
     },
-  });
-  // intro discover pueblito
+  });*/
 
+  gsap.to(".sello__wrapper", {
+    rotation: 360 * 2,
+    duration: 1,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#section__introDivider",
+      start: "top bottom%",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  gsap.to("#home-left-intro-animation", {
+    x: 0,
+    opacity: 1,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: "#carousel-1",
+      start: "top 80%",
+      end: "50% 80%",
+      scrub: 1,
+    }
+  })
+
+  gsap.to("#home-left-intro-animation > li:first-child", {
+    xPercent: -100,
+    opacity: 1,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: "#carousel-1",
+      start: "50% 60%",
+      end: "bottom 60%",
+      scrub: 1,
+    }
+  })
+
+
+  gsap.to("#home-right-intro-animation", {
+    x: 0,
+    opacity: 1,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: "#carousel-2",
+      start: "top 80%",
+      end: "50% 80%",
+      scrub: 1,
+    }
+  })
+
+  gsap.to("#home-right-intro-animation > li:first-child", {
+    xPercent: 100,
+    opacity: 1,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: "#carousel-2",
+      start: "50% 60%",
+      end: "bottom 60%",
+      scrub: 1,
+    }
+  })
+
+
+
+  // intro discover pueblito
+/*
   const tlDiscover = gsap.timeline();
 
   const leftDiscover = "#discoverPueblitoUl > li:first-child";
@@ -122,6 +196,13 @@ function gsapSoloAnimations() {
       scrub: true,
     },
   });
+*/
+
+const leftImg = document.querySelector("#discoverPueblitoUl li:first-child");
+const rightImg = document.querySelector("#discoverPueblitoUl li:last-child");
+
+leftImg.setAttribute("data-speed", "1.1");
+rightImg.setAttribute("data-speed", "0.9");
 
   // gallery divider
 

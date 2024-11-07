@@ -1,6 +1,21 @@
 #section__hero {
+  margin-top: 0;
   padding: 0;
   position: relative;
+  height: 100vh;
+  z-index: 1;
+  &::before{
+    content:"";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006b;
+    z-index: 1;
+    pointer-events: none;
+  }
   .flex__row {
     display: flex;
     flex-direction: row;
@@ -8,6 +23,8 @@
   .flex__column {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 2; 
   }
@@ -21,7 +38,7 @@
   }
   .column__2__hero {
     position: relative;
-    height: 100dvh;
+    height: 100%;
     overflow: hidden;
   }
   .btn__hero__container {
@@ -47,53 +64,55 @@
 }
 
 #section__intro {
+  margin-top: 0;
   background: url('../assets/img/bg_cream.jpg');
   position: relative;
-  .col__left{
-    position: relative;
-    .intro__picture__bg, img{
-      width: 100%;
-      height: 100%;
-      img{
-        width: 100% !important;
-        object-fit: cover;
-      }
+  padding: 10% 0% 5% 0%;
+  .column__2{
+    .col__left{
+      position: relative;
     }
-    .intro__picture__custom, img{
-      position: absolute;
-      width: 95%;
-      height: 100%;
-      img{
-        object-fit: contain;
-      }
+    .col__right{
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
-  picture {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1/1;
-    img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .column__1{
+    margin-top: 5%;
+  }
+  &::before{
+    content:"";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    background-image: url(/images/textura_manuscrito.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
   }
 }
+
 #section__introDivider{
   background: url('../assets/img/bg_cream.jpg');
   .column__1{
-    .introDivider__logo{
-      max-width: 50px;
-      aspect-ratio: 1/1;
-      position: relative;
+    .sello__wrapper{
       img{
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        width: 7vw;
+        min-width: 120px;
+        max-width: 500px;
+        height: auto;
         object-fit: contain;
+        animation-name: giraSello;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
       }
     }
+    
   }
   .column__2{
     .col__left{
@@ -101,24 +120,29 @@
       ul{
         width: 100%;
         position: relative;
+        transform: translateX(-100%);
+        opacity: 0;
         li{
           padding: 0 !important;
           width: 100%;
           height: auto;
+          margin: 0px;
           picture{ 
             position: relative;   
             width: 100%;
-            aspect-ratio: 1; 
+            max-height: 50vh;
+            aspect-ratio: 1;
             img{
               position: relative;
               height: 100%;
               object-fit: cover;
           }}
         }
-        li:last-child{
+        li:first-child{
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 2;
         }
       }
     }
@@ -126,13 +150,16 @@
       padding-left: 0%;
       ul{
         width: 100%;
+        transform: translateX(100%);
         li{
           padding: 0 !important;
           width: 100%;
           height: auto;
+          margin: 0px;
           picture{ 
             position: relative; 
             width: 100%; 
+            max-height: 50vh;
             aspect-ratio: 1; 
             img{
               height: 100%;
@@ -141,10 +168,11 @@
               object-fit: cover;
           }}
         }
-        li:last-child{
+        li:first-child{
           position: absolute;
           top: 0;
-          left: 0;
+          right: 0;
+          z-index: 2;
         }
       }
     }
@@ -152,15 +180,37 @@
     
 }
 
+@keyframes giraSello {
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+
+
+
+
 #section__discoverPueblito{
-  background: url('../assets/img/bg_cream.jpg');
-  padding-top: 0;
+  padding: 10% 0 10%;
+  &::before{
+    content:"";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    background-image: url(/images/textura_manuscrito.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+  }
   .col__left{
     justify-content: center;
-    padding-right: 5%;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .diamondFigure{
-    left: 0%;
+    left: -12px;
+    right: unset;
   }
   ul{
     width: 100%;
@@ -197,11 +247,11 @@
   position: relative;
   padding: 10%;
   h2{
-    width: 100%;
-    text-align: center;
     color: var(--color-white);
+    text-align: center;
     strong{
       color: var(--color-accent);
+      transform-origin: top center;
     }
   }
   ul {
@@ -256,33 +306,50 @@
   }
 }
 
+
+#section__location {
+  background: url('../assets/img/bg_noise_mapa.jpg');
+  h2{
+    strong{
+      transform-origin: top center;
+    }
+  }
+  h3{
+
+  }
+  .width__45{
+    text-align: center;
+  }
+}
+
+
 #section__discoverBenefits{
-  min-height: 80vh;
+  height: 100vh;
   position: relative;
   .accentDivider{
     background-color: var(--color-accent) ;
   }
   .column__1{
     z-index: 2;
-  }
-  h2{
-    width: 100%;
-  }
-  h2, p{
-    text-align: center;
-    color: var(--color-white)
-  }
-  .discoverBenefits__logo{
-    max-width: 50px;
-    aspect-ratio: 1/1;
-    position: relative;
+    align-items: center;
+    justify-content: center;
     img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      width: 100px;
+      height: auto;
+      margin-bottom: 50px;
+    }
+    h2{
+      color: var(--color-white);
+      strong{
+        transform-origin: top center;
+      }
+    }
+    p{
+      text-align: center;
+      color: var(--color-white)
     }
   }
+  
   picture{
     z-index: -1;
     top: 0;
@@ -297,11 +364,17 @@
    }
   }
 }
+
+
 #section__recentArticles{
   background: url('../assets/img/bg_cream.jpg');
   h2{
-    text-align: center;
-    width: 100%;
+    strong{
+      transform-origin: top center;
+    }
+  }
+  .recentblog__wrapper{
+    margin-top: 3%;
   }
   .splide{
     margin-top: 2em;
@@ -326,16 +399,7 @@
     left: 92% !important;
   }
 }
-#section__location {
-  background: url('../assets/img/bg_noise_mapa.jpg');
-  h2, h3{
-    width: 100%;
-    text-align: center;
-  }
-  .width__45{
-    text-align: center;
-  }
-}
+
 
 
 

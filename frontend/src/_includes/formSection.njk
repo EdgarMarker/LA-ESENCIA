@@ -1,58 +1,25 @@
 {% for item in empresa %}
-<section id="formSection">
-  <div class="column__2">
-    <div class="col__left pad__all__10 fadeInOut">
-      <div>{{ item.form.h2 | safe }}</div>
-      <div style="margin-top: 2em;">{{ item.form.description | safe }}</div>
-      {% include "form.njk"%}
-    </div>
-    <div class="col__right">
-      <picture class="introDivider__logo">
-        {% for format, images in item.form.img %}
-        <source
-          srcset="{{ images | srcset }}"
-          sizes="(max-width: 1920px) 100vw, 1920px"
-          type="image/{{ format }}"
-        />
-        {% endfor %}
-        <img src="{{ item.form.img.webp[0].url }}" alt="{{ item.form.img }}" />
-      </picture>
-    </div>
-  </div>
-</section>
-<style>
-  #formSection{
-    background: #D4CCC0;
-    h2{
-      strong{
-        text-wrap: nowrap;
-        font-size: 0.75em;
-      }
-    }
-    picture{
-      width: 100%;
-      height: 100%;
-      position: relative;
-      img{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
 
-  @media (max-width: 1024px) {
-    #formSection{
-      .col__left.pad__right__5{
-        padding: 0;
-      }
-      h2>strong{
-        text-wrap: balance;
-      }
-    }
-  }
-</style>
+  <section id="formSection">
+    <div class="column__2">
+
+      <div class="col__left pad__all__10 fadeInOut">
+        {{ item.form.h2 | safe }}
+        {{ item.form.description | safe }}
+        {% include "form.njk"%}
+      </div>
+
+      <div class="col__right">
+        <picture class="introDivider__logo">
+          {% for format, images in item.form.img %}
+          <source srcset="{{ images | srcset }}" sizes="(max-width: 1920px) 100vw, 1920px" type="image/{{ format }}" />
+          {% endfor %}
+          <img src="{{ item.form.img.webp[0].url }}" alt="{{ item.form.img }}" />
+        </picture>
+      </div>
+
+    </div>
+  </section>
 
 {% endfor %}
 
