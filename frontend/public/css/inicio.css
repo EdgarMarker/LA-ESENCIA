@@ -42,6 +42,7 @@
     width: 100%;
     text-align: center;
     transform-origin: top center;
+    font-size: var(--size-2xl);
   }
   .column__2__hero {
     position: relative;
@@ -51,7 +52,7 @@
   .btn__hero__container {
     margin-top: 2em;
     display: flex;
-    gap: 2px;
+    gap: 1px;
     .btn:first-child{
       border-radius: 8px 0 0 8px;
     }
@@ -88,7 +89,8 @@
     margin-top: 5%;
     overflow: hidden;
     .greca{
-      width: 150vw;
+      width: 120vw;
+      transform: translateX(-20vw);
     }
   }
   &::before{

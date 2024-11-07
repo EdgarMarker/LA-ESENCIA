@@ -66,13 +66,12 @@ function gsapSoloAnimations() {
 
     gsap.to(".greca", {
       x: 0,
-      ease: "power1.in",
+      ease: "linear",
       scrollTrigger: {
         trigger: ".greca",
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
-        
       }
     })
     
