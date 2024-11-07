@@ -4,9 +4,12 @@
     .column__2{
         .col__left{
             h2{
+                text-align: center;
+                width: 100%;
                 strong{
                   text-wrap: nowrap;
                   font-size: 0.75em;
+                  transform-origin: top center;
                 }
             }
             p{
@@ -49,6 +52,8 @@
 footer{
     background: var(--bg-primary);
     padding: 10% 10% 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer__column{

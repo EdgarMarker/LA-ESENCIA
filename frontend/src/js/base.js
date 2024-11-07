@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var menu = document.querySelector('.mobile__menu');
     var bgActive = document.querySelector('.mobile__active');
     var both = [check, bgActive];
+    console.log(both);
     both.forEach(function(element) {
         element.addEventListener('click', function(e) {
             e.preventDefault();

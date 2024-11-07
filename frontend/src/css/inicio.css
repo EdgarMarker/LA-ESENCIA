@@ -31,10 +31,17 @@
   .text__align__c {
     text-align: center;
   }
-  h1, h2, h2>strong{
+  h1{
     color: var(--color-white);
     width: 100%;
     text-align: center;
+    transform-origin: top center;
+  }
+  h2, h2>strong{
+    color: var(--color-white);
+    width: 100%;
+    text-align: center;
+    transform-origin: top center;
   }
   .column__2__hero {
     position: relative;
@@ -79,6 +86,10 @@
   }
   .column__1{
     margin-top: 5%;
+    overflow: hidden;
+    .greca{
+      width: 150vw;
+    }
   }
   &::before{
     content:"";
@@ -110,6 +121,7 @@
         animation-duration: 20s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
+        filter: drop-shadow(4px 0px 3px rgba(0, 0, 0, 0.3));
       }
     }
     
@@ -234,10 +246,10 @@
       }
     }
     li:last-child{
-      transform: translateY(150px);
+      transform: translateY(50px);
     }
     li:first-child{
-      transform: translateY(-150px);
+      transform: translateY(-50px);
     }
   }
 }
@@ -261,14 +273,19 @@
     grid-template-columns: 1fr 25% 1fr;
     justify-items: center;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
     margin-top: 10%;
   }
   li{
     display: flex;
     height: 100%;
     flex-direction: column;
-    gap: 10px;
+    gap: 50px;
+    picture{
+      box-shadow: 5px 30px 20px rgba(0,0,0,0.4);
+      border-radius: 15px;
+      overflow: hidden;
+    }
     &:nth-child(1), &:nth-child(3){
       padding-top: 20%;
     }
@@ -284,6 +301,9 @@
       }
     }
     &:nth-child(2){
+      picture:first-child{
+        aspect-ratio: 1/1.2;
+      }
       picture{
         width: 100%;
         aspect-ratio: 1;
@@ -369,6 +389,7 @@
 #section__recentArticles{
   background: url('../assets/img/bg_cream.jpg');
   h2{
+    text-align: center;
     strong{
       transform-origin: top center;
     }

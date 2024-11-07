@@ -62,17 +62,20 @@ function gsapSoloAnimations() {
         ease: "power1.out",
       },
       "-=0.2"
-    )
-    .from(
-      "#section__hero picture",
-      {
-        opacity: 0,
-        y: -50,
-        duration: 0.8,
-        ease: "power1.out",
-      },
-      "-=0.8"
     );
+
+    gsap.to(".greca", {
+      x: 0,
+      ease: "power1.in",
+      scrollTrigger: {
+        trigger: ".greca",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        
+      }
+    })
+    
 
   //Intro Divider animation
   /*const leftDivider = document.getElementById("home-left-intro-animation");
@@ -201,8 +204,8 @@ function gsapSoloAnimations() {
 const leftImg = document.querySelector("#discoverPueblitoUl li:first-child");
 const rightImg = document.querySelector("#discoverPueblitoUl li:last-child");
 
-leftImg.setAttribute("data-speed", "1.1");
-rightImg.setAttribute("data-speed", "0.9");
+leftImg.setAttribute("data-speed", "1.2");
+rightImg.setAttribute("data-speed", "0.8");
 
   // gallery divider
 
@@ -225,32 +228,38 @@ rightImg.setAttribute("data-speed", "0.9");
   };
 
   tlGalleryDivider.from(topImg1, {
-    x: "-100%",
+    x: "-50%",
     opacity: 0,
     scrollTrigger: { ...scrollTriggerOptions, }
   })
-    .from(topImg2, {
-      y: "-50%",
-      opacity: 0,
-      scrollTrigger: {...scrollTriggerOptions}
-    })
-    .from(topImg3, {
-      x: "100%",
-      opacity: 0,
-      scrollTrigger: {...scrollTriggerOptions}
-    })
-    .from(bottomImg3, {
-      x: "100%",
-      opacity: 0,
-      scrollTrigger: {...scrollTriggerOptions}
-    })
-    .from(bottomImg2, {
-      y: "100%",
-      opacity: 0,
-      scrollTrigger: {...scrollTriggerOptions}
-    })
-    .from("#placeToBeGalleryLi > picture:nth-child(2)", {
-      x: "-100%",
-      opacity: 0,
-    })
+  .from(bottomImg1, {
+    x: "-100%",
+    y: "50%",
+    opacity: 0,
+    scrollTrigger: { ...scrollTriggerOptions, }
+  }, "+=1.2")
+  .from(topImg2, {
+    y: "-50%",
+    opacity: 0,
+    scrollTrigger: {...scrollTriggerOptions}
+  }, "-=1.2")
+  .from(topImg3, {
+    x: "100%",
+    opacity: 0,
+    scrollTrigger: {...scrollTriggerOptions}
+  }, "-=0.4")
+  .from(bottomImg3, {
+    x: "100%",
+    opacity: 0,
+    scrollTrigger: {...scrollTriggerOptions}
+  }, "+=0.4")
+  .from(bottomImg2, {
+    y: "100%",
+    opacity: 0,
+    scrollTrigger: {...scrollTriggerOptions}
+  }, "+=0.4")
+  .from("#placeToBeGalleryLi > picture:nth-child(2)", {
+    x: "-100%",
+    opacity: 0,
+  })
 }

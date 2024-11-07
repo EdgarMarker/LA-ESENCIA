@@ -157,15 +157,10 @@ permalink: "/{{ page.fileSlug }}/"
           <li class="splide__slide pad__left__5">
             <picture>
               {% for format, images in image %} 
-              <source
-                srcset="{{ images | srcset }}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                type="image/{{ format }}" />
+              <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
               {% endfor %}
-              <img
-                src="{{ image.webp[0].url }}"
-                alt="{{ producto.gallery.altText }}"
-            /></picture>
+              <img src="{{ image.webp[0].url }}" alt="{{ producto.gallery.altText }}"/>
+            </picture>
           </li>
           {% endfor %}
         </ul>
@@ -183,16 +178,9 @@ permalink: "/{{ page.fileSlug }}/"
             {% for gallery in item.toBeImg1 %}
             <picture>
               {% for format, images in gallery %}
-              <source
-                srcset="{{ images | srcset }}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                type="image/{{ format }}"
-              />
+              <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
               {% endfor %}
-              <img
-                src="{{ gallery.webp[0].url }}"
-                alt="{{ gallery.alt.alt }}"
-              />
+              <img src="{{ gallery.webp[0].url }}" alt="{{ gallery.alt.alt }}"/>
             </picture>
             {% endfor %}
           </li>
@@ -266,7 +254,7 @@ permalink: "/{{ page.fileSlug }}/"
       />
       {% endfor %}
       <img
-        src="{{ item.discoverBenefits.img.svg[0].url }}"
+        src="{{ item.discoverBenefits.img.webp[0].url }}"
         alt="{{ producto.mainImage.alt }}"
       />
     </picture>
