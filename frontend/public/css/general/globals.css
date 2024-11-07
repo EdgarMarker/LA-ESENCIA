@@ -112,6 +112,7 @@ div{
         margin-bottom: 0;
         strong{
             font-family: var(--font-italic);
+            transform: scale(1.5);
             text-transform: lowercase !important;
         }  
     }
@@ -441,16 +442,20 @@ section{
     width: 30px;
     height: 150px;
     position: relative;
-    top: 25%;
-    left: 97%;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
     display: flex;
     gap: 2em;
     flex-direction: column;
     justify-content: space-between;
     z-index: 3;
-    img{
+    .diamondImg{
         width: 30px;
-        aspect-ratio: 1;
+        height: 30px;
+        background: url('../../assets/svg/redDiamond.svg');
+        background-position: center;
+        background-size: contain; 
     }
 }   
 

@@ -219,9 +219,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     
     // Mobile menu:
-    var check = document.querySelector('#mobile__trigger');
-    var menu = document.querySelector('#mobile__menu');
-    var bgActive = document.querySelector('#mobile__active');
+    var check = document.querySelector('.mobile__trigger');
+    var menu = document.querySelector('.mobile__menu');
+    var bgActive = document.querySelector('.mobile__active');
     var both = [check, bgActive];
     both.forEach(function(element) {
         element.addEventListener('click', function(e) {
@@ -232,6 +232,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
+    var check2 = document.querySelector('.mobile__trigger2');
+    var menu2 = document.querySelector('.mobile__menu2');
+    var bgActive2 = document.querySelector('.mobile__active2');
+    var both = [check2, bgActive2];
+    both.forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            check2.classList.toggle('active');
+            menu2.classList.toggle('show');
+            bgActive2.classList.toggle('show');
+        });
+    });
 
 
 });

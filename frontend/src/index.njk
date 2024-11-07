@@ -41,15 +41,9 @@ permalink: "/{{ page.fileSlug }}/"
   <div class="column__2">
     <div class="col__left pad__right__5">
       <div class="diamondFigure">
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
       </div>
       {% if item.introImg1 %}
       <picture class="intro__picture__bg width__30">
@@ -171,17 +165,11 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
       <div class="col__right">
         <div class="diamondFigure">
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
         </div>
-        <ul role="list" class="flex">
+        <ul role="list" class="flex" id="discoverPueblitoUl">
           {% for image in item.discoverPueblito.img %}
           <li class="splide__slide pad__left__5">
             <picture>
@@ -202,13 +190,13 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut">
+  <section id="section__placeToBe">
     <div class="column__1">
-      <div class="width__100">
+        <div class="width__100 fadeInOut">
           {{ item.toBeH2 | safe }}
         </div>  
-        <ul role='list'>
-          <li>
+        <ul role='list' id="placeToBeGallery">
+          <li id="placeToBeGalleryLi">
             {% for gallery in item.toBeImg1 %}
             <picture>
               {% for format, images in gallery %}
@@ -263,7 +251,7 @@ permalink: "/{{ page.fileSlug }}/"
   </section>
 
   <section id="section__location" class="pad__top__10">
-    <div class="column__1 flex__align__c">
+    <div class="column__1 flex__align__c fadeInOut">
       <div class="width__100">{{item.location.h2 | safe}}</div>
       <div class="accentDivider"></div>
       <h3>{{item.location.h3}}</h3>
@@ -275,7 +263,7 @@ permalink: "/{{ page.fileSlug }}/"
 
   <section id="section__discoverBenefits" class="pad__all__10">
     <div class="column__1 flex__justify__c flex__align__c">
-      <picture class="discoverBenefits__logo">
+      <picture class="discoverBenefits__logo fadeInOut">
         {% for format, images in item.discoverBenefits.logo %}
         <source
           srcset="{{ images | srcset }}"
@@ -288,9 +276,9 @@ permalink: "/{{ page.fileSlug }}/"
           alt="{{ producto.mainImage.alt }}"
         />
       </picture>
-      <div>{{item.discoverBenefits.h2 | safe}}</div>
-      <div class="accentDivider"></div>
-      <div class="max800">{{item.discoverBenefits.description | safe}}</div>
+      <div class="fadeInOut">{{item.discoverBenefits.h2 | safe}}</div>
+      <div class="accentDivider fadeInOut"></div>
+      <div class="max800 fadeInOut">{{item.discoverBenefits.description | safe}}</div>
       <!--
         <a href="" class="btn">Descubre los beneficios</a>
         -->
@@ -314,7 +302,7 @@ permalink: "/{{ page.fileSlug }}/"
   <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
 
-      <div>{{item.recentArticles.h2 | safe}}</div>
+      <div class="fadeInOut">{{item.recentArticles.h2 | safe}}</div>
       
       <div class="splide" id="carousel-3">
         <div class="splide__track">

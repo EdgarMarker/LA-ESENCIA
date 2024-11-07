@@ -19,33 +19,66 @@
       </picture>
       -->
     <div class="nav">
+      <!--
       {% include 'main-nav-izq.njk' %}
+      -->
+      <div class="mirrorNav"></div>
 
       <a id="logo__main" href="/">
         {% for logo in logosEmpresa %}
+
         <img src="{{ logo.brandLogo.media.url }}" alt="prueba" />
         {%endfor%}
       </a>
 
-      {% include 'main-nav-der.njk' %}
+      <div class="mirrorNav"></div>
+      
+      <!--
+        {% include 'main-nav-der.njk' %}
+      -->
+        
     </div>
-
-    <div id="mobile__trigger">
+    <div class="mobile__trigger2">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  </div>
-  <div id="mobile__menu">
-    {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
-    <a
+    <div  class="mobile__menu2">
+      {%include 'menu-provisional.njk' %}
+      <!--
+      FINAL MENU
+      {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
+      <a
       class="cta__msn"
       href="https://wa.me/521{{ marca.brandPhone }}"
       target="_blank"
       >Mensaje</a
+      >
+      -->
+    </div>
+    <div  class="mobile__active"></div>
+    <!-- NAV MENU DESKTOP-->
+  </div>
+    <div class="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile__menu">
+    {%include 'menu-provisional.njk' %}
+      <!--
+      FINAL MENU
+      {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
+      <a
+      class="cta__msn"
+      href="https://wa.me/521{{ marca.brandPhone }}"
+      target="_blank"
+      >Mensaje</a
+      -->
     >
   </div>
-  <div id="mobile__active"></div>
+  <div  class="mobile__active"></div>
   {% endfor %}
 </header>
 
@@ -54,7 +87,7 @@
     background-color: transparent;
     justify-content: space-between;
     position: relative;
-
+    min-height: 60px;
     .mask {
       z-index: 1;
       position: absolute;
@@ -78,10 +111,10 @@
       z-index: 5;
     }
     .nav__ul__left,
-    .nav__ul__right {
+    .nav__ul__right,
+    .mirrorNav {
       width: calc(50% - 50px);
       justify-content: space-evenly;
-      height: 60px;
     }
     #logo__main {
       position: absolute;
@@ -111,9 +144,50 @@
       object-fit: cover;
     }
   }
+
+  .mobile__trigger2{
+    display: none;
+  }
+
+  .mobile__trigger2.visible{
+    display: block;
+  }
+
+  .nav.hidden, .mask.hidden{
+    display: none !important;
+  }
+
   @media (max-width: 1024px) {
     .nav, .mask{
       display: none !important;
     }
+    .mobile__trigger2, .mobile__trigger2.visible{
+      display: none;
+    }
   }
 </style>
+<script>
+ window.onload = function() {
+  const nav = document.querySelector('.nav');
+  const mask = document.querySelector('.mask');
+  const mobileTrigger = document.querySelector('.mobile__trigger2');
+  const scrollThreshold = 50;
+
+  if (nav && mobileTrigger) {
+    document.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > scrollThreshold) {
+        nav.classList.add('hidden');
+        mask.classList.add('hidden')
+        mobileTrigger.classList.add('visible');
+      } else {
+        nav.classList.remove('hidden');
+        mask.classList.remove('hidden')
+        mobileTrigger.classList.remove('visible');
+      }
+    });
+  }
+};
+
+</script>

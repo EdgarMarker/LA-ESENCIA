@@ -65,22 +65,111 @@ function gsapSoloAnimations() {
     );
 
   //Intro Divider animation
-  const left = document.getElementById("home-left-intro-animation");
-  const right = document.getElementById("home-right-intro-animation");
+  const leftDivider = document.getElementById("home-left-intro-animation");
+  const rightDivider = document.getElementById("home-right-intro-animation");
 
-  let tlIntro = gsap.timeline();
+  const tlIntro = gsap.timeline();
 
-  tlIntro.from([left, right], {
+  tlIntro.from([leftDivider, rightDivider], {
     opacity: 0,
     x: function (index, target) {
-      return target === left ? "-100%" : "100%";
+      return target === leftDivider ? "-100%" : "100%";
     },
     scrollTrigger: {
       trigger: "#section__introDivider",
       start: "25% bottom",
-      end: "80% bottom",
-      markers: true,
-        scrub: 1,
+      end: "70% bottom",
+      scrub: 1,
+      onLeave: () => {
+        let left = "#home-left-intro-animation > li:last-child";
+        let right = "#home-right-intro-animation > li:last-child";
+
+        gsap.to(left, {
+          x: "-100%",
+          duration: 1,
+        });
+        gsap.to(right, {
+          x: "100%",
+          duration: 1,
+        });
+      },
+      onEnterBack: () => {
+        let left = "#home-left-intro-animation > li:last-child";
+        let right = "#home-right-intro-animation > li:last-child";
+
+        gsap.to([left, right], {
+          x: 0,
+          duration: 1,
+        });
+      },
     },
   });
+  // intro discover pueblito
+
+  const tlDiscover = gsap.timeline();
+
+  const leftDiscover = "#discoverPueblitoUl > li:first-child";
+  const rightDiscover = "#discoverPueblitoUl > li:last-child";
+  const containerDiscover = "#section__discoverPueblito";
+
+  tlDiscover.to([leftDiscover, rightDiscover], {
+    y: 0,
+    ease: 'power2.InOut',
+    scrollTrigger: {
+      trigger: containerDiscover,
+      start: "40% bottom",
+      end: "80% bottom",
+      scrub: true,
+    },
+  });
+
+  // gallery divider
+
+  const tlGalleryDivider = gsap.timeline();
+
+  const topImg1 = "#placeToBeGallery > li:nth-child(1) > picture:first-child";
+  const bottomImg1 = "#placeToBeGalleryLi > picture:last-child";
+
+  const topImg2 = "#placeToBeGallery > li:nth-child(2) > picture:first-child";
+  const bottomImg2 = "#placeToBeGallery > li:nth-child(2) > picture:last-child";
+
+  const topImg3 = "#placeToBeGallery > li:nth-child(3) > picture:first-child";
+  const bottomImg3 = "#placeToBeGallery > li:nth-child(3) > picture:last-child";
+
+  const scrollTriggerOptions = {
+    trigger: "#placeToBeGallery",
+    start: "top bottom",
+    end: "80% bottom",
+    scrub: true,
+  };
+
+  tlGalleryDivider.from(topImg1, {
+    x: "-100%",
+    opacity: 0,
+    scrollTrigger: { ...scrollTriggerOptions, }
+  })
+    .from(topImg2, {
+      y: "-50%",
+      opacity: 0,
+      scrollTrigger: {...scrollTriggerOptions}
+    })
+    .from(topImg3, {
+      x: "100%",
+      opacity: 0,
+      scrollTrigger: {...scrollTriggerOptions}
+    })
+    .from(bottomImg3, {
+      x: "100%",
+      opacity: 0,
+      scrollTrigger: {...scrollTriggerOptions}
+    })
+    .from(bottomImg2, {
+      y: "100%",
+      opacity: 0,
+      scrollTrigger: {...scrollTriggerOptions}
+    })
+    .from("#placeToBeGalleryLi > picture:nth-child(2)", {
+      x: "-100%",
+      opacity: 0,
+    })
 }

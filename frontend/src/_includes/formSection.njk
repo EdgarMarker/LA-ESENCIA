@@ -1,7 +1,7 @@
 {% for item in empresa %}
 <section id="formSection">
   <div class="column__2">
-    <div class="col__left pad__all__10">
+    <div class="col__left pad__all__10 fadeInOut">
       <div>{{ item.form.h2 | safe }}</div>
       <div style="margin-top: 2em;">{{ item.form.description | safe }}</div>
       {% include "form.njk"%}

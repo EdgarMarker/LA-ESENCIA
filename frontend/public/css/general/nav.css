@@ -99,10 +99,12 @@ header{
     background-size: 100%;
     margin-right: 5px;
 }
-
-#mobile__trigger{
+.mobile__trigger{
     display: none;
-    position: relative;
+}
+
+.mobile__trigger, .mobile__trigger2{
+    position: absolute;
     width: 50px;
     height: 50px;
     padding: 10px;
@@ -113,7 +115,7 @@ header{
     transition: transform 0.3s ease-in-out;
 }
 
-#mobile__trigger input{
+.mobile__trigger input, .mobile__trigger2 input{
     width: 50px;
     height: 50px;
     position: absolute;
@@ -122,7 +124,7 @@ header{
     z-index: 1;
 }
 
-#mobile__trigger span{
+.mobile__trigger span, .mobile__trigger2 span{
     width: 26px;
     height: 2px;
     background-color: var(--color-accent);
@@ -135,36 +137,36 @@ header{
     transition: transform 0.3s ease-in-out, left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-#mobile__trigger span:nth-child(2){
+.mobile__trigger span:nth-child(2), .mobile__trigger2 span:nth-child(2){
     top: calc(50% - 1px);
 }
 
-#mobile__trigger span:nth-child(3){
+.mobile__trigger span:nth-child(3), .mobile__trigger2 span:nth-child(3){
     top: unset;
     transform-origin: bottom left;
     bottom: 15px;
 }
 
-#mobile__trigger.active{
+.mobile__trigger.active, .mobile__trigger2.active{
     transform: rotate(90deg) scale(1.2);
 }
 
-#mobile__trigger.active span:nth-child(1){
+.mobile__trigger.active span:nth-child(1), .mobile__trigger2.active span:nth-child(1){
     transform: rotate(45deg);
     left: 17px;
 }
 
-#mobile__trigger.active span:nth-child(2){
+.mobile__trigger.active span:nth-child(2), .mobile__trigger2.active span:nth-child(2){
     opacity: 0;
 }
 
-#mobile__trigger.active span:nth-child(3){
+.mobile__trigger.active span:nth-child(3), .mobile__trigger2.active span:nth-child(3){
     transform: rotate(-45deg);
     left: 17px;
 }
 
-#mobile__menu{
-    display: none;
+.mobile__menu, .mobile__menu2{
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -180,12 +182,12 @@ header{
     transition: transform 0.3s ease-in-out;
 }
 
-#mobile__menu.show{
+.mobile__menu.show, .mobile__menu2.show{
     transform: translateX(0);
 }
 
-#mobile__active{
-    display: none;
+.mobile__active, .mobile__active2{
+    display: block;
     position: fixed;
     z-index: 98;
     background-color: var(--color-black);
@@ -198,22 +200,22 @@ header{
     transition: opacity 0.5s ease-in-out;
 }
 
-#mobile__active.show{
+.mobile__active.show{
     opacity: 0.8;
     pointer-events: all;
 }
 
-#mobile__menu ul{
+.mobile__menu ul, .mobile__menu2 ul{
     width: 100%;
     flex-direction: column;
 }
 
-#mobile__menu ul li{
+.mobile__menu ul li, .mobile__menu2 ul li{
     margin-bottom: 0px;
     width: 100%;
 }
 
-#mobile__menu ul li a{
+.mobile__menu ul li a, .mobile__menu ul li a{
     margin-bottom: 0px;
     justify-content: flex-start;
     padding-left: 10%;
@@ -255,18 +257,28 @@ header{
         display: none;
     }
 
-    #mobile__trigger{
+    .mobile__trigger{
+        display: block;
+        display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 100;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile__active{
         display: block;
     }
 
-    #mobile__active{
-        display: block;
-    }
-
-    #mobile__menu{
+    .mobile__menu{
         display: flex;
     }
-    #mobile__menu .cta__msn{
+    .mobile__menu .cta__msn{
         margin-top: 20px;
         margin-left: 20px;
     }

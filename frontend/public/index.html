@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La esencia | </title>
+    <title>La Esencia | </title>
     <meta name="description" content="0" />
     <meta name="keywords" content="0" />
-    <meta name="author" content="La esencia" />
+    <meta name="author" content="La Esencia" />
     
     <meta property="”og:type”" content="website" />
     <meta property="”og:title”" content="" />
@@ -48,6 +48,7 @@
       </picture>
       -->
     <div class="nav">
+      <!--
       <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
@@ -69,14 +70,20 @@
         </li>
     
 </ul>
+      -->
+      <div class="mirrorNav"></div>
 
       <a id="logo__main" href="/">
         
+
         <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
         
       </a>
 
-      <ul role="list" class="nav__ul nav__ul__right">
+      <div class="mirrorNav"></div>
+      
+      <!--
+        <ul role="list" class="nav__ul nav__ul__right">
     
         <li>
             <a href="/ubicación/" class="" >
@@ -97,16 +104,25 @@
         </li>
     
 </ul>
+      -->
+        
     </div>
-
-    <div id="mobile__trigger">
+    <div class="mobile__trigger2">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  </div>
-  <div id="mobile__menu">
-    <ul role="list" class="nav__ul nav__ul__left">
+    <div  class="mobile__menu2">
+      <ul role="list" class="nav__ul">
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+</ul>
+      <!--
+      FINAL MENU
+      <ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="active" >
@@ -147,14 +163,83 @@
         </li>
     
 </ul>
-    <a
+      <a
       class="cta__msn"
-      href="https://wa.me/5210"
+      href="https://wa.me/5219993437716"
       target="_blank"
       >Mensaje</a
+      >
+      -->
+    </div>
+    <div  class="mobile__active"></div>
+    <!-- NAV MENU DESKTOP-->
+  </div>
+    <div class="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile__menu">
+    <ul role="list" class="nav__ul">
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+</ul>
+      <!--
+      FINAL MENU
+      <ul role="list" class="nav__ul nav__ul__left">
+    
+        <li>
+            <a href="/" class="active" >
+                Esencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="" >
+                Experiencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/socios/" class="" >
+                Socios
+            </a>
+        </li>
+    
+</ul> <ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicación/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/blog/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>
+      <a
+      class="cta__msn"
+      href="https://wa.me/5219993437716"
+      target="_blank"
+      >Mensaje</a
+      -->
     >
   </div>
-  <div id="mobile__active"></div>
+  <div  class="mobile__active"></div>
   
 </header>
 
@@ -163,7 +248,7 @@
     background-color: transparent;
     justify-content: space-between;
     position: relative;
-
+    min-height: 60px;
     .mask {
       z-index: 1;
       position: absolute;
@@ -187,10 +272,10 @@
       z-index: 5;
     }
     .nav__ul__left,
-    .nav__ul__right {
+    .nav__ul__right,
+    .mirrorNav {
       width: calc(50% - 50px);
       justify-content: space-evenly;
-      height: 60px;
     }
     #logo__main {
       position: absolute;
@@ -220,12 +305,53 @@
       object-fit: cover;
     }
   }
+
+  .mobile__trigger2{
+    display: none;
+  }
+
+  .mobile__trigger2.visible{
+    display: block;
+  }
+
+  .nav.hidden, .mask.hidden{
+    display: none !important;
+  }
+
   @media (max-width: 1024px) {
     .nav, .mask{
       display: none !important;
     }
+    .mobile__trigger2, .mobile__trigger2.visible{
+      display: none;
+    }
   }
 </style>
+<script>
+ window.onload = function() {
+  const nav = document.querySelector('.nav');
+  const mask = document.querySelector('.mask');
+  const mobileTrigger = document.querySelector('.mobile__trigger2');
+  const scrollThreshold = 50;
+
+  if (nav && mobileTrigger) {
+    document.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > scrollThreshold) {
+        nav.classList.add('hidden');
+        mask.classList.add('hidden')
+        mobileTrigger.classList.add('visible');
+      } else {
+        nav.classList.remove('hidden');
+        mask.classList.remove('hidden')
+        mobileTrigger.classList.remove('visible');
+      }
+    });
+  }
+};
+
+</script>
 
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -265,33 +391,27 @@
   <div class="column__2">
     <div class="col__left pad__right__5">
       <div class="diamondFigure">
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
-        <div>
-          <img src="./assets/svg/redDiamond.svg" alt="">
-        </div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
       </div>
       
       <picture class="intro__picture__bg width__30">
           
           <source
-            srcset="/images/xEuXKj9x2n-300.jpeg 300w, /images/xEuXKj9x2n-600.jpeg 600w, /images/xEuXKj9x2n-900.jpeg 900w, /images/xEuXKj9x2n-1200.jpeg 1200w, /images/xEuXKj9x2n-1800.jpeg 1800w"
+            srcset="/images/8mfttVGE_X-300.jpeg 300w, /images/8mfttVGE_X-600.jpeg 600w, /images/8mfttVGE_X-900.jpeg 900w, /images/8mfttVGE_X-1200.jpeg 1200w, /images/8mfttVGE_X-1568.jpeg 1568w"
             sizes="(max-width: 900px) 100vw, 900px"
             type="image/jpeg"
           />
           
           <source
-            srcset="/images/xEuXKj9x2n-300.webp 300w, /images/xEuXKj9x2n-600.webp 600w, /images/xEuXKj9x2n-900.webp 900w, /images/xEuXKj9x2n-1200.webp 1200w, /images/xEuXKj9x2n-1800.webp 1800w"
+            srcset="/images/8mfttVGE_X-300.webp 300w, /images/8mfttVGE_X-600.webp 600w, /images/8mfttVGE_X-900.webp 900w, /images/8mfttVGE_X-1200.webp 1200w, /images/8mfttVGE_X-1568.webp 1568w"
             sizes="(max-width: 900px) 100vw, 900px"
             type="image/webp"
           />
           
           <img
-            src="/images/xEuXKj9x2n-300.jpeg"
+            src="/images/8mfttVGE_X-300.jpeg"
             alt=""
           />
         </picture>
@@ -300,19 +420,19 @@
       <picture class="intro__picture__custom width__30">
           
           <source
-            srcset="/images/WD7eQMV9wN-300.jpeg 300w, /images/WD7eQMV9wN-600.jpeg 600w, /images/WD7eQMV9wN-900.jpeg 900w, /images/WD7eQMV9wN-1200.jpeg 1200w, /images/WD7eQMV9wN-1800.jpeg 1800w"
+            srcset="/images/GMOljDNrRB-300.png 300w, /images/GMOljDNrRB-600.png 600w, /images/GMOljDNrRB-893.png 893w"
             sizes="(max-width: 900px) 100vw, 900px"
-            type="image/jpeg"
+            type="image/png"
           />
           
           <source
-            srcset="/images/WD7eQMV9wN-300.webp 300w, /images/WD7eQMV9wN-600.webp 600w, /images/WD7eQMV9wN-900.webp 900w, /images/WD7eQMV9wN-1200.webp 1200w, /images/WD7eQMV9wN-1800.webp 1800w"
+            srcset="/images/GMOljDNrRB-300.webp 300w, /images/GMOljDNrRB-600.webp 600w, /images/GMOljDNrRB-893.webp 893w"
             sizes="(max-width: 900px) 100vw, 900px"
             type="image/webp"
           />
           
           <img
-            src="/images/WD7eQMV9wN-300.jpeg"
+            src=""
             alt=""
           />
         </picture>
@@ -463,33 +583,27 @@
       </div>
       <div class="col__right">
         <div class="diamondFigure">
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
-          <div>
-            <img src="./assets/svg/redDiamond.svg" alt="">
-          </div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
         </div>
-        <ul role="list" class="flex">
+        <ul role="list" class="flex" id="discoverPueblitoUl">
           
           <li class="splide__slide pad__left__5">
             <picture>
                
               <source
-                srcset="/images/xEuXKj9x2n-300.jpeg 300w, /images/xEuXKj9x2n-600.jpeg 600w, /images/xEuXKj9x2n-900.jpeg 900w, /images/xEuXKj9x2n-1200.jpeg 1200w, /images/xEuXKj9x2n-1800.jpeg 1800w"
+                srcset="/images/7Pe7sc2SU_-300.jpeg 300w, /images/7Pe7sc2SU_-600.jpeg 600w, /images/7Pe7sc2SU_-780.jpeg 780w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 type="image/jpeg" />
                
               <source
-                srcset="/images/xEuXKj9x2n-300.webp 300w, /images/xEuXKj9x2n-600.webp 600w, /images/xEuXKj9x2n-900.webp 900w, /images/xEuXKj9x2n-1200.webp 1200w, /images/xEuXKj9x2n-1800.webp 1800w"
+                srcset="/images/7Pe7sc2SU_-300.webp 300w, /images/7Pe7sc2SU_-600.webp 600w, /images/7Pe7sc2SU_-780.webp 780w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 type="image/webp" />
               
               <img
-                src="/images/xEuXKj9x2n-300.webp"
+                src="/images/7Pe7sc2SU_-300.webp"
                 alt=""
             /></picture>
           </li>
@@ -498,17 +612,17 @@
             <picture>
                
               <source
-                srcset="/images/WD7eQMV9wN-300.jpeg 300w, /images/WD7eQMV9wN-600.jpeg 600w, /images/WD7eQMV9wN-900.jpeg 900w, /images/WD7eQMV9wN-1200.jpeg 1200w, /images/WD7eQMV9wN-1800.jpeg 1800w"
+                srcset="/images/AOt6zzOWe5-300.jpeg 300w, /images/AOt6zzOWe5-600.jpeg 600w, /images/AOt6zzOWe5-780.jpeg 780w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 type="image/jpeg" />
                
               <source
-                srcset="/images/WD7eQMV9wN-300.webp 300w, /images/WD7eQMV9wN-600.webp 600w, /images/WD7eQMV9wN-900.webp 900w, /images/WD7eQMV9wN-1200.webp 1200w, /images/WD7eQMV9wN-1800.webp 1800w"
+                srcset="/images/AOt6zzOWe5-300.webp 300w, /images/AOt6zzOWe5-600.webp 600w, /images/AOt6zzOWe5-780.webp 780w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 type="image/webp" />
               
               <img
-                src="/images/WD7eQMV9wN-300.webp"
+                src="/images/AOt6zzOWe5-300.webp"
                 alt=""
             /></picture>
           </li>
@@ -518,13 +632,13 @@
     </div>
   </section>
 
-  <section id="section__placeToBe" class="fadeInOut">
+  <section id="section__placeToBe">
     <div class="column__1">
-      <div class="width__100">
+        <div class="width__100 fadeInOut">
           <h2>Perfecto para todo tipo de</h2><h2><strong>aventuras</strong></h2>
         </div>  
-        <ul role='list'>
-          <li>
+        <ul role='list' id="placeToBeGallery">
+          <li id="placeToBeGalleryLi">
             
             <picture>
               
@@ -657,7 +771,7 @@
   </section>
 
   <section id="section__location" class="pad__top__10">
-    <div class="column__1 flex__align__c">
+    <div class="column__1 flex__align__c fadeInOut">
       <div class="width__100"><h2>Un destino</h2><h2><strong>en conexión</strong></h2></div>
       <div class="accentDivider"></div>
       <h3>Lleno de cultura</h3>
@@ -669,7 +783,7 @@
 
   <section id="section__discoverBenefits" class="pad__all__10">
     <div class="column__1 flex__justify__c flex__align__c">
-      <picture class="discoverBenefits__logo">
+      <picture class="discoverBenefits__logo fadeInOut">
         
         <source
           srcset="/images/Z52Y7QRMDi-68.png 68w"
@@ -688,9 +802,9 @@
           alt=""
         />
       </picture>
-      <div><h2>Vive la auténtica</h2><p></p><h2><strong>esencia mexicana</strong></h2></div>
-      <div class="accentDivider"></div>
-      <div class="max800"><p>Conviértete en un socio fundador y goza exclusivos beneficios</p></div>
+      <div class="fadeInOut"><h2>Vive la auténtica</h2><p></p><h2><strong>esencia mexicana</strong></h2></div>
+      <div class="accentDivider fadeInOut"></div>
+      <div class="max800 fadeInOut"><p>Conviértete en un socio fundador y goza exclusivos beneficios</p></div>
       <!--
         <a href="" class="btn">Descubre los beneficios</a>
         -->
@@ -720,7 +834,7 @@
   <section id="section__recentArticles" class="pad__all__10">
     <div class="column__1 flex__align__c">
 
-      <div><h2>Artículos Pensados</h2><h2><strong>para ti</strong></h2></div>
+      <div class="fadeInOut"><h2>Artículos Pensados</h2><h2><strong>para ti</strong></h2></div>
       
       <div class="splide" id="carousel-3">
         <div class="splide__track">
@@ -1091,7 +1205,7 @@
   
 <section id="formSection">
   <div class="column__2">
-    <div class="col__left pad__all__10">
+    <div class="col__left pad__all__10 fadeInOut">
       <div><h2>Contáctanos para</h2><h2><strong>vivir la esencia</strong></h2></div>
       <div style="margin-top: 2em;"><p>Llena el formulario con tus dataos y uno de nuestros asesores te proporcionará toda la información sobre La Esencia.</p></div>
       <form
@@ -1245,18 +1359,18 @@
       <picture class="introDivider__logo">
         
         <source
-          srcset="/images/xEuXKj9x2n-300.jpeg 300w, /images/xEuXKj9x2n-600.jpeg 600w, /images/xEuXKj9x2n-900.jpeg 900w, /images/xEuXKj9x2n-1200.jpeg 1200w, /images/xEuXKj9x2n-1800.jpeg 1800w"
+          srcset="/images/hHo5ebMR1_-300.jpeg 300w, /images/hHo5ebMR1_-600.jpeg 600w, /images/hHo5ebMR1_-900.jpeg 900w, /images/hHo5ebMR1_-1200.jpeg 1200w"
           sizes="(max-width: 1920px) 100vw, 1920px"
           type="image/jpeg"
         />
         
         <source
-          srcset="/images/xEuXKj9x2n-300.webp 300w, /images/xEuXKj9x2n-600.webp 600w, /images/xEuXKj9x2n-900.webp 900w, /images/xEuXKj9x2n-1200.webp 1200w, /images/xEuXKj9x2n-1800.webp 1800w"
+          srcset="/images/hHo5ebMR1_-300.webp 300w, /images/hHo5ebMR1_-600.webp 600w, /images/hHo5ebMR1_-900.webp 900w, /images/hHo5ebMR1_-1200.webp 1200w"
           sizes="(max-width: 1920px) 100vw, 1920px"
           type="image/webp"
         />
         
-        <img src="/images/xEuXKj9x2n-300.webp" alt="[object Object]" />
+        <img src="/images/hHo5ebMR1_-300.webp" alt="[object Object]" />
       </picture>
     </div>
   </div>
@@ -1341,9 +1455,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="footer__column">
             <h2>Datos de contacto</h2>
             
-                <li>T: <a class="tel__text" href="tel:+5210">0</a></li>
-                <li>C: <a href="mailto:0">0</a></li>
-                <li><a href="0" target="_blank">0</a></li>
+                <li>T: <a class="tel__text" href="tel:+5219993437716">9993437716</a></li>
+                <li>C: <a href="mailto:contacto@grupolinmex.mx">contacto@grupolinmex.mx</a></li>
+                <li><a href="https://maps.app.goo.gl/7R8ZhXHoPBjW4rtt6" target="_blank">Calle 19 #269A x36 y 38 esquina Colonia Campestre</a></li>
             
         </div>
         <div class="footer__column">
@@ -1359,7 +1473,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             
                 
                 <a class="logo__footer" href="/">
-                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/f1360f094f599337c9046609240d6f946d50cf08-5184x3888.jpg" alt=" - " />
+                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/c1869d9dcc26500ca5cfb9567fac0c38e94296ee-100x100.svg" alt=" - " />
                 </a>
                 
     
@@ -1371,7 +1485,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <div id="inner__footer" class="column__1">
         <span>
             
-                La esencia
+                La Esencia
             
             © Todos los derechos reservados | Sitio web creado por <a href="https://marker.com.mx" target="_blank">MARKER branding</a></span>
     </div>
