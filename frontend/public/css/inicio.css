@@ -630,6 +630,9 @@
 }
 
 @media (max-width: 1024px) {
+  .greca{
+    height: 100px;
+  }
   #section__hero{
     .img__hero, picture, img{
       height: 100%;
@@ -639,12 +642,26 @@
     }
   }
   #section__intro{
-    padding: 5%;
+    padding: 0%;
+    padding-top: 10%;
     .col__left{
       padding-right: 0;
     }
+    picture:last-child{
+      img{
+        position: absolute;
+      }
+    }
     h2{
       width: 100%;
+    }
+  }
+  #section__placeToBe {
+    ul, li{
+      gap: 10px;
+      picture{
+        border-radius:  5px;
+      }
     }
   }
   #section__introDivider{
@@ -653,7 +670,7 @@
     }
   }
   #section__discoverPueblito, #section__recentArticles{
-    padding: 5%;
+    padding: 10% 5%;
   }
   #carousel-1, #carousel-2{
     padding: 0 !important;
