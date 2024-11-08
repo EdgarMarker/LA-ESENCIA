@@ -117,6 +117,21 @@ function gsapSoloAnimations() {
     },
   });*/
 
+  // Imagen desfazada se mueve hacia la derecha
+  const cutRight = document.querySelector(".dual__img__wrapper picture:first-child");
+
+  gsap.to(cutRight, {
+    x: "-20%",
+    scrollTrigger: {
+      trigger:"#section__intro",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    }
+  })
+
+
+  // Giro del sello
   gsap.to(".sello__wrapper", {
     rotation: 360 * 2,
     duration: 1,
@@ -203,8 +218,28 @@ function gsapSoloAnimations() {
 const leftImg = document.querySelector("#discoverPueblitoUl li:first-child");
 const rightImg = document.querySelector("#discoverPueblitoUl li:last-child");
 
-leftImg.setAttribute("data-speed", "1.2");
-rightImg.setAttribute("data-speed", "0.8");
+
+gsap.to(leftImg, {
+  y: "15%",
+  ease: "power1.out",
+  scrollTrigger: {
+    trigger: "#section__discoverPueblito",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  }
+})
+
+gsap.to(rightImg, {
+  y: "-15%",
+  ease: "power1.out",
+  scrollTrigger: {
+    trigger: "#section__discoverPueblito",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  }
+})
 
   // gallery divider
 

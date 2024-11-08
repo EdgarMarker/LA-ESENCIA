@@ -16,6 +16,10 @@
     z-index: 1;
     pointer-events: none;
   }
+  .accentDivider{
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
   .flex__row {
     display: flex;
     flex-direction: row;
@@ -247,12 +251,7 @@
         }
       }
     }
-    li:last-child{
-      transform: translateY(50px);
-    }
-    li:first-child{
-      transform: translateY(-50px);
-    }
+    
   }
 }
 
@@ -331,16 +330,135 @@
 
 #section__location {
   background: url('../assets/img/bg_noise_mapa.jpg');
-  h2{
-    strong{
-      transform-origin: top center;
+  .column__1{
+    h2{
+      strong{
+        transform-origin: top center;
+      }
+    }
+    .width__45{
+      text-align: center;
     }
   }
-  h3{
-
-  }
-  .width__45{
-    text-align: center;
+  .column__1{
+    .map__wrapper{
+      width: 100%;
+      height: auto;
+      .hotspot#merida{
+        width: 100px;
+        height: 100px;
+      }
+      .hotspot{
+        position: absolute;
+        z-index: 2;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        .tooltip{
+          position: absolute;
+          background-color: var(--color-black);
+          display: none;
+          width: 240px;
+          height: auto;
+          padding-bottom: 10px;
+          border-radius: 10px;
+          top: -260px;
+          left: -90px;
+          &::before{
+            content: "";
+            position: absolute;
+            bottom: -17px;
+            left: calc(50% - 15px);
+            width: 30px;
+            height: 20px;
+            background-color: var(--color-black);
+            clip-path: polygon(100% 0, 0 0, 50% 100%);
+          }
+          img{
+            padding: 10px;
+          }
+          p{
+            width: 100%;
+            text-align: center;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 19px;
+            color: var(--color-white);
+            font-weight: 400;
+            margin-bottom: 0px;
+            strong{
+              font-weight: 600;
+            }
+            span{
+              color: var(--color-accent);
+              font-weight: 600;
+            }
+          }
+          img{
+            display: block;
+          }
+        }
+        &:hover{
+          .tooltip{
+            display: block;
+          }
+        }
+      }
+      #progreso{
+        top: calc(29.5% - 30px);
+        left: calc(26% - 30px);
+      }
+      #telchac{
+        top: calc(26.5% - 30px);
+        left: calc(34.8% - 30px);
+      }
+      #lagartos{
+        top: calc(17.1% - 30px);
+        left: calc(60.4% - 30px);
+      }
+      #cuyo{
+        top: calc(19.5% - 30px);
+        left: calc(70.6% - 30px);
+      }
+      #merida{
+        top: calc(43.8% - 50px);
+        left: calc(27.3% - 50px);
+      }
+      #izamal{
+        top: calc(42.5% - 30px);
+        left: calc(41% - 30px);
+      }
+      #chichenitza{
+        top: calc(59.1% - 30px);
+        left: calc(49.1% - 30px);
+      }
+      #cancun{
+        top: calc(34.5% - 30px);
+        left: calc(88.9% - 30px);
+      }
+      #playacarmen{
+        top: calc(57.9% - 30px);
+        left: calc(84.6% - 30px);
+      }
+      #tulum{
+        top: calc(76.5% - 30px);
+        left: calc(76.5% - 30px);
+      }
+      .vector{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .bitmap{
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 0;
+      }
+    }
   }
 }
 
@@ -540,4 +658,131 @@
   #carousel-1, #carousel-2{
     padding: 0 !important;
   }
+
+  #section__location {
+    .column__1{
+      .map__wrapper{
+        .hotspot#merida{
+          width: 30px;
+          height: 30px;
+        }
+        .hotspot{
+          width: 34px;
+          height: 34px;
+          .tooltip{
+            position: absolute;
+            background-color: var(--color-black);
+            display: none;
+            width: 240px;
+            height: auto;
+            padding: 0px;
+            border-radius: 10px;
+            top: -240px;
+            left: -90px;
+            img{
+              padding: 10px;
+            }
+            p{
+              width: 100%;
+              text-align: center;
+              padding: 0 10px;
+              font-size: 13px;
+              line-height: 19px;
+              color: var(--color-white);
+              font-weight: 400;
+              margin-bottom: 0px;
+              strong{
+                font-weight: 600;
+              }
+              span{
+                color: var(--color-accent);
+                font-weight: 600;
+              }
+            }
+            img{
+              display: block;
+            }
+          }
+          &:hover{
+            .tooltip{
+              display: block;
+            }
+          }
+        }
+        #progreso{
+          top: calc(29.5% - 15px);
+          left: calc(26% - 15px);
+        }
+        #telchac{
+          top: calc(26.5% - 15px);
+          left: calc(34.8% - 15px);
+        }
+        #lagartos{
+          top: calc(17.1% - 15px);
+          left: calc(60.4% - 15px);
+        }
+        #cuyo{
+          top: calc(19.5% - 15px);
+          left: calc(70.6% - 15px);
+        }
+        #merida{
+          top: calc(43.8% - 15px);
+          left: calc(27.3% - 15px);
+        }
+        #izamal{
+          top: calc(42.5% - 15px);
+          left: calc(41% - 15px);
+        }
+        #chichenitza{
+          top: calc(59.1% - 15px);
+          left: calc(49.1% - 15px);
+        }
+        #cancun{
+          top: calc(34.5% - 15px);
+          left: calc(88.9% - 15px);
+          .tooltip{   
+            left: -190px;
+            &::before{
+              left: calc(100% - 55px);
+            }
+          }
+        }
+        #playacarmen{
+          top: calc(57.9% - 15px);
+          left: calc(84.6% - 15px);
+          .tooltip{
+            left: -190px;
+            &::before{
+              left: calc(100% - 55px);
+            }
+          }
+        }
+        #tulum{
+          top: calc(76.5% - 15px);
+          left: calc(76.5% - 15px);
+          .tooltip{
+            left: -190px;
+            &::before{
+              left: calc(100% - 55px);
+            }
+          }
+        }
+        .vector{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .bitmap{
+          position: relative;
+          width: 100%;
+          height: auto;
+          z-index: 0;
+        }
+      }
+    }
+  }
+
 }

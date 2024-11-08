@@ -18,7 +18,7 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div class="col__left flex__justify__c width__45 flex__column flex__align__c">
         <h1>{{ item.heroH1 }}</h1>
-        <!--<div class="accentDivider"></div>-->
+        <div class="accentDivider"></div>
         {{ item.heroH2 | safe }}
         <div class="btn__hero__container">
           <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
@@ -230,8 +230,71 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="width__45 max1200">{{item.location.description | safe}}</div>
       <a href="{{item.location.url}}" target="_blank" class="btn">Abrir en google maps</a>
     </div>
-    <div class="column__1 map__wrapper">
-      <img src="./assets/img/mapa.jpg" alt="mapa ilustrativo del lugar">
+    <div class="column__1">
+      <div class="map__wrapper">
+        <a id="progreso" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_progreso.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>197.3 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="telchac" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_telchac.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>185 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="lagartos" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_lagartos.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>106 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="cuyo" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_cuyo.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>134 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="merida" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_merida.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>160 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="izamal" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_izamal.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>110 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="chichenitza" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_chichenitza.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>42.1 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="cancun" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_cancun.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>156 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="playacarmen" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_playacarmen.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>141 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <a id="tulum" class="hotspot">
+          <div class="tooltip">
+            <img src="/images/inicio/mapa_tulum.jpg" alt="La Esencia cerca de Progreso" />
+            <p>Se encuentra a <span>102 km</span> de <strong>Valladolid</strong></p>
+          </div>
+        </a>
+        <img class="vector" src="/images/inicio/inicio_mapa.svg" alt="La Esencia, un destino turístico en Valladolid"/>
+        <img class="bitmap" src="/images/inicio/inicio_mapa.jpg" alt="La Esencia es un punto de conexión con Valladolid y todo Yucatán">
+      </div>
     </div>
   </section>
 
