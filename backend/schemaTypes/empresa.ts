@@ -7,6 +7,10 @@ export default {
       name: 'form',
       title: 'Formulario',
     },
+    {
+      name: 'logo',
+      title: 'logos'
+    }
   ],
   fields: [
     {
@@ -85,6 +89,24 @@ export default {
           type: 'image',
         },
       ]
+    },
+    {
+      name: 'isoType',
+      title: 'Iso tipo para el navegador',
+      type: 'image',
+      group: 'logo',
+      options: {
+          hotspot: true,
+      },
+    },
+    {
+      name: 'logoType',
+      title: 'Logo tipo para el navegador mobile y ipad',
+      type: 'image',
+      group: 'logo',
+      options: {
+          hotspot: true,
+      },
     },
   ]
 }

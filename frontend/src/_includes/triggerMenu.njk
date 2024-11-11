@@ -1,0 +1,39 @@
+<div class="mobile__trigger" id="mobile__trigger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</div>
+<div class="mobile__menu">
+    {%include 'menu-provisional.njk' %}
+    <!--
+    FINAL MENU
+    {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
+    <a
+    class="cta__msn"
+    href="https://wa.me/521{{ marca.brandPhone }}"
+    target="_blank"
+    >Mensaje</a
+    -->
+    >
+</div>
+<div class="mobile__active"></div>
+
+<style>
+    .mobile__trigger {
+        position: fixed;
+        z-index: 50;
+        right: 5px;
+        top: 5px;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 50px;
+        cursor: pointer;
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        background: var(--bg-primary);
+        opacity: 0;
+    }
+</style>

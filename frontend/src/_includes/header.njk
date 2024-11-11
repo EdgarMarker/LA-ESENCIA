@@ -6,18 +6,6 @@
       <div class="circle-cut"></div>
       <div class="mask-right"></div>
     </div>
-    <!--Mascara
-      -absoluta,
-      -los 3 elementos, 50% - 50px
-    -->
-    <!--
-      <picture>
-        {% for format, images in marca.brandLogo %}
-        <source srcset="{{ images | srcset }}" sizes="(max-width: 1920px) 100vw, 1920px" type="image/{{ format }}"/>
-        {% endfor %}
-        <img src="{{ marca.brandLogo.svg[0].url }}" alt="{{ marca.brandLogo.alt }}"/>
-      </picture>
-      -->
     <div class="nav">
       <!--
       {% include 'main-nav-izq.njk' %}
@@ -32,53 +20,19 @@
       </a>
 
       <div class="mirrorNav"></div>
-      
+
       <!--
         {% include 'main-nav-der.njk' %}
       -->
-        
+
     </div>
-    <div class="mobile__trigger2">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div  class="mobile__menu2">
-      {%include 'menu-provisional.njk' %}
-      <!--
-      FINAL MENU
-      {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
-      <a
-      class="cta__msn"
-      href="https://wa.me/521{{ marca.brandPhone }}"
-      target="_blank"
-      >Mensaje</a
-      >
-      -->
-    </div>
-    <div  class="mobile__active"></div>
-    <!-- NAV MENU DESKTOP-->
-  </div>
-    <div class="mobile__trigger">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="nav__secondary">
+      <div class="isoTypeRoom"></div>
+      {% for logo in logosEmpresa %}
+      <img src="{{ logo.logoType.media.url }}" alt="prueba" />
+      {%endfor%}
     </div>
   </div>
-  <div class="mobile__menu">
-    {%include 'menu-provisional.njk' %}
-      <!--
-      FINAL MENU
-      {% include 'main-nav-izq.njk' %} {% include 'main-nav-der.njk' %}
-      <a
-      class="cta__msn"
-      href="https://wa.me/521{{ marca.brandPhone }}"
-      target="_blank"
-      >Mensaje</a
-      -->
-    >
-  </div>
-  <div  class="mobile__active"></div>
   {% endfor %}
 </header>
 
@@ -87,7 +41,7 @@
     background-color: transparent;
     justify-content: space-between;
     position: relative;
-    min-height: 60px;
+
     .mask {
       z-index: 1;
       position: absolute;
@@ -97,36 +51,44 @@
       width: 100%;
       height: 60px;
       justify-content: space-between;
+
       .mask-left,
       .mask-right {
         background: var(--bg-primary);
         width: calc(50% - 50px);
       }
     }
-    .nav{
+
+    .nav {
+      height: 60px;
       width: 100%;
       display: flex;
       justify-content: space-between;
       position: relative;
       z-index: 5;
     }
+
     .nav__ul__left,
     .nav__ul__right,
     .mirrorNav {
       width: calc(50% - 50px);
       justify-content: space-evenly;
     }
+
     #logo__main {
       position: absolute;
-      position: relative;
       width: 250px;
       aspect-ratio: 1/1;
       top: -20px;
-      img{
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
         width: 100%;
         object-fit: contain;
       }
     }
+
     .circle-cut {
       --r: 135px;
       width: 270px;
@@ -135,8 +97,10 @@
       mask: radial-gradient(var(--r) at 50% 240%, #0000 calc(100% - 1px), #000);
     }
   }
+
   #logo__main {
     position: relative;
+
     img {
       position: absolute;
       width: 100%;
@@ -144,50 +108,36 @@
       object-fit: cover;
     }
   }
-
-  .mobile__trigger2{
+  .nav__secondary{
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-primary);
     display: none;
-  }
-
-  .mobile__trigger2.visible{
-    display: block;
-  }
-
-  .nav.hidden, .mask.hidden{
-    display: none !important;
+    img{
+      height: 60px;
+      width: auto;
+    }
+    .isoTypeRoom{
+      width: 50px;
+      aspect-ratio: 1/1;
+      margin: 5px;
+    }
   }
 
   @media (max-width: 1024px) {
-    .nav, .mask{
+    header {
+      background: var(--bg-primary);
+      height: 60px;
+    }
+
+    .nav,
+    .mask {
       display: none !important;
     }
-    .mobile__trigger2, .mobile__trigger2.visible{
-      display: none;
+    .nav__secondary{
+      display: flex;
     }
   }
 </style>
-<script>
- window.onload = function() {
-  const nav = document.querySelector('.nav');
-  const mask = document.querySelector('.mask');
-  const mobileTrigger = document.querySelector('.mobile__trigger2');
-  const scrollThreshold = 50;
-
-  if (nav && mobileTrigger) {
-    document.addEventListener('scroll', function() {
-      const scrollY = window.scrollY;
-
-      if (scrollY > scrollThreshold) {
-        nav.classList.add('hidden');
-        mask.classList.add('hidden')
-        mobileTrigger.classList.add('visible');
-      } else {
-        nav.classList.remove('hidden');
-        mask.classList.remove('hidden')
-        mobileTrigger.classList.remove('visible');
-      }
-    });
-  }
-};
-
-</script>

@@ -1,6 +1,6 @@
-const client = require('../utils/sanityClient');
+const client = require("../utils/sanityClient");
 
-module.exports = async function() {
+module.exports = async function () {
   const data = await client.fetch(`*[_type == "empresa"]{
     brandLogo{
     "media": asset->{url},
@@ -10,12 +10,19 @@ module.exports = async function() {
     "media": asset->{url},
     "alt": asset->{altText}
     },
+    isoType{
+      "media": asset->{url},
+      "alt": asset->{altText}},
+    logoType{
+      "media": asset->{url},
+      "alt": asset->{altText}}
     }`);
 
-  return await Promise.all(data.map(async item => {
-    return {
-      ...item,
-      
-    };
-  }));
+  return await Promise.all(
+    data.map(async (item) => {
+      return {
+        ...item,
+      };
+    })
+  );
 };

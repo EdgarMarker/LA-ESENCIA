@@ -32,10 +32,12 @@
     {% endif %} {% endfor %}
   </head>
   <body data-barba="wrapper">
-    {% include 'loader.njk' %} {% include 'header.njk' %}
+    {% include 'triggerMenu.njk' %}
+    {% include 'isoTypeMenu.njk' %}
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <main>
+        <main id="main">
+          {% include 'loader.njk' %}
           {{ content | safe }}
         </main>
         {% include 'footer.njk' %}

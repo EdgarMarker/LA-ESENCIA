@@ -1,9 +1,8 @@
 header{
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 100;
+    position: absolute;
+    top: 0;
+
 }
 
 #inner__header{
@@ -99,9 +98,7 @@ header{
     background-size: 100%;
     margin-right: 5px;
 }
-.mobile__trigger{
-    display: none;
-}
+
 
 .mobile__trigger, .mobile__trigger2{
     position: absolute;

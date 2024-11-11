@@ -15,6 +15,7 @@ permalink: "/{{ page.fileSlug }}/"
 >
   {% for item in inicio %}
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    {% include 'header.njk' %}
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div class="col__left flex__justify__c width__45 flex__column flex__align__c">
         <h1>{{ item.heroH1 }}</h1>
