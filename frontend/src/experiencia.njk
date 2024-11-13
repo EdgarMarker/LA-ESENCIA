@@ -1,0 +1,342 @@
+---
+eleventyComputed:
+  title: "{{ experiencia[0].titleseo }}"
+  description: "{{ experiencia[0].descseo }}"
+  keywords: "{{ experiencia[0].keyseo }}"
+layout: "base.njk"
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<div
+  data-barba="container"
+  data-barba-namespace="experiencia"
+  data-css="experiencia"
+  data-js="experiencia"
+>
+  {% for item in experiencia %}
+
+  <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    {% include 'header.njk' %}
+    <div class="column__2 column__2__hero flex__row flex__justify__c">
+      <div
+        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      >
+        <h1>{{ item.heroH1 }}</h1>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
+        <div class="btn__hero__container">
+          <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
+          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+        </div>
+      </div>
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
+          <source
+            src="/images/inicio/esencia index hero.mp4"
+            type="video/mp4"
+          />
+          Tu navegador no soporta este video
+        </video>
+      </div>
+      <div class="blackDisplayOverlayGradient"></div>
+    </div>
+  </section>
+  <section id="section__happyPlace">
+    <div class="column__1 happyPlace__richText">
+      <div class="richTextH2">{{ item.introH2 | safe }}</div>
+      <div class="accentDivider"></div>
+      <h3>{{ item.introH3 }}</h3>
+    </div>
+
+    <!---->
+    <div class="column__1">
+      <div class="dualHorizon__img__wrapper">
+        {% if item.introImg2 %}
+        <picture class="intro__picture__bg">
+          {% for format, images in item.introImg2 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.introImg2.webp[0].url }}"
+            alt="{{ item.introImg2Alt }}"
+          />
+        </picture>
+        {% endif %} {% if item.introImg1 %}
+        <picture class="intro__picture__bg">
+          {% for format, images in item.introImg1 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.introImg1.webp[0].url }}"
+            alt="{{ item.introImg1Alt }}"
+          />
+        </picture>
+        {% endif %}
+      </div>
+      <div class="diamondFigureHorizon">
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+      </div>
+    </div>
+    <!---->
+    <div class="column__1">
+      <div class="pad__all__5 width__55">{{ item.introDesc | safe }}</div>
+    </div>
+  </section>
+
+  <section id="section__spaCarousel">
+    <div class="column__2">
+      <div class="col__left">
+        <ul role="list" id="pinStart__spaCarousel">
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text1.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text1.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text2.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text2.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text3.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text3.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text4.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text4.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text5.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text5.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text6.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text6.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text7.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text7.desc | safe }}</div>
+          </li>
+          <li class="spaCarousel__card">
+            {{ item.spaCarousel.text8.h2 | safe }}
+            <div class="card__line">
+              <div class="card__line--red"></div>
+            </div>
+            <div>{{ item.spaCarousel.text8.desc | safe }}</div>
+          </li>
+        </ul>
+      </div>
+      <div class="col__right" id="pinRight__spaCarousel">
+        {% if item.spaCarousel.img1 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img1 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.Img1.webp[0].url }}" alt="{{ item.img1Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img2 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img2 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img2.webp[0].url }}" alt="{{ item.img2Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img3 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img3 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img3.webp[0].url }}" alt="{{ item.img3Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img4 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img4 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img4.webp[0].url }}" alt="{{ item.img4Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img5 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img5 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img5.webp[0].url }}" alt="{{ item.img5Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img6 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img6 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img6.webp[0].url }}" alt="{{ item.img6Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img7 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img7 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img7.webp[0].url }}" alt="{{ item.img7Alt }}" />
+        </picture>
+        {% endif %} {% if item.spaCarousel.img8 %}
+        <picture class="intro__picture__bg spaCarousel__img">
+          {% for format, images in item.spaCarousel.img8 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img src="{{ item.img8.webp[0].url }}" alt="{{ item.img8Alt }}" />
+        </picture>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section id="section__adventureCarousel">
+    <div class="column__1 fadeInOut">
+      <div>{{ item.adventure.h2 | safe }}</div>
+    </div>
+    <div class="column__1">
+      <div class="splide" id="carousel-3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.adventure.gallery %}
+            <li class="splide__slide carouselCard">
+              <picture class="discoverBenefits__img">
+                {% for format, images in item.img %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  type="image/{{ format }}"
+                />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ producto.mainImage.alt }}"
+                />
+              </picture>
+              <h3>{{ item.name }}</h3>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section__placeToBe">
+    <div class="column__1 fadeInOut">
+      {{ item.placeToBeH2 | safe}}
+    </div>
+    <div class="blackDisplayOverlay"></div>
+    {% if item.placeToBeImg %}
+    <picture>
+      {% for format, images in item.placeToBeImg %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img src="{{ item.placeToBeImg.webp[0].url }}" alt="{{ item.placeToBeImg.altText }}" />
+    </picture>
+    {% endif %}
+  </section>
+
+  <section id="section__traditions">
+    <div class="column__1">
+      {{item.traditionsH2 | safe}}
+      <h3>{{item.traditionsH3}}</h3>
+      <div>
+        {{item.traditionsDesc | safe}}
+      </div>
+      <a href="" class="btn">{{item.traditionsBtn}}</a>
+    </div>
+  </section>
+
+  {%endfor%}
+</div>
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link
+  href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+  rel="stylesheet"
+/>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let carrousel = new Splide("#carousel-3", {
+      height: "80vh",
+      perPage: 3,
+      gap: "1rem",
+      arrows: true,
+      wheel: false,
+      pagination: false,
+      breakpoints: {
+        768: {
+          height: "500px",
+        },
+      },
+    });
+    carrousel.mount();
+  });
+</script>

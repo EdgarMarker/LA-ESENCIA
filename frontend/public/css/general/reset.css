@@ -19,6 +19,7 @@
 
     /* Custom bg */
     --bg-primary: url('../../assets/img/bg_red.webp');
+    --bg-cream: url('../../assets/img/bg_cream.jpg');
 
     /* Messages color */
     --color-success: #3ec43e;

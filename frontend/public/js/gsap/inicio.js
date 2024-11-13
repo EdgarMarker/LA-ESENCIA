@@ -297,19 +297,4 @@ gsap.to(rightImg, {
     opacity: 0,
   })
 
-  // header isoType && trigger animation
-
-  const tlNav = gsap.timeline();
-
-  tlNav.to(['#isoType', '#mobile__trigger'], {
-    x: 0,
-    opacity: 1,
-    duration: 0.25,
-    scrollTrigger: {
-      trigger: '#main',
-      start: '50px top',
-      end: '60px top', 
-      scrub: 1,
-    }
-  })
 }
