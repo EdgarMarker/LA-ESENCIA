@@ -56,6 +56,20 @@ export default defineConfig({
                       .id('experiencia')
                       .child(S.document().schemaType('experiencia').documentId('experiencia')),
                     S.listItem()
+                      .title('Resorts')
+                      .id('resorts')
+                      .child(S.document().schemaType('resorts').documentId('resorts')),
+                    S.listItem()
+                      .title('Ubicación')
+                      .id('ubicacion')
+                      .child(S.document().schemaType('ubicacion').documentId('ubicacion')),
+                      S.listItem()
+                      .title('Socios')
+                      .id('socios')
+                      .child(S.document().schemaType('socios').documentId('socios')),
+
+                      
+                    S.listItem()
                       .title('Nosotros')
                       .id('about')
                       .child(S.document().schemaType('nosotros').documentId('nosotros')),

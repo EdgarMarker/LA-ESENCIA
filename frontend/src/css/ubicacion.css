@@ -1,0 +1,309 @@
+#section__hero {
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    &::before{
+      content:"";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0000006b;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .accentDivider{
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+    .flex__row {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex__column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2; 
+    }
+    .text__align__c {
+      text-align: center;
+    }
+    h1{
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+    }
+    h2, h2>strong{
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+      font-size: var(--size-2xl);
+    }
+    .column__2__hero {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+    .btn__hero__container {
+      margin-top: 2em;
+      display: flex;
+      gap: 1px;
+      .btn:first-child{
+        border-radius: 8px 0 0 8px;
+      }
+      .btn:last-child{
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    .img__hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      video{
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  #section__intro {
+    margin-top: 0;
+    background: url('../assets/img/bg_cream.jpg');
+    position: relative;
+    padding: 10% 0% 5% 0%;
+    .column__2{
+      .col__left{
+        position: relative;
+      }
+      .col__right{
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+    }
+    .column__1{
+      margin-top: 5%;
+      overflow: hidden;
+      .greca{
+        width: 120vw;
+        transform: translateX(-20vw);
+      }
+    }
+    &::before{
+      content:"";
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: -20%;
+      right: 0;
+      background-image: url(/images/textura_manuscrito.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+
+ #section__haveAll{
+    background: var(--bg-primary);
+    padding: 10% 0%;
+    min-height: 80vh;
+    .column__2{
+        .col__left{
+            padding-left: 5%;
+            padding-right: 10%;
+            justify-content: center;
+            h2{
+                width: 100%;
+                strong{
+                    color: var(--color-accent);
+                }
+            }
+            p,h2, h3{
+                color: var(--color-white);
+            }
+            .accentDivider{
+                background-color: var(--color-white);
+            }
+        }
+        .col__right{
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            gap: 2.5%;
+            picture{
+                img{
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .haveAll__leftImg{
+                width: 50%;
+                aspect-ratio: 2/3;
+            }
+            .haveAll__rightImg{
+                width: 50%;
+                padding: 5% 0%;
+                display: flex;
+                flex-direction: column;
+                & > picture:first-child{
+                    width: 100%;
+                    aspect-ratio: 3/2;
+                    padding-bottom: 2.5%;
+                }
+                picture:last-child{
+                    width: 100%;
+                    aspect-ratio: 3/2;
+                    padding-right: 10%;
+                    padding-top: 2.5%;
+                }
+            }
+        }
+    }
+ } 
+ #section__discoverBenefits{
+    height: 100vh;
+    position: relative;
+    .accentDivider{
+      background-color: var(--color-accent) ;
+    }
+    .column__1{
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100px;
+        height: auto;
+        margin-bottom: 50px;
+      }
+      h2{
+        color: var(--color-white);
+        strong{
+          transform-origin: top center;
+        }
+      }
+      p{
+        text-align: center;
+        color: var(--color-white)
+      }
+    }
+    
+    picture{
+      z-index: -1;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+     }
+    }
+  }
+
+#section__map{
+  background: var(--bg-cream);
+  padding: 10% 0;
+  padding-left: 5%;
+  .column__2{
+    .col__left{
+      align-self: center;
+      padding-right: 5%;
+      h2, ul{
+        width: 100%;
+      }
+      .mapDesc{
+        margin: 1em 0;
+      }
+      li{
+       display: flex;
+       align-items: center;
+       width: 100%;
+       border-bottom: 2px solid rgb(85, 83, 83);
+       picture{
+        width: 24px;
+        aspect-ratio: 1/1;
+        img{
+          height: 100%;
+          object-fit: contain;
+        }
+       } 
+      }
+    }
+  }
+}
+#section__adventureCarousel{
+  padding: 10%;
+  .column__1:nth-child(1){
+    div, h2{
+      width: 100%;
+      text-align: center;
+      h2{
+        display: flex;
+      justify-content: center;
+      color: var(--color-white);
+      }
+      strong{
+        width: fit-content;
+        color: var(--color-accent);
+      }
+    }
+  } 
+  ul.splide__list{
+    padding: 3em 0 !important;
+    li{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      picture, img{
+        height: 100%;
+        img{
+          object-fit: cover;
+        }
+      }
+      h3{
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .splide__arrow {
+    border: 1px solid var(--color-black);
+  }
+  .splide__arrow--prev{
+    left: -5%;
+    background-color: transparent;
+  }
+  .splide__arrow--next{
+    right: -5%;
+    background-color: transparent;
+  }
+  #carousel-2{
+    display: none;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  #section__adventureCarousel{
+    padding: 10% 5%;
+    #carousel-3{
+      display: none;
+    }
+    #carousel-2{
+      display: block;
+    }
+  }
+}

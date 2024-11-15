@@ -157,7 +157,7 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
       <div class="col__right" id="pinRight__spaCarousel">
         {% if item.spaCarousel.img1 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class="spaCarousel__img">
           {% for format, images in item.spaCarousel.img1 %}
           <source
             srcset="{{ images | srcset }}"
@@ -168,7 +168,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.Img1.webp[0].url }}" alt="{{ item.img1Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img2 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class=" spaCarousel__img">
           {% for format, images in item.spaCarousel.img2 %}
           <source
             srcset="{{ images | srcset }}"
@@ -179,7 +179,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img2.webp[0].url }}" alt="{{ item.img2Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img3 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class=" spaCarousel__img">
           {% for format, images in item.spaCarousel.img3 %}
           <source
             srcset="{{ images | srcset }}"
@@ -190,7 +190,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img3.webp[0].url }}" alt="{{ item.img3Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img4 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class="spaCarousel__img">
           {% for format, images in item.spaCarousel.img4 %}
           <source
             srcset="{{ images | srcset }}"
@@ -201,7 +201,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img4.webp[0].url }}" alt="{{ item.img4Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img5 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class="spaCarousel__img">
           {% for format, images in item.spaCarousel.img5 %}
           <source
             srcset="{{ images | srcset }}"
@@ -212,7 +212,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img5.webp[0].url }}" alt="{{ item.img5Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img6 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class=" spaCarousel__img">
           {% for format, images in item.spaCarousel.img6 %}
           <source
             srcset="{{ images | srcset }}"
@@ -223,7 +223,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img6.webp[0].url }}" alt="{{ item.img6Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img7 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class="spaCarousel__img">
           {% for format, images in item.spaCarousel.img7 %}
           <source
             srcset="{{ images | srcset }}"
@@ -234,7 +234,7 @@ permalink: "/{{ page.fileSlug }}/"
           <img src="{{ item.img7.webp[0].url }}" alt="{{ item.img7Alt }}" />
         </picture>
         {% endif %} {% if item.spaCarousel.img8 %}
-        <picture class="intro__picture__bg spaCarousel__img">
+        <picture class="spaCarousel__img">
           {% for format, images in item.spaCarousel.img8 %}
           <source
             srcset="{{ images | srcset }}"
@@ -255,6 +255,31 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
     <div class="column__1">
       <div class="splide" id="carousel-3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.adventure.gallery %}
+            <li class="splide__slide carouselCard">
+              <picture class="discoverBenefits__img">
+                {% for format, images in item.img %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  type="image/{{ format }}"
+                />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ producto.mainImage.alt }}"
+                />
+              </picture>
+              <h3>{{ item.name }}</h3>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+      
+      <div class="splide" id="carousel-2">
         <div class="splide__track">
           <ul class="splide__list">
             {% for item in item.adventure.gallery %}
@@ -300,7 +325,7 @@ permalink: "/{{ page.fileSlug }}/"
     {% endif %}
   </section>
 
-  <section id="section__traditions">
+  <section id="section__traditions" class="fadeInOut">
     <div class="column__1">
       {{item.traditionsH2 | safe}}
       <h3>{{item.traditionsH3}}</h3>
@@ -309,6 +334,45 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
       <a href="" class="btn">{{item.traditionsBtn}}</a>
     </div>
+
+    {% if item.traditionsImg1 %}
+    <picture class="traditionsImg1">
+      {% for format, images in item.traditionsImg1 %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img src="{{ item.traditionsImg1.webp[0].url }}" alt="{{ item.traditionsImg1.altText }}" />
+    </picture>
+    {% endif %}
+
+    {% if item.traditionsImg2 %}
+    <picture class="traditionsImg2">
+      {% for format, images in item.traditionsImg2 %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img src="{{ item.traditionsImg2.webp[0].url }}" alt="{{ item.traditionsImg2.altText }}" />
+    </picture>
+    {% endif %}
+
+    {% if item.traditionsImg3 %}
+    <picture class="traditionsImg3">
+      {% for format, images in item.traditionsImg3 %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img src="{{ item.traditionsImg3.webp[0].url }}" alt="{{ item.traditionsImg3.altText }}" />
+    </picture>
+    {% endif %}
   </section>
 
   {%endfor%}
@@ -331,12 +395,16 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       arrows: true,
       wheel: false,
       pagination: false,
-      breakpoints: {
-        768: {
-          height: "500px",
-        },
-      },
     });
+
+    let carrouselMobile = new Splide('#carousel-2', {
+      height: '50vh',
+      perPage: 1,
+      arrows: true,
+      wheel: false,
+      pagination: false,
+    })
     carrousel.mount();
+    carrouselMobile.mount()
   });
 </script>

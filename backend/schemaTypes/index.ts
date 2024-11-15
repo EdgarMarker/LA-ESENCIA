@@ -13,5 +13,8 @@ import aviso from './aviso'
 import post from './post'
 import postCategory from './post-category'
 import experiencia from './experiencia'
+import ubicacion from './ubicacion'
+import resorts from './resorts'
+import socios from './socios'
 
-export const schemaTypes = [inicio, nosotros, productos, blog, contact, aviso, products, author, category, blockContent, social, empresa, post, postCategory, experiencia]
+export const schemaTypes = [inicio, nosotros, productos, blog, contact, aviso, products, author, category, blockContent, social, empresa, post, postCategory, experiencia, ubicacion, resorts, socios]

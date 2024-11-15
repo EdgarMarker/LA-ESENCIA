@@ -390,5 +390,23 @@ export default {
       group: 'traditions',
       type: 'string',
     },
+    {
+      name: 'traditionsImg1',
+      title: 'imagen 1',
+      group: 'traditions',
+      type: 'image'
+    },
+    {
+      name: 'traditionsImg2',
+      title: 'imagen 2',
+      group: 'traditions',
+      type: 'image'
+    },
+    {
+      name: 'traditionsImg3',
+      title: 'imagen 3',
+      group: 'traditions',
+      type: 'image'
+    }
   ],
 }

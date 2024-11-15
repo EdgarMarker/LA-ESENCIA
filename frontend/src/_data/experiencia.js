@@ -106,7 +106,19 @@ module.exports = async function () {
     traditionsH2,
     traditionsH3,
     traditionsDesc,
-    traditionsBtn
+    traditionsBtn,
+    traditionsImg1{
+      "media": asset -> {url},
+      "alt": asset -> {altText}
+    },
+    traditionsImg2{
+      "media": asset -> {url},
+      "alt": asset -> {altText}
+    },
+    traditionsImg3{
+      "media": asset -> {url},
+      "alt": asset -> {altText}
+    }
   }`);
 
   await Promise.all(data.map(processContent)); // Procesa todo el contenido en cada objeto

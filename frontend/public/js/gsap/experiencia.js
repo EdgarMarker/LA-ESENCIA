@@ -63,18 +63,17 @@ function gsapSoloAnimations() {
       "-=0.8"
     );
 
-    gsap.to(".intro__picture__bg:first-child", {
-      y: 150,
-      ease: "power1.in",
-      scrollTrigger: {
-        trigger: ".dualHorizon__img__wrapper",
-        start: "top bottom",
-        end: "center top",
-        scrub: true,
-      }
-  
-    })
-  
+  gsap.to(".intro__picture__bg:first-child", {
+    y: 150,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: ".dualHorizon__img__wrapper",
+      start: "top bottom",
+      end: "center top",
+      scrub: true,
+    },
+  });
+
   //Pin vertical scroll
 
   let mm = gsap.matchMedia();
@@ -90,6 +89,7 @@ function gsapSoloAnimations() {
         pinSpacing: false,
       },
     });
+
     let li = gsap.utils.toArray(".spaCarousel__card");
     let img = gsap.utils.toArray(".spaCarousel__img");
     img.forEach((item, idx) => {
@@ -100,13 +100,62 @@ function gsapSoloAnimations() {
         scrollTrigger: {
           trigger: li[idx],
           start: "top center",
-          end: `150% center`,
+          end: `120% center`,
           scrub: true,
         },
       });
     });
   });
+
   // Mobile
-  mm.add("(max-width: 1024px)", () => { });
-  
+
+  mm.add("(max-width: 1024px)", () => {
+    const sections2 = gsap.utils.toArray("#pinStart__spaCarousel");
+    const snapBloque = gsap.utils.toArray(".spaCarousel__card");
+    //let dataWidth = gsap.getProperty(".pin__start .col__left", "width");
+
+    let maxWidth = 0;
+    sections2.forEach((section2) => {
+      maxWidth += section2.offsetWidth;
+    });
+
+    gsap.to(sections2, {
+      x: () => `-${maxWidth - window.innerWidth}`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#section__spaCarousel",
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        start: "top 60",
+        end: () => `+=${maxWidth}`,
+        snap: {
+          snapTo: 1 / (snapBloque.length - 1),
+          inertia: true,
+          duration: { min: 0.1, max: 0.2 },
+        },
+      },
+    });
+
+    let li = gsap.utils.toArray(".spaCarousel__card");
+    let img = gsap.utils.toArray(".spaCarousel__img");
+    img.forEach((item, idx) => {
+      gsap.to(item, {
+        x: `100%`,
+        ease: "power4.inOut",
+        duration: 1,
+        scrollTrigger: {
+          trigger: li[idx],
+          start: `${li[idx].offsetLeft + (window.innerWidth * 0) / 100}px top`,
+          end: `${li[idx].offsetLeft + (window.innerWidth * 100) / 100}px top`,
+          scrub: true,
+        },
+      });
+    });
+
+    //start: "top 50%",
+    //end: "bottom 50%",
+    //start: `${(document.querySelector("#section__intro").offsetLeft + (window.innerWidth * 0 / 100) )}px center`,
+    //end: `${(document.querySelector(".value:nth-child(2)").offsetLeft + (window.innerWidth * 100 / 100) )}px center`,
+  });
 }

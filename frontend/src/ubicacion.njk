@@ -1,0 +1,291 @@
+---
+eleventyComputed:
+  title: "{{ ubicacion[0].titleseo }}"
+  description: "{{ ubicacion[0].descseo }}"
+  keywords: "{{ ubicacion[0].keyseo }}"
+layout: "base.njk"
+#gsap: "ubicacion.js"
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<div
+  data-barba="container"
+  data-barba-namespace="ubicacion"
+  data-css="ubicacion"
+  data-js="ubicacion"
+>
+  {% for item in ubicacion %}
+  <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    {% include 'header.njk' %}
+    <div class="column__2 column__2__hero flex__row flex__justify__c">
+      <div
+        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      >
+        <h1>{{ item.heroH1 }}</h1>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
+        <div class="btn__hero__container">
+          <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
+          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+        </div>
+      </div>
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
+          <source
+            src="/images/inicio/esencia index hero.mp4"
+            type="video/mp4"
+          />
+          Tu navegador no soporta este video
+        </video>
+      </div>
+      <div class="blackDisplayOverlayGradient"></div>
+    </div>
+  </section>
+
+  <section id="section__intro">
+    <div class="column__2">
+      <div class="col__left">
+        <div class="diamondFigure">
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+        </div>
+        <div class="dual__img__wrapper" data-speed="1.2">
+          {% if item.introImg2 %}
+          <picture class="intro__picture__custom">
+            {% for format, images in item.introImg2 %}
+            <source
+              srcset="{{ images | srcset }}"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/{{ format }}"
+            />
+            {% endfor %}
+            <img
+              src="{{ item.introImg2.webp[0].url }}"
+              alt="{{ item.introImg1Alt }}"
+            />
+          </picture>
+          {% endif %} {% if item.introImg1 %}
+          <picture class="intro__picture__bg">
+            {% for format, images in item.introImg1 %}
+            <source
+              srcset="{{ images | srcset }}"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/{{ format }}"
+            />
+            {% endfor %}
+            <img
+              src="{{ item.introImg1.webp[0].url }}"
+              alt="{{ item.introImg1Alt }}"
+            />
+          </picture>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col__right flex__justify__c fadeInOut">
+        <h3 class="text__align__c">{{ item.introH3 }}</h3>
+        <div>
+          {{ item.introH2 | safe }}
+        </div>
+        <div class="accentDivider" style="width: 100px"></div>
+        <h3 class="post__title">{{ item.introH4 }}</h3>
+        <p>{{ item.introRichText | safe }}</p>
+      </div>
+    </div>
+    <div class="column__1">
+      <div class="greca"></div>
+    </div>
+  </section>
+
+  <section id="section__haveAll">
+    <div class="column__2 fadeInOut">
+      <div class="col__left">
+        <div>
+          {{ item.haveAll.h2 | safe }}
+        </div>
+        <div class="accentDivider" style="width: 100px"></div>
+        <h3>{{ item.haveAll.h3 }}</h3>
+        <div>{{ item.haveAll.desc | safe }}</div>
+      </div>
+      <div class="col__right">
+        {% if item.haveAll.leftGallery %}
+        <picture class="haveAll__leftImg">
+          {% for format, images in item.haveAll.leftGallery %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.leftGallery.webp[0].url }}"
+            alt="{{ item.leftGallery.Alt }}"
+          />
+        </picture>
+        {% endif %}
+
+        <div class="haveAll__rightImg">
+          {% for gallery in item.haveAll.rightGallery %}
+          <picture>
+            {% for format, images in gallery %}
+            <source
+              srcset="{{ images | srcset }}"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/{{ format }}"
+            />
+            {% endfor %}
+            <img
+              src="{{ item.gallery.webp[0].url }}"
+              alt="{{ gallery.alt.alt }}"
+            />
+          </picture>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section__discoverBenefits" class="pad__all__10">
+    <div class="column__1 fadeInOut">
+      <img src="{{ item.discoverBenefits.logo.url }}" />
+      {{ item.discoverBenefits.h2 | safe }}
+      <div class="accentDivider"></div>
+      <div class="max800">{{ item.discoverBenefits.description | safe }}</div>
+      <!--
+        <a href="" class="btn">Descubre los beneficios</a>
+        -->
+    </div>
+    <div class="blackDisplayOverlay"></div>
+    <picture class="discoverBenefits__img">
+      {% for format, images in item.discoverBenefits.img %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1920px) 100vw, 1920px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img
+        src="{{ item.discoverBenefits.img.webp[0].url }}"
+        alt="{{ producto.mainImage.alt }}"
+      />
+    </picture>
+  </section>
+  <section id="section__map">
+    <div class="column__2">
+      <div class="col__left">
+        <div>{{ item.map.h2 | safe }}</div>
+        <div class="mapDesc">{{ item.map.desc | safe }}</div>
+        <ul role="list">
+          {% for item in item.map.keyPlaces %}
+          <li>
+            <h3>
+              {{ item.name | safe }}
+            </h3>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col__right">
+        <picture class="discoverBenefits__img">
+          {% for format, images in item.map.img %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.map.img.webp[0].url }}"
+            alt="{{ item.mao.img.alt }}"
+          />
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section id="section__adventureCarousel">
+    <div class="column__1">
+      <div class="splide" id="carousel-3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.adventure.gallery %}
+            <li class="splide__slide carouselCard">
+              <picture class="discoverBenefits__img">
+                {% for format, images in item.img %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  type="image/{{ format }}"
+                />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ producto.mainImage.alt }}"
+                />
+              </picture>
+              <h3>{{ item.name }}</h3>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+      
+      <div class="splide" id="carousel-2">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.adventure.gallery %}
+            <li class="splide__slide carouselCard">
+              <picture class="discoverBenefits__img">
+                {% for format, images in item.img %}
+                <source
+                  srcset="{{ images | srcset }}"
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  type="image/{{ format }}"
+                />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ producto.mainImage.alt }}"
+                />
+              </picture>
+              <h3>{{ item.name }}</h3>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link
+  href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+  rel="stylesheet"
+/>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let carrousel = new Splide("#carousel-3", {
+      height: "80vh",
+      perPage: 3,
+      gap: "1rem",
+      arrows: true,
+      wheel: false,
+      pagination: false,
+    });
+
+    let carrouselMobile = new Splide('#carousel-2', {
+      height: '50vh',
+      perPage: 1,
+      arrows: true,
+      wheel: false,
+      pagination: false,
+    })
+    carrousel.mount();
+    carrouselMobile.mount()
+  });
+</script>

@@ -1,0 +1,300 @@
+#section__hero {
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006b;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .accentDivider {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .flex__row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .text__align__c {
+    text-align: center;
+  }
+  h1 {
+    color: var(--color-white);
+    width: 100%;
+    text-align: center;
+    transform-origin: top center;
+  }
+  h2,
+  h2 > strong {
+    color: var(--color-white);
+    width: 100%;
+    text-align: center;
+    transform-origin: top center;
+    font-size: var(--size-2xl);
+  }
+  .column__2__hero {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .btn__hero__container {
+    margin-top: 2em;
+    display: flex;
+    gap: 1px;
+    .btn:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+    .btn:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+  .img__hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    video {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#section__happyPlace {
+  background: var(--bg-cream);
+  overflow: hidden;
+  padding: 10% 10%;
+  &::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    background-image: url(/images/textura_manuscrito.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .column__1:nth-child(2) {
+    max-width: 1600px;
+    align-self: center;
+  }
+  .happyPlace__richText {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      width: 100%;
+      display: flex;
+      strong {
+        transform-origin: top center;
+      }
+    }
+  }
+  .intro__imgWrapper {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+  }
+  .intro__imgInner {
+    width: 100%;
+    height: 100%;
+  }
+  .width__55 {
+    align-self: center;
+  }
+}
+
+#section__placeToBe {
+    background: var(--bg-primary);
+    position: relative;
+    padding: 10%;
+    &:before{
+      content: "";
+      background: url('../assets/svg/greca_crema.svg');
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+    h2{
+      color: var(--color-white);
+      text-align: center;
+      strong{
+        color: var(--color-accent);
+        transform-origin: top center;
+      }
+    }
+    ul {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 25% 1fr;
+      justify-items: center;
+      align-items: center;
+      gap: 50px;
+      margin-top: 10%;
+    }
+    li{
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      gap: 50px;
+      picture{
+        box-shadow: 5px 30px 20px rgba(0,0,0,0.4);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      &:nth-child(1), &:nth-child(3){
+        padding-top: 20%;
+      }
+      &:nth-child(1){
+        align-items: flex-end;
+        picture:last-child{
+          width: 50%;
+          aspect-ratio: 3/4;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      &:nth-child(2){
+        picture:first-child{
+          aspect-ratio: 1/1.2;
+        }
+        picture{
+          width: 100%;
+          aspect-ratio: 1;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      &:nth-child(3){
+        picture:first-child{
+          width: 50%;
+          aspect-ratio: 1;
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  
+  #section__recentArticles{
+    background: url('../assets/img/bg_cream.jpg');
+    h2{
+      text-align: center;
+      strong{
+        transform-origin: top center;
+      }
+    }
+    .recentblog__wrapper{
+      margin-top: 3%;
+    }
+    .splide{
+      margin-top: 2em;
+      -webkit-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      -moz-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      border: 20px solid white;
+    }
+    .splide, .splide__track, .splide__list{
+      background-color: white;
+    }
+    .btn{
+      margin-top: 2.5%;
+    }
+    .splide__pagination__page.is-active{
+      background: var(--color-accent) !important;
+    }
+    .splide__arrows--ttb .splide__arrow{
+      left: 96% !important;
+    }
+    .splide__pagination--ttb{
+      left: 92% !important;
+    }
+  }
+
+  #section__discoverBenefits{
+    height: 100vh;
+    position: relative;
+    .accentDivider{
+      background-color: var(--color-accent) ;
+    }
+    .column__1{
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100px;
+        height: auto;
+        margin-bottom: 50px;
+      }
+      h2{
+        color: var(--color-white);
+        strong{
+          transform-origin: top center;
+        }
+      }
+      p{
+        text-align: center;
+        color: var(--color-white)
+      }
+    }
+    
+    picture{
+      z-index: -1;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+     }
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    #section__placeToBe {
+        ul, li{
+          gap: 10px;
+          picture{
+            border-radius:  5px;
+          }
+        }
+    }
+    #section__recentArticles{
+      padding: 10% 5%;
+    }
+  }
