@@ -29,6 +29,7 @@
     </div>
 </div>
 <div class="transition__top"></div>
+<<<<<<< HEAD
 <div class="transition__bottom"></div>
     <div class="mobile__trigger" id="mobile__trigger">
     <span></span>
@@ -38,15 +39,108 @@
 </div>
 <div class="mobile__menu">
     <ul role="list" class="nav__ul">
+=======
+<div class="transition__bottom"></div> <header id="header" class="">
+  
+  <div id="inner__header">
+    <div class="mask">
+      <div class="mask-left"></div>
+      <div class="circle-cut"></div>
+      <div class="mask-right"></div>
+    </div>
+    <!--Mascara
+      -absoluta,
+      -los 3 elementos, 50% - 50px
+    -->
+    <!--
+      <picture>
+        
+        <img src="" alt=""/>
+      </picture>
+      -->
+    <div class="nav">
+      <!--
+      <ul role="list" class="nav__ul nav__ul__left">
+    
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="" >
+                Experiencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/socios/" class="" >
+                Socios
+            </a>
+        </li>
+    
+</ul>
+      -->
+      <div class="mirrorNav"></div>
+
+      <a id="logo__main" href="/">
+        
+
+        <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
+        
+      </a>
+
+      <div class="mirrorNav"></div>
+      
+      <!--
+        <ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicación/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/blog/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>
+      -->
+        
+    </div>
+    <div class="mobile__trigger2">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div  class="mobile__menu2">
+      <ul role="list" class="nav__ul">
+>>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
         <li>
             <a href="/" class="" >
                 Esencia
             </a>
         </li>
 </ul>
+<<<<<<< HEAD
     <!--
     FINAL MENU
     <ul role="list" class="nav__ul nav__ul__left">
+=======
+      <!--
+      FINAL MENU
+      <ul role="list" class="nav__ul nav__ul__left">
+>>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
     
         <li>
             <a href="/" class="" >
@@ -87,6 +181,7 @@
         </li>
     
 </ul>
+<<<<<<< HEAD
     <a
     class="cta__msn"
     href="https://wa.me/521"
@@ -160,6 +255,201 @@
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <main id="main">
+=======
+      <a
+      class="cta__msn"
+      href="https://wa.me/5219993437716"
+      target="_blank"
+      >Mensaje</a
+      >
+      -->
+    </div>
+    <div  class="mobile__active"></div>
+    <!-- NAV MENU DESKTOP-->
+  </div>
+    <div class="mobile__trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="mobile__menu">
+    <ul role="list" class="nav__ul">
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+</ul>
+      <!--
+      FINAL MENU
+      <ul role="list" class="nav__ul nav__ul__left">
+    
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="" >
+                Experiencia
+            </a>
+        </li>
+    
+        <li>
+            <a href="/socios/" class="" >
+                Socios
+            </a>
+        </li>
+    
+</ul> <ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicación/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/blog/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>
+      <a
+      class="cta__msn"
+      href="https://wa.me/5219993437716"
+      target="_blank"
+      >Mensaje</a
+      -->
+    >
+  </div>
+  <div  class="mobile__active"></div>
+  
+</header>
+
+<style>
+  #inner__header {
+    background-color: transparent;
+    justify-content: space-between;
+    position: relative;
+    min-height: 60px;
+    .mask {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 60px;
+      justify-content: space-between;
+      .mask-left,
+      .mask-right {
+        background: var(--bg-primary);
+        width: calc(50% - 50px);
+      }
+    }
+    .nav{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 5;
+    }
+    .nav__ul__left,
+    .nav__ul__right,
+    .mirrorNav {
+      width: calc(50% - 50px);
+      justify-content: space-evenly;
+    }
+    #logo__main {
+      position: absolute;
+      position: relative;
+      width: 250px;
+      aspect-ratio: 1/1;
+      top: -20px;
+      img{
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .circle-cut {
+      --r: 135px;
+      width: 270px;
+      background: var(--bg-primary);
+      background-position: center;
+      mask: radial-gradient(var(--r) at 50% 240%, #0000 calc(100% - 1px), #000);
+    }
+  }
+  #logo__main {
+    position: relative;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .mobile__trigger2{
+    display: none;
+  }
+
+  .mobile__trigger2.visible{
+    display: block;
+  }
+
+  .nav.hidden, .mask.hidden{
+    display: none !important;
+  }
+
+  @media (max-width: 1024px) {
+    .nav, .mask{
+      display: none !important;
+    }
+    .mobile__trigger2, .mobile__trigger2.visible{
+      display: none;
+    }
+  }
+</style>
+<script>
+ window.onload = function() {
+  const nav = document.querySelector('.nav');
+  const mask = document.querySelector('.mask');
+  const mobileTrigger = document.querySelector('.mobile__trigger2');
+  const scrollThreshold = 50;
+
+  if (nav && mobileTrigger) {
+    document.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > scrollThreshold) {
+        nav.classList.add('hidden');
+        mask.classList.add('hidden')
+        mobileTrigger.classList.add('visible');
+      } else {
+        nav.classList.remove('hidden');
+        mask.classList.remove('hidden')
+        mobileTrigger.classList.remove('visible');
+      }
+    });
+  }
+};
+
+</script>
+
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+>>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
           <div data-barba="container" data-barba-namespace="articulo" data-css="articulo" data-js="articulo">
 
   <section id="section__hero" class="pad__lr__5 pad__top__10">

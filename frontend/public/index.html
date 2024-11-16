@@ -974,7 +974,10 @@
   data-netlify="true"
   onsubmit="return validateForm()"
   netlify
+  data-netlify-honeypot="bot-field"
+  actions="/frontend/src/gracias.njk"
 >
+<input name="bot-field" class="honeypot">
   <div class="column__2 width__100 pad__bottom__2">
     <div class="col__left pad__right__5">
       <label for="nombre" class="width__100 pad__bottom__2">Nombre</label>
@@ -1048,7 +1051,9 @@
   .form {
     margin: 0 auto;
   }
-
+  .honeypot{
+    display: none;
+  }
   /* Estilos para las etiquetas */
   .form label {
     display: block;
