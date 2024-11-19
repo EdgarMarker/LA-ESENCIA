@@ -1,5 +1,5 @@
 [
-    { "name": "Esencia", "url": "/" },
-    { "name": "Experiencia", "url": "/experiencia/" },
-    { "name": "Socios", "url": "/socios/" }
+    { "name": "Inicio", "url": "/" },
+    { "name": "Experiencia mexicana", "url": "/experiencia/" },
+    { "name": "Experiencia resort", "url": "/resort/" }
 ]

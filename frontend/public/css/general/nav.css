@@ -173,7 +173,7 @@ header{
     width: 30vw;
     min-width: 250px;
     height: 100dvh;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary-dark);
     transform: translateX(100vw);
     z-index: 99;
     transition: transform 0.3s ease-in-out;

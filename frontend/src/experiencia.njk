@@ -41,14 +41,14 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="blackDisplayOverlayGradient"></div>
     </div>
   </section>
-  <section id="section__happyPlace">
+
+
+  <section id="section__happyPlace" class="fadeInOut">
     <div class="column__1 happyPlace__richText">
       <div class="richTextH2">{{ item.introH2 | safe }}</div>
       <div class="accentDivider"></div>
-      <h3>{{ item.introH3 }}</h3>
+      <h3 class="post__title">{{ item.introH3 }}</h3>
     </div>
-
-    <!---->
     <div class="column__1">
       <div class="dualHorizon__img__wrapper">
         {% if item.introImg2 %}
@@ -87,15 +87,15 @@ permalink: "/{{ page.fileSlug }}/"
         <div class="diamondImg"></div>
       </div>
     </div>
-    <!---->
     <div class="column__1">
-      <div class="pad__all__5 width__55">{{ item.introDesc | safe }}</div>
+      <div>{{ item.introDesc | safe }}</div>
     </div>
   </section>
 
+
   <section id="section__spaCarousel">
     <div class="column__2">
-      <div class="col__left">
+      <div class="col__left fadeInOut">
         <ul role="list" id="pinStart__spaCarousel">
           <li class="spaCarousel__card">
             {{ item.spaCarousel.text1.h2 | safe }}
@@ -249,8 +249,8 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__adventureCarousel">
-    <div class="column__1 fadeInOut">
+  <section id="section__adventureCarousel" class="fadeInOut">
+    <div class="column__1">
       <div>{{ item.adventure.h2 | safe }}</div>
     </div>
     <div class="column__1">
@@ -306,8 +306,8 @@ permalink: "/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__placeToBe">
-    <div class="column__1 fadeInOut">
+  <section id="section__placeToBe" class="fadeInOut">
+    <div class="column__1">
       {{ item.placeToBeH2 | safe}}
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -328,15 +328,15 @@ permalink: "/{{ page.fileSlug }}/"
   <section id="section__traditions" class="fadeInOut">
     <div class="column__1">
       {{item.traditionsH2 | safe}}
-      <h3>{{item.traditionsH3}}</h3>
-      <div>
-        {{item.traditionsDesc | safe}}
-      </div>
+      <div class="accentDivider"></div>
+      <h3 class="post__title">{{item.traditionsH3}}</h3>
+      {{item.traditionsDesc | safe}}
+
       <a href="" class="btn">{{item.traditionsBtn}}</a>
     </div>
 
     {% if item.traditionsImg1 %}
-    <picture class="traditionsImg1">
+    <picture class="traditionsImg1" data-speed="1.2">
       {% for format, images in item.traditionsImg1 %}
       <source
         srcset="{{ images | srcset }}"
@@ -349,7 +349,7 @@ permalink: "/{{ page.fileSlug }}/"
     {% endif %}
 
     {% if item.traditionsImg2 %}
-    <picture class="traditionsImg2">
+    <picture class="traditionsImg2" data-speed="1.2">
       {% for format, images in item.traditionsImg2 %}
       <source
         srcset="{{ images | srcset }}"
@@ -362,7 +362,7 @@ permalink: "/{{ page.fileSlug }}/"
     {% endif %}
 
     {% if item.traditionsImg3 %}
-    <picture class="traditionsImg3">
+    <picture class="traditionsImg3" data-speed="1.2">
       {% for format, images in item.traditionsImg3 %}
       <source
         srcset="{{ images | srcset }}"
@@ -380,17 +380,12 @@ permalink: "/{{ page.fileSlug }}/"
 <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 "></script>
-<link
-  href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-"
-  rel="stylesheet"
-/>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let carrousel = new Splide("#carousel-3", {
-      height: "80vh",
+      height: "70vh",
       perPage: 3,
+      perMove: 1,
       gap: "1rem",
       arrows: true,
       wheel: false,

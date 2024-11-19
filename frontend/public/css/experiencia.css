@@ -79,7 +79,7 @@
 #section__happyPlace{
   background: var(--bg-cream);
   overflow: hidden;
-  padding: 10% 10%;
+  padding: 5% 10% 8%;
   &::before{
     content:"";
     width: 50%;
@@ -103,6 +103,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 3%;
     h2{
       width: 100%;
       display: flex;
@@ -123,10 +124,16 @@
     .width__55{
       align-self: center;
     }
+    .column__1:nth-child(3){
+      max-width: 40%;
+      padding-top: 8%;
+    }
 }
 
 #section__spaCarousel{
-  &:after{
+  padding-left: 5%;
+  padding-right: 5%;
+  &:before{
     content: "";
     width: 5%;
     height: 100%;
@@ -136,20 +143,31 @@
     background: url("../assets/svg/greca_crema_90.svg");
     background-repeat: repeat-y;
   }
-  padding-left: 5%;
+  &:after{
+    content: "";
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url("../assets/svg/greca_crema_90.svg");
+    background-repeat: repeat-y;
+  }
+  
   ul{
     width: 100%;
-    padding-left: 10%;
-    padding-top: 10%;
+    padding-left: 15%;
+    padding-top: 0%;
+    border-right: 6px solid var(--color-secondary-light);
     li{
       padding-right: 5%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 80vh;
+      height: 100vh;
       margin: 0;
       p{
-        max-width: 800px;
+        max-width: 80%;
       }
       .card__line{
         position: relative;
@@ -165,13 +183,13 @@
           &:before{
             content: "";
             width: 100%;
-            height: 3px;
+            height: 2px;
             background-color: var(--color-primary);
           }
           &:after{
             position: absolute;
-            left: 100%;
-            transform: translateX(-50%) rotate(45deg);
+            right: -20px;
+            transform: rotate(45deg);
             content: "";
             width: 24px;
             aspect-ratio: 1/1;
@@ -185,6 +203,7 @@
   #pinRight__spaCarousel{
     height: 100vh;
     position: relative;
+    overflow: hidden;
     picture, img{
       height: 100% !important;
       img{
@@ -195,6 +214,7 @@
     & .spaCarousel__img:nth-child(8){
       position: relative !important;
       z-index: 1;
+      opacity: 1 !important;
     }
     & .spaCarousel__img:nth-child(7){
       position: absolute;
@@ -242,16 +262,20 @@
 }
 
 #section__adventureCarousel{
-  padding: 10%;
+  padding: 8% 10%;
   background: var(--bg-primary);
   .column__1:nth-child(1){
+    margin-bottom: 3%;
     div, h2{
       width: 100%;
       text-align: center;
       h2{
         display: flex;
-      justify-content: center;
-      color: var(--color-white);
+        justify-content: center;
+        color: var(--color-white);
+        strong{
+          transform-origin: top center;
+        }
       }
       strong{
         width: fit-content;
@@ -272,21 +296,16 @@
         }
       }
       h3{
+        font-size: var(--size-sm);
         width: 100%;
         text-align: center;
         margin-top: 1em;
         margin-bottom: 0;
         color: var(--color-white);
+        transform: none !important;
+        opacity: 1 !important;
       }
     }
-  }
-  .splide__arrow--prev{
-    left: -5%;
-    background-color: var(--color-accent);
-  }
-  .splide__arrow--next{
-    right: -5%;
-    background-color: var(--color-accent);
   }
   #carousel-2{
     display: none;
@@ -299,15 +318,19 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 10%;
+  background-color: var(--color-primary-dark);
   .column__1{
     position: relative;
     width: fit-content;
     height: fit-content;
+    align-items: center;
     z-index: 2;
     h2{
       color: var(--color-white);
+      text-align: center;
       strong{
         color: var(--color-accent);
+        transform-origin: top center;
       }
     }
   }
@@ -326,13 +349,13 @@
 
 #section__traditions{
   background: var(--bg-cream);
-  padding: 10% 5%;
-  min-height: 80vh;
+  padding: calc(10% + 150px) 5% 10%;
+  min-height: 100vh;
   &:before{
     content: "";
     background: url('../assets/svg/greca_crema.svg');
     width: 100%;
-    height: 100px;
+    height: 150px;
     position: absolute;
     top: 0;
     left: 0;
@@ -345,42 +368,39 @@
         transform-origin: top center;
       }
     }
-    h3{
-      margin-top: 1em;
-    }
     p{
-      max-width: 480px;
+      max-width: 30%;
       text-align: center;
     }
   }
   picture{
     position: absolute;
-    border: 5px solid var(--color-white);
     img{
       height: 100%;
       object-fit: cover; 
       object-position: center;
+      border: 3px solid var(--color-white);
+      box-shadow: -10px 22px 30px rgba(0,0,0,0.4);
     }
   }
   .traditionsImg1{
-    top: 50%;
+    top: calc(150px + 15%);
     left: 5%;
-    transform: translateY(-50%);
     width: 15vw;
     min-width: 150px;
     aspect-ratio: 2/3;
   }
   .traditionsImg2{
-    top: 15%;
+    top: calc(150px + 8%);
     right: 5%;
-    width: 14vw;
+    width: 18vw;
     min-width: 150px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
   }
   .traditionsImg3{
-    bottom: 5%;
+    bottom: 10%;
     right: 15%;
-    width: 13vw;
+    width: 14vw;
     min-width: 150px;
     aspect-ratio: 4/3;
   }

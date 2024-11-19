@@ -19,6 +19,7 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
 >
   {% for item in blog %}
   <section id="section__hero" class="pad__lr__5">
+    {% include 'header.njk' %}
     <div class="column__2">
       <div class="col__left flex__justify__c pad__right__5 width__45">
         <h1>{{ item.heroH1 }}</h1>

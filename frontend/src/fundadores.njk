@@ -1,0 +1,314 @@
+---
+eleventyComputed:
+  title: "{{ socios[0].titleseo }}"
+  description: "{{ socios[0].descseo }}"
+  keywords: "{{ socios[0].keyseo }}"
+layout: "base.njk"
+#gsap: "socios.js"
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<div
+  data-barba="container"
+  data-barba-namespace="fundadores"
+  data-css="fundadores"
+  data-js="fundadores"
+>
+  {%for item in socios %}
+
+  <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    {% include 'header.njk' %}
+    <div class="column__2 column__2__hero flex__row flex__justify__c">
+      <div
+        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      >
+        <h1>{{ item.heroH1 }}</h1>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
+        <div class="btn__hero__container">
+          <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
+          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+        </div>
+      </div>
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
+          <source
+            src="/images/inicio/esencia index hero.mp4"
+            type="video/mp4"
+          />
+          Tu navegador no soporta este video
+        </video>
+      </div>
+      <div class="blackDisplayOverlayGradient"></div>
+    </div>
+  </section>
+
+  <section id="section__happyPlace">
+    <div class="column__1 happyPlace__richText">
+      <div class="richTextH2">{{ item.introH2 | safe }}</div>
+      <div class="accentDivider"></div>
+      <h3>{{ item.introH3 }}</h3>
+    </div>
+
+    <!---->
+    <div class="column__1">
+      <div class="dualHorizon__img__wrapper">
+        {% if item.introImg2 %}
+        <picture class="intro__picture__bg">
+          {% for format, images in item.introImg2 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.introImg2.webp[0].url }}"
+            alt="{{ item.introImg2Alt }}"
+          />
+        </picture>
+        {% endif %} {% if item.introImg1 %}
+        <picture class="intro__picture__bg">
+          {% for format, images in item.introImg1 %}
+          <source
+            srcset="{{ images | srcset }}"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+            src="{{ item.introImg1.webp[0].url }}"
+            alt="{{ item.introImg1Alt }}"
+          />
+        </picture>
+        {% endif %}
+      </div>
+      <div class="diamondFigureHorizon">
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+        <div class="diamondImg"></div>
+      </div>
+    </div>
+    <!---->
+    <div class="column__1">
+      <div>{{ item.introDesc | safe }}</div>
+    </div>
+  </section>
+
+  <section id="section__discoverPueblito">
+    <div class="column__2">
+      <div class="col__left fadeInOut">
+        <div>{{ item.discoverPueblito.h2 | safe}}</div>
+        <div class="accentDivider"></div>
+        <h3>{{ item.discoverPueblito.h3 }}</h3>
+        <div>{{ item.discoverPueblito.description | safe }}</div>
+        <!--
+          <a href="#" class="btn">Descubre Pueblito</a>
+          -->
+      </div>
+      <div class="col__right">
+        <div class="diamondFigure">
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+        </div>
+        <ul role="list" class="flex" id="discoverPueblitoUl">
+          {% for image in item.discoverPueblito.img %}
+          <li class="splide__slide pad__left__5">
+            <picture>
+              {% for format, images in image %} 
+              <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
+              {% endfor %}
+              <img src="{{ image.webp[0].url }}" alt="{{ producto.gallery.altText }}"/>
+            </picture>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section__experiencias" class="fadeInOut">
+    <div class="column__1">
+      <h2>
+        Tu propiedad en un
+        <strong>icono turístico</strong>
+      </h2>
+      <div class="inner__p">
+        <p>
+          Ya sea que vivas la experiencia mexicana, alquiles tu propiedad
+          para los turistas que busquen vivir una autentica aventura o que
+          vendas en el momento indicado, la esencia te brinda una gran
+          variedad de oportunidades para que tu inversión crezca.
+        </p>
+      </div>
+      <div class="accentDivider"></div>
+    </div>
+    <div class="column__1 listado__x3">
+      <div class="experiencia">
+        <img src="/images/resorts/water_kids.svg" />
+        <h3>Vive y disfruta</h3>
+        <p>Convierte tu propiedad
+          en hogar que celebra
+          la cultura y el confort.</p>
+      </div>
+      <div class="experiencia">
+        <img src="/images/resorts/pabellones.svg" />
+        <h3>Renta y crece</h3>
+        <p>Genera ingresos consistentes
+          alquilando en un mercado
+          turístico perfecto.</p>
+      </div>
+      <div class="experiencia">
+        <img src="/images/resorts/chill_spots.svg" />
+        <h3>Vende tu propiedad</h3>
+        <p>Aprovecha el valor en alza y
+          capitaliza tu propiedad cuando
+          las condiciones sean ideales.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section__banner">
+    <img src="/images/resorts/actividad2.jpg" data-speed="0.9"/>
+    <div class="column__1">
+      <h3>
+        Encárgarte de generar ganancias, nosotros
+        nos encargamos de todo lo demás.
+      </h3>
+      <a class="btn">
+        Conoce todas las posibilidades
+      </a>
+    </div>
+  </section>
+
+
+  <section id="section__inversion" class="fadeInOut">
+    <div class="column__1">
+      <h2>
+        Obtener ingresos con tu inversión
+        <strong>nunca fue tan fácil</strong>
+      </h2>
+    </div>
+    <div class="column__2">
+      <div class="col__left">
+        <p>
+          Gracias a los beneficios exclusivos para
+          socios fundadores, podrás obtener ingresos
+          seguros y constantes.
+        </p>
+        <p>
+          Nos encargaremos de todo, asegurando el
+          flujo de turistas para maximizar la
+          rentabilidad de tu propiedad.
+        </p>
+        <a class="btn">Detalles aquí</a>
+      </div>
+      <div class="col__right">
+        <div class="listado__operaciones">
+          <div class="operacion">
+            <img src="/images/inicio/600x400.png" />
+            <h3>Operadora turística</h3>
+          </div>
+          <div class="operacion">
+            <img src="/images/inicio/600x400.png" />
+            <h3>Gestor de rentas vacacionales</h3>
+          </div>
+          <div class="operacion">
+            <img src="/images/inicio/600x400.png" />
+            <h3>Administración inmobiliaria</h3>
+          </div>
+          <div class="operacion">
+            <img src="/images/inicio/600x400.png" />
+            <h3>Programa fractional</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section__encontraras" class="fadeInOut">
+    <div class="column__2">
+      <div class="col__left">
+        <h2>
+          Lo que
+          <strong>
+            encontrarás
+          </strong>
+        </h2>
+        <ul role="list">
+          <li>Piscina</li>
+          <li>Wet bar</li>
+          <li>Caminos</li>
+          <li>Caseta de vigilancia</li>
+          <li>Terrazas para picnic</li>
+          <li>Cenote</li>
+          <li>Lago artificial</li>
+        </ul>
+      </div>
+      <div class="col__right">
+        <img src="/images/inicio/600x400.png" />
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section__oportunidades" class="fadeInOut">
+    <div class="column__2">
+      <div class="col__left">
+        <img src="/images/inicio/600x400.png" />
+        <div class="diamondFigure">
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+          <div class="diamondImg"></div>
+        </div>
+      </div>
+      <div class="col__right">
+        <h2>
+          Un modelo que crea
+          <strong>oportunidades</strong>
+        </h2>
+        <div class="accentDivider"></div>
+        <h3 class="post__title">
+          Y desarrollo local en armonía con el entorno
+        </h3>
+        <p>
+          Gracias a la cercanía con Valladolid, La Esencia
+          ayudara a generar ingresos para los negocios
+          locales gracias al flujo constante de viajeros. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section__discoverBenefits" class="pad__all__10">
+    <div class="column__1 fadeInOut">
+      <img src="{{item.discoverBenefits.logo.url}}" />
+      {{item.discoverBenefits.h2 | safe}}
+      <div class="accentDivider"></div>
+      <div class="max800">{{item.discoverBenefits.description | safe}}</div>
+      
+        <a href="" class="btn">FORMULARIO SOCIOS FUNDADORES</a>
+        
+    </div>
+    <div class="blackDisplayOverlay"></div>
+    <picture class="discoverBenefits__img">
+      {% for format, images in item.discoverBenefits.img %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1920px) 100vw, 1920px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img
+        src="{{ item.discoverBenefits.img.webp[0].url }}"
+        alt="{{ producto.mainImage.alt }}"
+      />
+    </picture>
+  </section>
+  {%endfor%}
+</div>

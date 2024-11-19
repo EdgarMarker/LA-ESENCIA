@@ -1,5 +1,6 @@
 [
-    { "name": "Ubicación", "url": "/ubicación/" },
-    { "name": "Blog", "url": "/blog/" },
+    { "name": "Ubicación", "url": "/ubicacion/" },
+    { "name": "Fundadores", "url": "/fundadores/" },
+    { "name": "Blog", "url": "/articulos/1/" },
     {"name": "Contacto", "url":"/contacto/"}
 ]

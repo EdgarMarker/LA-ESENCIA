@@ -5,14 +5,14 @@
 
     /* Base color */
     --color-primary: #942525;
-    --color-secondary: #6E1414;
+    --color-secondary: #564B3E;
     --color-accent: #E8A030;
 
-    --color-primary-light: #942525;
-    --color-secondary-light: #6E1414;
+    --color-primary-light: #9a6a6a;
+    --color-secondary-light: #c6b093;
     
-    --color-primary-dark: #942525;
-    --color-secondary-dark: #6E1414;
+    --color-primary-dark: #6E1414;
+    --color-secondary-dark: #49443d;
 
     --color-white: #f5f5f5;
     --color-black: #222222;
@@ -28,7 +28,7 @@
 
     /* Text sizes */
     --size-xs: 0.7vw;
-    --size-sm: 1.0vw;
+    --size-sm: 0.9vw;
     --size-md: 1.1vw;
     --size-lg: 1.6vw;
     --size-xl: 2vw;

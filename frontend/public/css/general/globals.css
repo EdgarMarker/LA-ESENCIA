@@ -13,7 +13,7 @@ body{
     top: 0;
     left: 0;
     display: block;
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-primary-dark);
     z-index: 101;
     pointer-events: none;
     opacity: 1;
@@ -26,7 +26,7 @@ body{
     bottom: 0;
     left: 0;
     display: block;
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-primary-dark);
     z-index: 101;
     pointer-events: none;
     opacity: 1;
@@ -110,11 +110,12 @@ h2{
     margin-bottom: 0px;
     font-family: var(--font-title);
     text-transform: uppercase;
+    display: block;
     strong{
         font-family: var(--font-italic);
         transform: scale(1.5);
         transform-origin: top left;
-        text-transform: lowercase !important;
+        text-transform: initial !important;
         display: block;
     }
 }
@@ -153,7 +154,7 @@ p, li{
     line-height: 1.6;
     margin-bottom: 20px;
     text-wrap: pretty;
-    color: #564B3E;
+    color: var(--color-secondary);
 }
 
 a{
@@ -175,6 +176,7 @@ ol:where([role="list"]) {
     border-radius: 8px;
     text-transform: uppercase;
     font-size: var(--size-xs);
+    color: var(--color-primary-dark);
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -197,6 +199,39 @@ ol:where([role="list"]) {
       }
 }
 
+/*  globales botones carrusel splide  */
+
+.splide{
+    padding: 0 80px;
+}
+.splide__arrow--prev{
+left: 0%;
+background-color: transparent;
+background-image: url(/images/prev_yellow.svg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+width: 55px;
+height: auto;
+aspect-ratio: 1/1;
+svg{
+    opacity: 0;
+}
+}
+.splide__arrow--next{
+right: 0%;
+background-color: transparent;
+background-image: url(/images/next_yellow.svg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+width: 55px;
+height: auto;
+aspect-ratio: 1/1;
+svg{
+    opacity: 0;
+}
+}
 
 
 /*  Layout globals  */
@@ -611,6 +646,7 @@ section{
         img{
             width: 100%;
             height: 100%;
+            max-width: 100%;
             object-fit: contain;
             object-position: bottom;
         }

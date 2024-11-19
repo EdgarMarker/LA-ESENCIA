@@ -333,6 +333,7 @@
   background: url('../assets/img/bg_noise_mapa.jpg');
   .column__1{
     h2{
+      text-align: center;
       strong{
         transform-origin: top center;
       }

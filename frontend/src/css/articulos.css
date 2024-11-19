@@ -1,10 +1,4 @@
-#inner__header .nav__ul li:nth-child(4) a{
-    color: var(--color-accent);
-}
 
-#inner__header .nav__ul li:nth-child(4) a::before{
-    display: block;
-}
 
 #section__hero{
     background-color: var(--color-secondary);

@@ -13,6 +13,7 @@
     <meta property="”og:description”" content="" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/general/reset.css" />
     <link rel="stylesheet" href="/css/general/globals.css" />
     <link rel="stylesheet" href="/css/general/nav.css" />
@@ -29,7 +30,6 @@
     </div>
 </div>
 <div class="transition__top"></div>
-<<<<<<< HEAD
 <div class="transition__bottom"></div>
     <div class="mobile__trigger" id="mobile__trigger">
     <span></span>
@@ -39,137 +39,50 @@
 </div>
 <div class="mobile__menu">
     <ul role="list" class="nav__ul">
-=======
-<div class="transition__bottom"></div> <header id="header" class="">
-  
-  <div id="inner__header">
-    <div class="mask">
-      <div class="mask-left"></div>
-      <div class="circle-cut"></div>
-      <div class="mask-right"></div>
-    </div>
-    <!--Mascara
-      -absoluta,
-      -los 3 elementos, 50% - 50px
-    -->
-    <!--
-      <picture>
-        
-        <img src="" alt=""/>
-      </picture>
-      -->
-    <div class="nav">
-      <!--
-      <ul role="list" class="nav__ul nav__ul__left">
-    
-        <li>
-            <a href="/" class="" >
-                Esencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/experiencia/" class="" >
-                Experiencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/socios/" class="" >
-                Socios
-            </a>
-        </li>
-    
-</ul>
-      -->
-      <div class="mirrorNav"></div>
-
-      <a id="logo__main" href="/">
-        
-
-        <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
-        
-      </a>
-
-      <div class="mirrorNav"></div>
-      
-      <!--
-        <ul role="list" class="nav__ul nav__ul__right">
-    
-        <li>
-            <a href="/ubicación/" class="" >
-                Ubicación
-            </a>
-        </li>
-    
-        <li>
-            <a href="/blog/" class="" >
-                Blog
-            </a>
-        </li>
-    
-        <li>
-            <a href="/contacto/" class="" >
-                Contacto
-            </a>
-        </li>
-    
-</ul>
-      -->
-        
-    </div>
-    <div class="mobile__trigger2">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div  class="mobile__menu2">
-      <ul role="list" class="nav__ul">
->>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
         <li>
             <a href="/" class="" >
                 Esencia
             </a>
         </li>
 </ul>
-<<<<<<< HEAD
     <!--
     FINAL MENU
     <ul role="list" class="nav__ul nav__ul__left">
-=======
-      <!--
-      FINAL MENU
-      <ul role="list" class="nav__ul nav__ul__left">
->>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
     
         <li>
             <a href="/" class="" >
-                Esencia
+                Inicio
             </a>
         </li>
     
         <li>
             <a href="/experiencia/" class="" >
-                Experiencia
+                Experiencia mexicana
             </a>
         </li>
     
         <li>
-            <a href="/socios/" class="" >
-                Socios
+            <a href="/resort/" class="" >
+                Experiencia resort
             </a>
         </li>
     
 </ul> <ul role="list" class="nav__ul nav__ul__right">
     
         <li>
-            <a href="/ubicación/" class="" >
+            <a href="/ubicacion/" class="" >
                 Ubicación
             </a>
         </li>
     
         <li>
-            <a href="/blog/" class="" >
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
                 Blog
             </a>
         </li>
@@ -181,7 +94,6 @@
         </li>
     
 </ul>
-<<<<<<< HEAD
     <a
     class="cta__msn"
     href="https://wa.me/521"
@@ -195,9 +107,9 @@
 <style>
     .mobile__trigger {
         position: fixed;
-        z-index: 50;
-        right: 5px;
-        top: 5px;
+        z-index: 100;
+        right: 20px;
+        top: 35px;
         width: 50px;
         height: 50px;
         padding: 10px;
@@ -205,13 +117,14 @@
         cursor: pointer;
         transform-origin: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%);
-        background: var(--bg-primary);
-        opacity: 0;
+        transform: translateX(100px);
+        background: var(--color-primary-dark);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        opacity: 1;
     }
     @media (max-width: 1024px) {
         .mobile__trigger{
-            transform: translateX(0%);
+            transform: translateX(0px);
             z-index: 60;
             opacity: 1;
         }
@@ -220,26 +133,27 @@
     <div id="isoType">
     
     <a href="/">
-        <img src="https://cdn.sanity.io/images/qf6rvplj/production/236f647fb84ed3a97c0c10f66c3d215e189d4f15-60x60.svg" alt="Iso tipo" />
+        <img src="https://cdn.sanity.io/images/qf6rvplj/production/c1869d9dcc26500ca5cfb9567fac0c38e94296ee-100x100.svg" alt="Iso tipo" />
     </a>
     
 </div>
 <style>
     #isoType {
         position: fixed;
-        padding: 5px;
+        padding: 1px;
         z-index: 50;
-        left: 5px;
-        top: 5px;
-        width: 50px;
-        height: 50px;
+        left: 20px;
+        top: 35px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         cursor: pointer;
         transform-origin: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(-100%);
-        opacity: 0;
-        background: var(--bg-primary);
+        transform: translateX(-100px);
+        opacity: 1;
+        background: var(--color-primary-dark);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
         img, a {
             height: 100%;
             object-fit: cover;
@@ -247,7 +161,7 @@
     }
     @media only screen and (max-width: 1024px) {
         #isoType {
-            transform: translateX(0%) !important;
+            transform: translateX(0px) !important;
             opacity: 1;
         }
     }
@@ -255,201 +169,6 @@
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <main id="main">
-=======
-      <a
-      class="cta__msn"
-      href="https://wa.me/5219993437716"
-      target="_blank"
-      >Mensaje</a
-      >
-      -->
-    </div>
-    <div  class="mobile__active"></div>
-    <!-- NAV MENU DESKTOP-->
-  </div>
-    <div class="mobile__trigger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <div class="mobile__menu">
-    <ul role="list" class="nav__ul">
-        <li>
-            <a href="/" class="" >
-                Esencia
-            </a>
-        </li>
-</ul>
-      <!--
-      FINAL MENU
-      <ul role="list" class="nav__ul nav__ul__left">
-    
-        <li>
-            <a href="/" class="" >
-                Esencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/experiencia/" class="" >
-                Experiencia
-            </a>
-        </li>
-    
-        <li>
-            <a href="/socios/" class="" >
-                Socios
-            </a>
-        </li>
-    
-</ul> <ul role="list" class="nav__ul nav__ul__right">
-    
-        <li>
-            <a href="/ubicación/" class="" >
-                Ubicación
-            </a>
-        </li>
-    
-        <li>
-            <a href="/blog/" class="" >
-                Blog
-            </a>
-        </li>
-    
-        <li>
-            <a href="/contacto/" class="" >
-                Contacto
-            </a>
-        </li>
-    
-</ul>
-      <a
-      class="cta__msn"
-      href="https://wa.me/5219993437716"
-      target="_blank"
-      >Mensaje</a
-      -->
-    >
-  </div>
-  <div  class="mobile__active"></div>
-  
-</header>
-
-<style>
-  #inner__header {
-    background-color: transparent;
-    justify-content: space-between;
-    position: relative;
-    min-height: 60px;
-    .mask {
-      z-index: 1;
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: flex;
-      width: 100%;
-      height: 60px;
-      justify-content: space-between;
-      .mask-left,
-      .mask-right {
-        background: var(--bg-primary);
-        width: calc(50% - 50px);
-      }
-    }
-    .nav{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      z-index: 5;
-    }
-    .nav__ul__left,
-    .nav__ul__right,
-    .mirrorNav {
-      width: calc(50% - 50px);
-      justify-content: space-evenly;
-    }
-    #logo__main {
-      position: absolute;
-      position: relative;
-      width: 250px;
-      aspect-ratio: 1/1;
-      top: -20px;
-      img{
-        width: 100%;
-        object-fit: contain;
-      }
-    }
-    .circle-cut {
-      --r: 135px;
-      width: 270px;
-      background: var(--bg-primary);
-      background-position: center;
-      mask: radial-gradient(var(--r) at 50% 240%, #0000 calc(100% - 1px), #000);
-    }
-  }
-  #logo__main {
-    position: relative;
-    img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .mobile__trigger2{
-    display: none;
-  }
-
-  .mobile__trigger2.visible{
-    display: block;
-  }
-
-  .nav.hidden, .mask.hidden{
-    display: none !important;
-  }
-
-  @media (max-width: 1024px) {
-    .nav, .mask{
-      display: none !important;
-    }
-    .mobile__trigger2, .mobile__trigger2.visible{
-      display: none;
-    }
-  }
-</style>
-<script>
- window.onload = function() {
-  const nav = document.querySelector('.nav');
-  const mask = document.querySelector('.mask');
-  const mobileTrigger = document.querySelector('.mobile__trigger2');
-  const scrollThreshold = 50;
-
-  if (nav && mobileTrigger) {
-    document.addEventListener('scroll', function() {
-      const scrollY = window.scrollY;
-
-      if (scrollY > scrollThreshold) {
-        nav.classList.add('hidden');
-        mask.classList.add('hidden')
-        mobileTrigger.classList.add('visible');
-      } else {
-        nav.classList.remove('hidden');
-        mask.classList.remove('hidden')
-        mobileTrigger.classList.remove('visible');
-      }
-    });
-  }
-};
-
-</script>
-
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main>
->>>>>>> 5719af5d6656cf96c1e522e8e53984a2e667d06e
           <div data-barba="container" data-barba-namespace="articulo" data-css="articulo" data-js="articulo">
 
   <section id="section__hero" class="pad__lr__5 pad__top__10">
@@ -501,8 +220,60 @@ Internet ha cambiado la cara de la inversión, permitiendo que la gente mueva di
         <div class="footer__column">
             <h2>Mapa del sitio</h2>
             <ul role="list" class="nav__ul">
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+</ul>
+            <!--<ul role="list" class="nav__ul nav__ul__left">
     
-</ul> 
+        <li>
+            <a href="/" class="" >
+                Inicio
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="" >
+                Experiencia mexicana
+            </a>
+        </li>
+    
+        <li>
+            <a href="/resort/" class="" >
+                Experiencia resort
+            </a>
+        </li>
+    
+</ul>
+            <ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicacion/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>-->
         </div>
         <div class="footer__column">
             <h2>Datos de contacto</h2>

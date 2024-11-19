@@ -4,7 +4,6 @@ eleventyComputed:
     description: "{{ contacto[0].descseo }}"
     keywords: "{{ contacto[0].keyseo }}"
 layout: "base.njk"
-#gsap: "contacto.js"
 permalink: "/{{ page.fileSlug }}/"
 ---
 
@@ -12,6 +11,7 @@ permalink: "/{{ page.fileSlug }}/"
 {% for item in contacto %}
 
     <section id="section__hero" class="pad__lr__5">
+        {% include 'header.njk' %}
         <div class="column__2">
             <div class="col__left flex__justify__c pad__right__5 width__45">            
                 <h1>{{ item.heroH1 }}</h1>

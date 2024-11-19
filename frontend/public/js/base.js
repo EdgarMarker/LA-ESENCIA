@@ -304,6 +304,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
 
       // TERMINA GSAP GLOBAL ESCRITORIO
+
+      ScrollTrigger.batch("#mobile__trigger", {
+        trigger: "#main",
+        start: "50 top",
+        end: "50 top",
+        ease: "power1.in",
+        onEnter: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onEnterBack: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onLeave: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onLeaveBack: (batch) =>	gsap.to(batch, { x: 100, duration: 0.2 }),
+      });
+
+      ScrollTrigger.batch("#isoType", {
+        trigger: "#main",
+        start: "50 top",
+        end: "50 top",
+        ease: "power1.in",
+        onEnter: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onEnterBack: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onLeave: (batch) =>	gsap.to(batch, { x: 0, duration: 0.2 }),
+        onLeaveBack: (batch) =>	gsap.to(batch, { x: -100, duration: 0.2 }),
+      });
+      
+      /*
       const tlNav = gsap.timeline();
 
       tlNav.to(["#isoType", "#mobile__trigger"], {
@@ -314,15 +338,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
           trigger: "#main",
           start: "50px top",
           end: "60px top",
-          scrub: 1,
+          markers: true,
         },
-      });
+      });*/
+
+
     });
 
     // Separación visual para telefonos:
-    (telText = new SplitText(".tel__text", { type: "chars" })),
-      (telTextChars = telText.chars);
+    // Separación visual para telefonos:
+    telText = new SplitText(".tel__text", { type: "chars" }),
+    telTextChars = telText.chars;
     gsap.to(telTextChars, {});
+    
   } // Termina función GSAP
 
   // Mobile menu:

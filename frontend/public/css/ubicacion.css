@@ -79,7 +79,7 @@
     margin-top: 0;
     background: url('../assets/img/bg_cream.jpg');
     position: relative;
-    padding: 10% 0% 5% 0%;
+    padding: 10% 0% 10% 0%;
     .column__2{
       .col__left{
         position: relative;
@@ -100,10 +100,10 @@
     &::before{
       content:"";
       width: 50%;
-      height: 100%;
+      height: 70%;
       position: absolute;
-      top: -20%;
-      right: 0;
+      bottom: -20%;
+      left: 0;
       background-image: url(/images/textura_manuscrito.png);
       background-repeat: no-repeat;
       background-size: contain;
@@ -114,13 +114,13 @@
 
  #section__haveAll{
     background: var(--bg-primary);
-    padding: 10% 0%;
+    padding: 8% 0% 8% 10%;
     min-height: 80vh;
     .column__2{
         .col__left{
-            padding-left: 5%;
             padding-right: 10%;
             justify-content: center;
+            width: 40%;
             h2{
                 width: 100%;
                 strong{
@@ -138,6 +138,7 @@
             position: relative;
             flex-direction: row;
             align-items: center;
+            width: 60%;
             gap: 2.5%;
             picture{
                 img{
@@ -161,17 +162,20 @@
                 }
                 picture:last-child{
                     width: 100%;
-                    aspect-ratio: 3/2;
-                    padding-right: 10%;
+                    aspect-ratio: 3.5/2;
+                    padding-right: 20%;
                     padding-top: 2.5%;
                 }
             }
         }
     }
- } 
+ }
+
+
  #section__discoverBenefits{
     height: 100vh;
     position: relative;
+    justify-content: flex-start;
     .accentDivider{
       background-color: var(--color-accent) ;
     }
@@ -179,13 +183,8 @@
       z-index: 2;
       align-items: center;
       justify-content: center;
-      img{
-        width: 100px;
-        height: auto;
-        margin-bottom: 50px;
-      }
+      padding-top: 5%;
       h2{
-        color: var(--color-white);
         strong{
           transform-origin: top center;
         }
@@ -193,6 +192,20 @@
       p{
         text-align: center;
         color: var(--color-white)
+      }
+      .sello__wrapper{
+        margin-bottom: 30px;
+        img{
+          position: relative;
+          width: 100px;
+          height: auto;
+          object-fit: contain;
+          animation-name: giraSello;
+          animation-duration: 20s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          filter: drop-shadow(4px 0px 3px rgba(0, 0, 0, 0.3));
+        }
       }
     }
     
@@ -209,16 +222,37 @@
         object-fit: cover
      }
     }
-  }
+}
+
+@keyframes giraSello {
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
 
 #section__map{
   background: var(--bg-cream);
-  padding: 10% 0;
-  padding-left: 5%;
+  padding: 0% 0% 0% 10%;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: -75px;
+    left: 0px;
+    z-index: 1;
+    background-image: url("../assets/svg/greca_crema.svg");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+  }
   .column__2{
     .col__left{
+      width: 50%;
       align-self: center;
-      padding-right: 5%;
+      padding-right: 15%;
+      div:nth-child(1){
+        margin-bottom: 3%;
+      }
       h2, ul{
         width: 100%;
       }
@@ -227,23 +261,43 @@
       }
       li{
        display: flex;
+       flex-direction: row;
        align-items: center;
        width: 100%;
-       border-bottom: 2px solid rgb(85, 83, 83);
-       picture{
-        width: 24px;
+       border-bottom: 2px solid rgba(85, 83, 83, 0.437);
+       margin-bottom: 0px;
+       padding: 15px 0px;
+       gap: 10px;
+       img{
+        width: 28px;
         aspect-ratio: 1/1;
-        img{
-          height: 100%;
-          object-fit: contain;
-        }
-       } 
+       }
+       h3{
+        font-size: var(--size-sm);
+        margin: 0px;
+       }
       }
+    }
+    .col__right{
+      width: 50%;
     }
   }
 }
 #section__adventureCarousel{
-  padding: 10%;
+  padding: 5% 10%;
+  &::before{
+    content:"";
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    background-image: url(/images/textura_manuscrito.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+  }
   .column__1:nth-child(1){
     div, h2{
       width: 100%;
@@ -276,22 +330,32 @@
         text-align: center;
         margin-top: 1em;
         margin-bottom: 0;
+        font-size: var(--size-sm);
       }
     }
   }
-  .splide__arrow {
-    border: 1px solid var(--color-black);
-  }
-  .splide__arrow--prev{
-    left: -5%;
-    background-color: transparent;
+
+  .splide__arrow--prev{ 
+    background-image: url(/images/prev_outline.svg);
   }
   .splide__arrow--next{
-    right: -5%;
-    background-color: transparent;
+    background-image: url(/images/next_outline.svg);
   }
+  
   #carousel-2{
     display: none;
+  }
+}
+
+#section__gmap{
+  background-color: var(--color-secondary-light);
+  padding: 0%;
+  position: relative;
+  .column__1{
+    #map {
+      height: 60vh;
+      width: 100%;
+    }
   }
 }
 

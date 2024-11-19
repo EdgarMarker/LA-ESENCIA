@@ -1,0 +1,303 @@
+---
+eleventyComputed:
+    title: "{{ resorts[0].titleseo }}"
+    description: "{{ resorts[0].descseo }}"
+    keywords: "{{ resorts[0].keyseo }}"
+layout: "base.njk"
+#gsap: "resorts.js"
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<div
+  data-barba="container"
+  data-barba-namespace="resorts"
+  data-css="resorts"
+  data-js="resorts"
+>
+{%for item in resorts %}
+<section id="section__hero" class="pad__lr__5 pad__tb__5">
+  {% include 'header.njk' %}
+  <div class="column__2 column__2__hero flex__row flex__justify__c">
+    <div class="col__left flex__justify__c width__45 flex__column flex__align__c">
+      <h1>{{ item.heroH1 }}</h1>
+      <div class="accentDivider"></div>
+      {{ item.heroH2 | safe }}
+      <div class="btn__hero__container">
+        <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
+        <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+      </div>
+    </div>
+    <div class="col__right width__55 img__hero">
+      <video width="320" height="240" muted loop autoplay>
+        <source
+          src="/images/inicio/esencia_index_hero.mp4"
+          type="video/mp4"
+        />
+        Tu navegador no soporta este video
+      </video>
+    </div>
+    <div class="blackDisplayOverlayGradient"></div>
+  </div>
+</section>
+
+<section id="section__happyPlace" class="fadeInOut">
+  <div class="column__1 happyPlace__richText">
+    <div class="richTextH2">{{ item.introH2 | safe }}</div>
+    <div class="accentDivider"></div>
+    <h3>{{ item.introH3 }}</h3>
+  </div>
+
+  <!---->
+  <div class="column__1">
+    <div class="dualHorizon__img__wrapper">
+      {% if item.introImg2 %}
+      <picture class="intro__picture__bg">
+        {% for format, images in item.introImg2 %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img
+          src="{{ item.introImg2.webp[0].url }}"
+          alt="{{ item.introImg2Alt }}"
+        />
+      </picture>
+      {% endif %} {% if item.introImg1 %}
+      <picture class="intro__picture__bg">
+        {% for format, images in item.introImg1 %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img
+          src="{{ item.introImg1.webp[0].url }}"
+          alt="{{ item.introImg1Alt }}"
+        />
+      </picture>
+      {% endif %}
+    </div>
+    <div class="diamondFigureHorizon">
+      <div class="diamondImg"></div>
+      <div class="diamondImg"></div>
+      <div class="diamondImg"></div>
+    </div>
+  </div>
+  <!---->
+  <div class="column__1">
+    <div>{{ item.introDesc | safe }}</div>
+  </div>
+</section>
+
+
+<section id="section__experiencias" class="fadeInOut">
+  <div class="column__1">
+    <h2>
+      +15 experiencias para tu
+      <strong>escapada perfecta</strong>
+    </h2>
+    <div class="accentDivider"></div>
+  </div>
+  <div class="column__1 listado__x3">
+    <div class="experiencia">
+      <img src="/images/resorts/water_kids.svg" />
+      <h3>Water Kids</h3>
+      <ul role="list">
+        <li>Splash Pads</li>
+        <li>Toboganes</li>
+        <li>Chapoteaderos</li>
+      </ul>
+    </div>
+    <div class="experiencia">
+      <img src="/images/resorts/pabellones.svg" />
+      <h3>Pabellones</h3>
+      <ul role="list">
+        <li>Albercas</li>
+        <li>Grills</li>
+        <li>Camastros</li>
+      </ul>
+    </div>
+    <div class="experiencia">
+      <img src="/images/resorts/chill_spots.svg" />
+      <h3>Chill Spots</h3>
+      <ul role="list">
+        <li>Albercas</li>
+        <li>Lago</li>
+        <li>Wet Bar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="section__actividades" class="fadeInOut">
+  <div class="column__1">
+    <h2>Actividades <strong>exclusivas</strong></h2>
+    <div class="accentDivider"></div>
+  </div>
+  <div class="column__1">
+    <div class="splide actividades" role="group">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="/images/resorts/actividad1.jpg" />
+            <h3>Pabellones</h3>
+          </li>
+          <li class="splide__slide">
+            <img src="/images/resorts/actividad2.jpg" />
+            <h3>Chill Spots</h3>
+          </li>
+          <li class="splide__slide">
+            <img src="/images/resorts/actividad3.jpg" />
+            <h3>Water Kids</h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="section__placeToBe">
+    <div class="column__1 flex__align__c flex__justify__c fadeInOut">  
+          {{ item.toBeH2 | safe }}
+    </div>
+    <div class="column__1">
+        <ul role='list' id="placeToBeGallery">
+          <li id="placeToBeGalleryLi">
+            {% for gallery in item.toBeImg1 %}
+            <picture>
+              {% for format, images in gallery %}
+              <source srcset="{{ images | srcset }}" sizes="(max-width: 1200px) 100vw, 1200px" type="image/{{ format }}" />
+              {% endfor %}
+              <img src="{{ gallery.webp[0].url }}" alt="{{ gallery.alt.alt }}"/>
+            </picture>
+            {% endfor %}
+            <h3>Enigmático</h3>
+          </li>
+          <li>
+            {% for gallery in item.toBeImg2 %}
+            <picture>
+              {% for format, images in gallery %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ gallery.webp[0].url }}"
+                alt="{{ gallery.alt.alt }}"
+              />
+            </picture>
+            {% endfor %}
+          </li>
+          <li>
+            <h3>Vibrante</h3>
+            {% for gallery in item.toBeImg3 %}
+            <picture>
+              {% for format, images in gallery %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ gallery.webp[0].url }}"
+                alt="{{ gallery.alt.alt }}"
+              />
+            </picture>
+            {% endfor %}
+            <h3>Natural</h3>
+          </li>
+        </ul>
+  </section>
+
+  <section id="section__recentArticles" class="pad__all__10">
+    <div class="column__1 flex__align__c flex__justify__c fadeInOut">
+      {{item.recentArticles.h2 | safe}}
+    </div>
+    <div class="column__1 recentblog__wrapper">
+      <div class="splide" id="carousel-3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in item.recentArticles.articles %}
+            <li class="splide__slide">
+              <div class="card__articulo">
+                {% include "post-card.njk" %}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+        <a href="/blog" class="btn">Ver todos los artículos</a>
+    </div>
+  </section>
+
+  <section id="section__discoverBenefits" class="pad__all__10">
+    <div class="column__1 fadeInOut">
+      <img src="{{item.discoverBenefits.logo.url}}" />
+      {{item.discoverBenefits.h2 | safe}}
+      <div class="accentDivider"></div>
+      <div class="max800">{{item.discoverBenefits.description | safe}}</div>
+      
+        <a href="" class="btn">Regístrate aquí</a>
+        
+    </div>
+    <div class="blackDisplayOverlay"></div>
+    <picture class="discoverBenefits__img">
+      {% for format, images in item.discoverBenefits.img %}
+      <source
+        srcset="{{ images | srcset }}"
+        sizes="(max-width: 1920px) 100vw, 1920px"
+        type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img
+        src="{{ item.discoverBenefits.img.webp[0].url }}"
+        alt="{{ producto.mainImage.alt }}"
+      />
+    </picture>
+  </section>
+{% endfor %}
+</div>
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    var actividades = new Splide( '.actividades', {
+      padding: '10%',
+      perPage: 2,
+      gap: '2rem',
+      wheel: false,
+      arrows: true,
+    } );
+
+    actividades.mount();
+
+    let main3 = new Splide('#carousel-3', {
+      direction: 'ttb', 
+      height: '50vh',
+      perPage: 1,
+      gap: '2rem',
+      pagination: true,
+      wheel: false,
+      arrows: true,
+      breakpoints: {
+        768: {
+          height: '500px',
+        }
+      },
+      })
+
+      main3.mount();
+  })
+</script>

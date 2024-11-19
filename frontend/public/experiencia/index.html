@@ -13,6 +13,7 @@
     <meta property="”og:description”" content="0" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/general/reset.css" />
     <link rel="stylesheet" href="/css/general/globals.css" />
     <link rel="stylesheet" href="/css/general/nav.css" />
@@ -50,32 +51,38 @@
     
         <li>
             <a href="/" class="" >
-                Esencia
+                Inicio
             </a>
         </li>
     
         <li>
             <a href="/experiencia/" class="active" >
-                Experiencia
+                Experiencia mexicana
             </a>
         </li>
     
         <li>
-            <a href="/socios/" class="" >
-                Socios
+            <a href="/resort/" class="" >
+                Experiencia resort
             </a>
         </li>
     
 </ul> <ul role="list" class="nav__ul nav__ul__right">
     
         <li>
-            <a href="/ubicación/" class="" >
+            <a href="/ubicacion/" class="" >
                 Ubicación
             </a>
         </li>
     
         <li>
-            <a href="/blog/" class="" >
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
                 Blog
             </a>
         </li>
@@ -100,9 +107,9 @@
 <style>
     .mobile__trigger {
         position: fixed;
-        z-index: 50;
-        right: 5px;
-        top: 5px;
+        z-index: 100;
+        right: 20px;
+        top: 35px;
         width: 50px;
         height: 50px;
         padding: 10px;
@@ -110,13 +117,14 @@
         cursor: pointer;
         transform-origin: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%);
-        background: var(--bg-primary);
-        opacity: 0;
+        transform: translateX(100px);
+        background: var(--color-primary-dark);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        opacity: 1;
     }
     @media (max-width: 1024px) {
         .mobile__trigger{
-            transform: translateX(0%);
+            transform: translateX(0px);
             z-index: 60;
             opacity: 1;
         }
@@ -125,26 +133,27 @@
     <div id="isoType">
     
     <a href="/">
-        <img src="https://cdn.sanity.io/images/qf6rvplj/production/236f647fb84ed3a97c0c10f66c3d215e189d4f15-60x60.svg" alt="Iso tipo" />
+        <img src="https://cdn.sanity.io/images/qf6rvplj/production/c1869d9dcc26500ca5cfb9567fac0c38e94296ee-100x100.svg" alt="Iso tipo" />
     </a>
     
 </div>
 <style>
     #isoType {
         position: fixed;
-        padding: 5px;
+        padding: 1px;
         z-index: 50;
-        left: 5px;
-        top: 5px;
-        width: 50px;
-        height: 50px;
+        left: 20px;
+        top: 35px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         cursor: pointer;
         transform-origin: center;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(-100%);
-        opacity: 0;
-        background: var(--bg-primary);
+        transform: translateX(-100px);
+        opacity: 1;
+        background: var(--color-primary-dark);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
         img, a {
             height: 100%;
             object-fit: cover;
@@ -152,7 +161,7 @@
     }
     @media only screen and (max-width: 1024px) {
         #isoType {
-            transform: translateX(0%) !important;
+            transform: translateX(0px) !important;
             opacity: 1;
         }
     }
@@ -179,30 +188,28 @@
       <div class="mask-right"></div>
     </div>
     <div class="nav">
-      <!--
-      <ul role="list" class="nav__ul nav__ul__left">
+      
+      <!--<ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="" >
-                Esencia
+                Inicio
             </a>
         </li>
     
         <li>
             <a href="/experiencia/" class="active" >
-                Experiencia
+                Experiencia mexicana
             </a>
         </li>
     
         <li>
-            <a href="/socios/" class="" >
-                Socios
+            <a href="/resort/" class="" >
+                Experiencia resort
             </a>
         </li>
     
-</ul>
-      -->
-      <div class="mirrorNav"></div>
+</ul>-->
 
       <a id="logo__main" href="/">
         
@@ -210,20 +217,23 @@
         <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
         
       </a>
-
-      <div class="mirrorNav"></div>
-
-      <!--
-        <ul role="list" class="nav__ul nav__ul__right">
+      
+        <!--<ul role="list" class="nav__ul nav__ul__right">
     
         <li>
-            <a href="/ubicación/" class="" >
+            <a href="/ubicacion/" class="" >
                 Ubicación
             </a>
         </li>
     
         <li>
-            <a href="/blog/" class="" >
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
                 Blog
             </a>
         </li>
@@ -234,9 +244,8 @@
             </a>
         </li>
     
-</ul>
-      -->
-
+</ul>-->
+      
     </div>
     <div class="nav__secondary">
       <div class="isoTypeRoom"></div>
@@ -267,7 +276,7 @@
       .mask-left,
       .mask-right {
         background: var(--bg-primary);
-        width: calc(50% - 50px);
+        width: calc(50% - 125px);
       }
     }
 
@@ -283,7 +292,7 @@
     .nav__ul__left,
     .nav__ul__right,
     .mirrorNav {
-      width: calc(50% - 50px);
+      width: calc(50% - 125px);
       justify-content: space-evenly;
     }
 
@@ -377,14 +386,14 @@
       <div class="blackDisplayOverlayGradient"></div>
     </div>
   </section>
-  <section id="section__happyPlace">
+
+
+  <section id="section__happyPlace" class="fadeInOut">
     <div class="column__1 happyPlace__richText">
       <div class="richTextH2"><h2>Shopping y </h2><h2><strong>reajación</strong></h2></div>
       <div class="accentDivider"></div>
-      <h3>En tu happy place</h3>
+      <h3 class="post__title">En tu happy place</h3>
     </div>
-
-    <!---->
     <div class="column__1">
       <div class="dualHorizon__img__wrapper">
         
@@ -435,15 +444,15 @@
         <div class="diamondImg"></div>
       </div>
     </div>
-    <!---->
     <div class="column__1">
-      <div class="pad__all__5 width__55"><p>Hospédate en La Esencia, el nuevo ícono turístico que convierte a Valladolid en la espada perfecta para disfrutar de una experiencia resort mientras vives en México</p></div>
+      <div><p>Hospédate en La Esencia, el nuevo ícono turístico que convierte a Valladolid en la espada perfecta para disfrutar de una experiencia resort mientras vives en México</p></div>
     </div>
   </section>
 
+
   <section id="section__spaCarousel">
     <div class="column__2">
-      <div class="col__left">
+      <div class="col__left fadeInOut">
         <ul role="list" id="pinStart__spaCarousel">
           <li class="spaCarousel__card">
             <h2><strong>Spa & wellnes</strong></h2>
@@ -645,8 +654,8 @@
     </div>
   </section>
 
-  <section id="section__adventureCarousel">
-    <div class="column__1 fadeInOut">
+  <section id="section__adventureCarousel" class="fadeInOut">
+    <div class="column__1">
       <div><h2>Perfecto para todo tipo de</h2><h2><strong>aventuras</strong></h2></div>
     </div>
     <div class="column__1">
@@ -944,8 +953,8 @@
     </div>
   </section>
 
-  <section id="section__placeToBe">
-    <div class="column__1 fadeInOut">
+  <section id="section__placeToBe" class="fadeInOut">
+    <div class="column__1">
       <h2>El nuevo</h2><h2><strong>place to be</strong></h2>
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -972,15 +981,15 @@
   <section id="section__traditions" class="fadeInOut">
     <div class="column__1">
       <h2>música, gastronomía y</h2><h2><strong>tradiciones</strong></h2>
-      <h3>El plan que lo tiene todo</h3>
-      <div>
-        <p>Conoce cómo convertirte en socio fundador y disfruta de La Esencia de México</p>
-      </div>
+      <div class="accentDivider"></div>
+      <h3 class="post__title">El plan que lo tiene todo</h3>
+      <p>Conoce cómo convertirte en socio fundador y disfruta de La Esencia de México</p>
+
       <a href="" class="btn">Descubre los beneficios</a>
     </div>
 
     
-    <picture class="traditionsImg1">
+    <picture class="traditionsImg1" data-speed="1.2">
       
       <source
         srcset="/images/dm2_kJUrVR-300.jpeg 300w, /images/dm2_kJUrVR-600.jpeg 600w"
@@ -999,7 +1008,7 @@
     
 
     
-    <picture class="traditionsImg2">
+    <picture class="traditionsImg2" data-speed="1.2">
       
       <source
         srcset="/images/dm2_kJUrVR-300.jpeg 300w, /images/dm2_kJUrVR-600.jpeg 600w"
@@ -1018,7 +1027,7 @@
     
 
     
-    <picture class="traditionsImg3">
+    <picture class="traditionsImg3" data-speed="1.2">
       
       <source
         srcset="/images/dm2_kJUrVR-300.jpeg 300w, /images/dm2_kJUrVR-600.jpeg 600w"
@@ -1042,17 +1051,12 @@
 <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 "></script>
-<link
-  href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-"
-  rel="stylesheet"
-/>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let carrousel = new Splide("#carousel-3", {
-      height: "80vh",
+      height: "70vh",
       perPage: 3,
+      perMove: 1,
       gap: "1rem",
       arrows: true,
       wheel: false,
@@ -1077,8 +1081,60 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="footer__column">
             <h2>Mapa del sitio</h2>
             <ul role="list" class="nav__ul">
+        <li>
+            <a href="/" class="" >
+                Esencia
+            </a>
+        </li>
+</ul>
+            <!--<ul role="list" class="nav__ul nav__ul__left">
     
-</ul> 
+        <li>
+            <a href="/" class="" >
+                Inicio
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="active" >
+                Experiencia mexicana
+            </a>
+        </li>
+    
+        <li>
+            <a href="/resort/" class="" >
+                Experiencia resort
+            </a>
+        </li>
+    
+</ul>
+            <ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicacion/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>-->
         </div>
         <div class="footer__column">
             <h2>Datos de contacto</h2>

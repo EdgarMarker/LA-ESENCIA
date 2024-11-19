@@ -80,7 +80,7 @@
 #section__happyPlace {
   background: var(--bg-cream);
   overflow: hidden;
-  padding: 10% 10%;
+  padding: 5% 10% 8%;
   &::before {
     content: "";
     width: 50%;
@@ -121,8 +121,119 @@
     width: 100%;
     height: 100%;
   }
-  .width__55 {
+  .width__55{
     align-self: center;
+  }
+  .column__1:nth-child(3){
+    max-width: 40%;
+    padding-top: 8%;
+  }
+}
+
+#section__experiencias{
+  padding: 8% 10%;
+  .column__1:first-child{
+    align-items: center;
+    margin-bottom: 5%;
+    .accentDivider{
+      background-color: var(--color-accent);
+    }
+    h2{
+      text-align: center;
+      strong{
+        transform-origin: top center;
+      }
+    }
+  }
+  .column__1:last-child{
+    .experiencia{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100px;
+        height: auto;
+        margin-bottom: 30px;
+      }
+      h3{
+        text-align: center;
+      }
+      ul{
+        align-items: center;
+        li{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-bottom: 5px;
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+#section__actividades{
+  padding: 8% 0%;
+  overflow: hidden;
+  background-color: #ECEBE9;
+  .column__1:first-child{
+    padding: 0 10% 3%;
+    .accentDivider{
+      margin-top: 20px;
+      margin-bottom: 0px;
+    }
+    h2{
+      display: inline-block;
+      strong{
+        display: inline-block;
+        transform-origin: left center;
+      }
+    }
+  }
+  .column__1:last-child{
+    .splide{
+      padding: 0px;
+      .splide__pagination{
+        .splide__pagination__page{
+          background-color: var(--color-secondary-light);
+        }
+        .splide__pagination__page.is-active{
+          background: var(--color-accent);
+        }
+      }
+      .splide__slide{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        img{
+          min-height: 50vh;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        h3{
+          margin-top: 20px;
+          font-size: var(--size-sm);
+          opacity: 1 !important;
+          transform: translate(0px) !important;
+        }
+      }
+      .splide__arrows{
+        position: absolute;
+        top: calc((5% + 85px)*-1);
+        right: 10%;
+        width: 120px;
+        .splide__arrow--prev{
+          background-image: url(/images/prev_outline.svg);
+        }
+        .splide__arrow--next{
+          background-image: url(/images/next_outline.svg);
+        }
+      }
+    }
   }
 }
 
@@ -132,11 +243,11 @@
     padding: 10%;
     &:before{
       content: "";
-      background: url('../assets/svg/greca_crema.svg');
+      background: url('/images/greca_dorada.svg');
       width: 100%;
-      height: 100px;
+      height: 150px;
       position: absolute;
-      top: 0;
+      top: -75px;
       left: 0;
       z-index: 5;
     }
@@ -152,7 +263,7 @@
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: 1fr 25% 1fr;
+      grid-template-columns: calc(32% - 50px) 36% calc(32% - 50px);
       justify-items: center;
       align-items: center;
       gap: 50px;
@@ -162,50 +273,42 @@
       display: flex;
       height: 100%;
       flex-direction: column;
+      justify-content: center;
       gap: 50px;
       picture{
         box-shadow: 5px 30px 20px rgba(0,0,0,0.4);
         border-radius: 15px;
         overflow: hidden;
       }
-      &:nth-child(1), &:nth-child(3){
-        padding-top: 20%;
+      h3{
+        font-family: var(--font-title);
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: var(--size-xl);
+        color: var(--color-secondary-light);
+        margin: 0px;
+        line-height: 0px;
       }
       &:nth-child(1){
         align-items: flex-end;
-        picture:last-child{
-          width: 50%;
-          aspect-ratio: 3/4;
-          img{
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-      }
-      &:nth-child(2){
         picture:first-child{
-          aspect-ratio: 1/1.2;
+          width: 60%;
         }
-        picture{
-          width: 100%;
-          aspect-ratio: 1;
-          img{
-            height: 100%;
-            object-fit: cover;
-          }
+        picture:last-child{
+          width: 90%;
         }
       }
       &:nth-child(3){
-        picture:first-child{
-          width: 50%;
-          aspect-ratio: 1;
-          img{
-            height: 100%;
-            object-fit: cover;
-          }
+        align-items: flex-start;
+        picture:nth-child(2){
+          width: 90%;
+        }
+        picture:nth-child(3){
+          width: 60%;
         }
       }
     }
+    
   }
   
   #section__recentArticles{
@@ -246,6 +349,9 @@
   #section__discoverBenefits{
     height: 100vh;
     position: relative;
+    .blackDisplayOverlay{
+      background-color: rgba(0, 0, 0, 0.7);
+    }
     .accentDivider{
       background-color: var(--color-accent) ;
     }

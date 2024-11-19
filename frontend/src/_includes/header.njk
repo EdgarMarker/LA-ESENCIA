@@ -7,10 +7,8 @@
       <div class="mask-right"></div>
     </div>
     <div class="nav">
-      <!--
-      {% include 'main-nav-izq.njk' %}
-      -->
-      <div class="mirrorNav"></div>
+      
+      <!--{% include 'main-nav-izq.njk' %}-->
 
       <a id="logo__main" href="/">
         {% for logo in logosEmpresa %}
@@ -18,13 +16,9 @@
         <img src="{{ logo.brandLogo.media.url }}" alt="prueba" />
         {%endfor%}
       </a>
-
-      <div class="mirrorNav"></div>
-
-      <!--
-        {% include 'main-nav-der.njk' %}
-      -->
-
+      
+        <!--{% include 'main-nav-der.njk' %}-->
+      
     </div>
     <div class="nav__secondary">
       <div class="isoTypeRoom"></div>
@@ -55,7 +49,7 @@
       .mask-left,
       .mask-right {
         background: var(--bg-primary);
-        width: calc(50% - 50px);
+        width: calc(50% - 125px);
       }
     }
 
@@ -71,7 +65,7 @@
     .nav__ul__left,
     .nav__ul__right,
     .mirrorNav {
-      width: calc(50% - 50px);
+      width: calc(50% - 125px);
       justify-content: space-evenly;
     }
 

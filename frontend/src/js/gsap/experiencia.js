@@ -65,7 +65,7 @@ function gsapSoloAnimations() {
 
   gsap.to(".intro__picture__bg:first-child", {
     y: 150,
-    ease: "power1.in",
+    ease: "power4.in",
     scrollTrigger: {
       trigger: ".dualHorizon__img__wrapper",
       start: "top bottom",
@@ -94,17 +94,32 @@ function gsapSoloAnimations() {
     let img = gsap.utils.toArray(".spaCarousel__img");
     img.forEach((item, idx) => {
       gsap.to(item, {
-        x: `100%`,
-        ease: "power4.inOut",
+        opacity: 0,
+        ease: "power2.out",
         duration: 1,
         scrollTrigger: {
           trigger: li[idx],
-          start: "top center",
-          end: `120% center`,
+          start: "20% top",
+          end: `80% top`,
           scrub: true,
         },
       });
     });
+
+    img.forEach((item, idx) => {
+      gsap.to(item, {
+        scale: 1.2,
+        ease: "power1.inOut",
+        duration: 1,
+        scrollTrigger: {
+          trigger: li[idx],
+          start: "top bottom",
+          end: `bottom top`,
+          scrub: true,
+        },
+      });
+    });
+
   });
 
   // Mobile
