@@ -296,9 +296,11 @@
     h2{
       text-align: center;
       color: var(--color-white);
+      width: auto;
       strong{
         color: var(--color-accent);
         transform-origin: top center;
+        width: auto;
       }
     }
   }
@@ -341,7 +343,7 @@
 
 #section__encontraras{
   padding: calc(8% + 75px) 10% 8%;
-  background-image: url('../assets/img/bg_noise_mapa.jpg');
+  background-image: url('/images/fundadores/bg_noise_masterplan.jpg');
   .column__2{
     .col__left{
       width: 35%;

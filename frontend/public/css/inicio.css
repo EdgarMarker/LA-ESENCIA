@@ -509,7 +509,6 @@
 
 
 #section__recentArticles{
-  display: none; /*test preview deploy netlify*/
   background: url('../assets/img/bg_cream.jpg');
   h2{
     text-align: center;

@@ -40,7 +40,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
     <div class="column__1 happyPlace__richText">
       <div class="richTextH2">{{ item.introH2 | safe }}</div>
       <div class="accentDivider"></div>
-      <h3>{{ item.introH3 }}</h3>
+      <h3 class="post__title">{{ item.introH3 }}</h3>
     </div>
 
     <div class="column__1">
@@ -89,7 +89,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
   <section id="section__privileges" class="fadeInOut">
     <div class="column__1">
       <div class="richTextH2">{{ item.privileges.h2 | safe }}</div>
-      <h3>{{ item.privileges.h3 }}</h3>
+      <h3 class="post__title">{{ item.privileges.h3 }}</h3>
       <div class="accentDivider"></div>
       <ul role="list" class="listado__x3">
         {% for item in item.privileges.list %}

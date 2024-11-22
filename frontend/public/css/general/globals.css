@@ -87,13 +87,10 @@ body{
 
 /*  Text globals  */
 .richTextH2{
-    h2{
-        text-align: center;
-        width: 100%;
-        strong{
-            width: fit-content;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 h1{
     font-size: var(--size-md);
@@ -202,7 +199,7 @@ ol:where([role="list"]) {
 /*  globales botones carrusel splide  */
 
 .splide{
-    padding: 0 80px;
+    
 }
 .splide__arrow--prev{
 left: 0%;

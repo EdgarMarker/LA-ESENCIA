@@ -105,11 +105,11 @@
       align-items: center;
       flex-direction: column;
       h2 {
-        width: 100%;
         display: flex;
+        text-align: center;
+        width: auto;
         strong {
           transform-origin: top center;
-          width: 100%;
         }
       }
     }
@@ -253,7 +253,7 @@
       }
     }
     .recentRichText{
-        max-width: 500px;
+        max-width: 35vw;
         text-align: center;
     }
     .recentblog__wrapper{
