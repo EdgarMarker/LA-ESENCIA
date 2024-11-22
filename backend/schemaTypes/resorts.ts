@@ -20,13 +20,21 @@ export default {
       title: 'Divisor galleria',
     },
     {
+      name: 'experience',
+      title: 'Experiencias',
+    },
+    {
+      name: 'activity',
+      title: 'Actividades'
+    },
+    {
       name: 'article',
       title: 'Artículos',
-      },
-      {
-        name: 'discoverBenefits',
-        title: 'Regístrate aquí',
-      },
+    },
+    {
+      name: 'discoverBenefits',
+      title: 'Regístrate aquí',
+    },
   ],
   fields: [
     {
@@ -161,68 +169,150 @@ export default {
       group: 'toBe',
       validation: (Rule: ArrayValidationRule) =>
         Rule.max(2).error('No se pueden agregar más de 2 imágenes'),
-      },
-      {
-        name: 'recentArticles',
-        title: 'Artículos recientes',
-        type: 'object',
-        group: 'article',
-        fields: [
-          {
-            name: 'h2',
-            title: 'Título principal',
-            description:
-              '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-            type: 'blockContent',
+    },
+    {
+      name: 'recentArticles',
+      title: 'Artículos recientes',
+      type: 'object',
+      group: 'article',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'articles',
+          title: 'Artículos',
+          type: 'array',
+          of: [{type: 'reference', to: {type: 'post'}}],
+          options: {
+            layout: 'grid',
           },
-          {
-            name: 'articles',
-            title: 'Artículos',
-            type: 'array',
-            of: [{type: 'reference', to: {type: 'post'}}],
-            options: {
-              layout: 'grid',
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(5).warning('Se han rebasado los 5 elementos recomendados'),
+        },
+      ],
+    },
+    {
+      name: 'discoverBenefits',
+      title: 'Regístrate aquí',
+      type: 'object',
+      group: 'discoverBenefits',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'img',
+          title: 'Imagen fondo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'logo',
+          title: 'Logo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    {
+      name: 'experience',
+      title: 'Sección de experiencia',
+      group: 'experience',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'desc',
+          title: 'Descripción general',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de elementos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'h3',
+                  title: 'Titulo',
+                  type: 'string',
+                },
+                {
+                  name: 'p',
+                  title: 'Texto',
+                  type: 'text',
+                },
+                {
+                  name: 'img',
+                  title: 'Icono',
+                  type: 'image',
+                },
+              ],
             },
-            validation: (rule: ArrayValidationRule) =>
-              rule.max(5).warning('Se han rebasado los 5 elementos recomendados'),
-          },
-        ]
-      },
-      {
-        name: 'discoverBenefits',
-        title: 'Regístrate aquí',
-        type: 'object',
-        group: 'discoverBenefits',
-        fields: [
-          {
-            name: 'h2',
-            title: 'Título principal',
-            description:
-              '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-            type: 'blockContent',
-          },
-          {
-            name: 'description',
-            title: 'Descripción',
-            type: 'blockContent',
-          },
-          {
-            name: 'img',
-            title: 'Imagen fondo',
-            type: 'image',
-            options: {
-              hotspot: true,
-            },
-          },
-          {
-            name: 'logo',
-            title: 'Logo',
-            type: 'image',
-            options: {
-              hotspot: true,
-            }
-          }
-        ],
-      },
+          ],
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
+        },
+      ],
+    },
+    {
+      name: 'activity',
+      title: 'Sección de actividades exclusivas',
+      group: 'activity',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de imágenes',
+          type: 'array',
+          of: [{
+            type: 'object', fields: [
+              {
+                name: 'title',
+                title: 'Nombre de la actividad',
+                type: 'string'
+              },
+              {
+                name: 'img',
+                title: 'Imagen',
+                type: 'image'
+              }
+          ]}],
+        },
+      ],
+    },
   ],
 }

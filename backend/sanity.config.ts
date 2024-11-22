@@ -63,46 +63,22 @@ export default defineConfig({
                       .title('Ubicación')
                       .id('ubicacion')
                       .child(S.document().schemaType('ubicacion').documentId('ubicacion')),
-                      S.listItem()
-                      .title('Socios')
+                    S.listItem()
+                      .title('Fundadores')
                       .id('socios')
                       .child(S.document().schemaType('socios').documentId('socios')),
-
-                      
-                    S.listItem()
-                      .title('Nosotros')
-                      .id('about')
-                      .child(S.document().schemaType('nosotros').documentId('nosotros')),
-                    S.listItem()
-                      .title('Productos')
-                      .id('productos')
-                      .child(S.document().schemaType('productos').documentId('productos')),
                     S.listItem()
                       .title('Artículos')
                       .id('blog')
                       .child(S.document().schemaType('blog').documentId('blog')),
                     S.listItem()
                       .title('Contacto')
-                      .id('contact')
-                      .child(S.document().schemaType('contact').documentId('contact')),
-                  ]),
-              ),
-
-            // Crea un nuevo grupo llamado "Productos"
-            S.listItem()
-              .title('Lista de productos')
-              .child(
-                S.list()
-                  .title('Gestión de Productos')
-                  .items([
+                      .id('contacto')
+                      .child(S.document().schemaType('contacto').documentId('contacto')),
                     S.listItem()
-                      .title('Productos')
-                      .schemaType('products') // Asegúrate de que 'product' corresponde al nombre del schema en tu esquema de productos
-                      .child(S.documentTypeList('products').title('Productos')),
-                    S.listItem()
-                      .title('Categorías')
-                      .schemaType('category') // Asegúrate de que 'category' corresponde al nombre del schema en tu esquema de categorías
-                      .child(S.documentTypeList('category').title('Categorías')),
+                      .title('Miembros')
+                      .id('gracias')
+                      .child(S.document().schemaType('gracias').documentId('gracias')),
                   ]),
               ),
 
@@ -133,10 +109,8 @@ export default defineConfig({
               (listItem) =>
                 ![
                   'inicio',
-                  'nosotros',
-                  'productos',
                   'blog',
-                  'contact',
+                  'contacto',
                   'aviso',
                   'empresa',
                   'social',
@@ -145,6 +119,11 @@ export default defineConfig({
                   'author',
                   'post',
                   'post-category',
+                  'experiencia',
+                  'ubicacion',
+                  'resorts',
+                  'socios',
+                  'gracias'
                 ].includes(listItem.getId()),
             ),
           ]),

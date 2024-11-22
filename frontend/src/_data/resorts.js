@@ -61,6 +61,28 @@ module.exports = async function() {
       "alt": asset->{altText}
     }
    },
+   experience{
+    h2,
+    desc,
+    list[]{
+      h3,
+      p,
+      img{
+        "media": asset -> {url},
+        "alt": asset -> {altText}
+      }
+    }
+   },
+   activity{
+    h2,
+    list[]{
+      title,
+      img{
+        "media" : asset -> {url},
+        "alt": asset -> {altText}
+      }
+    }
+   }
   }`);
 
   await Promise.all(data.map(processContent)); // Procesa todo el contenido en cada objeto

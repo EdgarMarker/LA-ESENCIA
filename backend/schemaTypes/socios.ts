@@ -16,6 +16,26 @@ export default {
       title: 'Introducción',
     },
     {
+      name: 'experience',
+      title: 'Icono Turístico',
+    },
+    {
+      name: 'banner',
+      title: 'Banner',
+    },
+    {
+      name: 'income',
+      title: 'Ingresos de inversión',
+    },
+    {
+      name: 'uFind',
+      title: 'Lo que encontraras',
+    },
+    {
+      name: 'model',
+      title: 'Modelo de oportunidad',
+    },
+    {
       name: 'discover',
       title: 'Sé parte del proyecto',
     },
@@ -178,6 +198,181 @@ export default {
           options: {
             hotspot: true,
           },
+        },
+      ],
+    },
+    {
+      name: 'experience',
+      title: 'Sección de icono turístico',
+      group: 'experience',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'desc',
+          title: 'Descripción general',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de elementos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'h3',
+                  title: 'Titulo',
+                  type: 'string',
+                },
+                {
+                  name: 'p',
+                  title: 'Texto',
+                  type: 'text',
+                },
+                {
+                  name: 'img',
+                  title: 'Icono',
+                  type: 'image',
+                },
+              ],
+            },
+          ],
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
+        },
+      ],
+    },
+    {
+      name: 'banner',
+      title: 'Banner',
+      group: 'banner',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Texto',
+          type: 'string',
+        },
+        {
+          name: 'img',
+          title: 'Imagen del banner',
+          type: 'image',
+        },
+      ],
+    },
+    {
+      name: 'income',
+      title: 'Ingresos de inversión ',
+      group: 'income',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'desc',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de servicios',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  title: 'Nombre',
+                  type: 'string',
+                },
+                {
+                  name: 'img',
+                  title: 'Imagen',
+                  type: 'image',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'uFind',
+      title: 'Sección lo que encontraras',
+      group: 'uFind',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de servicios',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'img',
+          title: 'Imagen de sección',
+          type: 'image',
+        },
+      ],
+    },
+    {
+      name: 'model',
+      title: 'Sección Modelo de oportunidades',
+      group: 'model',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'h3',
+          title: 'Subtitulo de sección',
+          type: 'string'
+        },
+        {
+          name: 'desc',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'img',
+          title: 'Imagen de sección',
+          type: 'image',
         },
       ],
     },

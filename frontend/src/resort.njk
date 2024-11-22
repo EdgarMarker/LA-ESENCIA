@@ -95,65 +95,56 @@ permalink: "/{{ page.fileSlug }}/"
 
 <section id="section__experiencias" class="fadeInOut">
   <div class="column__1">
-    <h2>
-      +15 experiencias para tu
-      <strong>escapada perfecta</strong>
-    </h2>
+    <div class="richTextH2">{{item.experience.h2 | safe}}</div>
+    <div class="inner__p">
+      <p>
+        {{item.experience.p}}
+      </p>
+    </div>
     <div class="accentDivider"></div>
   </div>
   <div class="column__1 listado__x3">
+    {% for item in item.experience.list %}
     <div class="experiencia">
-      <img src="/images/resorts/water_kids.svg" />
-      <h3>Water Kids</h3>
-      <ul role="list">
-        <li>Splash Pads</li>
-        <li>Toboganes</li>
-        <li>Chapoteaderos</li>
-      </ul>
+      <img src="{{item.img.url}}" />
+      <h3>{{item.h3}}</h3>
+      <p>
+        {{item.p}}
+      </p>
     </div>
-    <div class="experiencia">
-      <img src="/images/resorts/pabellones.svg" />
-      <h3>Pabellones</h3>
-      <ul role="list">
-        <li>Albercas</li>
-        <li>Grills</li>
-        <li>Camastros</li>
-      </ul>
-    </div>
-    <div class="experiencia">
-      <img src="/images/resorts/chill_spots.svg" />
-      <h3>Chill Spots</h3>
-      <ul role="list">
-        <li>Albercas</li>
-        <li>Lago</li>
-        <li>Wet Bar</li>
-      </ul>
-    </div>
-  </div>
+    {% endfor %}
 </section>
 
 
 <section id="section__actividades" class="fadeInOut">
   <div class="column__1">
-    <h2>Actividades <strong>exclusivas</strong></h2>
+    <div class="richTextH2">{{item.activity.h2 | safe}}</div>
     <div class="accentDivider"></div>
   </div>
   <div class="column__1">
     <div class="splide actividades" role="group">
       <div class="splide__track">
         <ul class="splide__list">
+          {% for item in item.activity.list %}
           <li class="splide__slide">
-            <img src="/images/resorts/actividad1.jpg" />
-            <h3>Pabellones</h3>
+              {% if item.img %}
+              <picture >
+                {% for format, images in item.img %}
+                  <source
+                    srcset="{{ images | srcset }}"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/{{ format }}"
+                  />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ item.img.altText }}"
+                />
+              </picture>
+              {% endif %}
+            <h3>{{item.title}}</h3>
           </li>
-          <li class="splide__slide">
-            <img src="/images/resorts/actividad2.jpg" />
-            <h3>Chill Spots</h3>
-          </li>
-          <li class="splide__slide">
-            <img src="/images/resorts/actividad3.jpg" />
-            <h3>Water Kids</h3>
-          </li>
+          {%endfor%}
         </ul>
       </div>
     </div>

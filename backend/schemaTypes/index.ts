@@ -5,8 +5,6 @@ import author from './author'
 import empresa from './empresa'
 import social from './social'
 import inicio from './inicio'
-import nosotros from './nosotros'
-import productos from './productos'
 import blog from './blog'
 import contact from './contact'
 import aviso from './aviso'
@@ -16,5 +14,6 @@ import experiencia from './experiencia'
 import ubicacion from './ubicacion'
 import resorts from './resorts'
 import socios from './socios'
+import gracias from './gracias'
 
-export const schemaTypes = [inicio, nosotros, productos, blog, contact, aviso, products, author, category, blockContent, social, empresa, post, postCategory, experiencia, ubicacion, resorts, socios]
+export const schemaTypes = [inicio, blog, contact, aviso, products, author, category, blockContent, social, empresa, post, postCategory, experiencia, ubicacion, resorts, socios, gracias]

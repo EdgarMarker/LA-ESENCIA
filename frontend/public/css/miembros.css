@@ -1,0 +1,392 @@
+#section__hero {
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0000006b;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .accentDivider {
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+    .flex__row {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex__column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .text__align__c {
+      text-align: center;
+    }
+    h1 {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+    }
+    h2,
+    h2 > strong {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+      font-size: var(--size-2xl);
+    }
+    .column__2__hero {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+    .btn__hero__container {
+      margin-top: 2em;
+      display: flex;
+      gap: 1px;
+      .btn:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+      .btn:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    .img__hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      video {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #section__happyPlace {
+    background: var(--bg-cream);
+    overflow: hidden;
+    padding: 5% 10% 8%;
+    &::before {
+      content: "";
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      bottom: -10%;
+      right: 0;
+      background-image: url(/images/textura_manuscrito.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .column__1:nth-child(2) {
+      max-width: 1600px;
+      align-self: center;
+    }
+    .happyPlace__richText {
+      width: 100%;
+      align-self: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      h2 {
+        width: 100%;
+        display: flex;
+        strong {
+          transform-origin: top center;
+          width: 100%;
+        }
+      }
+    }
+    .intro__imgWrapper {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+    }
+    .intro__imgInner {
+      width: 100%;
+      height: 100%;
+    }
+    .width__55{
+      align-self: center;
+    }
+    .column__1:nth-child(3){
+      max-width: 40%;
+      padding-top: 8%;
+    }
+  }
+
+  #section__privileges{
+    padding: 10%;
+    background: var(--bg-primary);
+    .column__1{
+        align-items: center;
+        h2, h3, li > p{
+            color: var(--color-white);
+            strong{
+                transform-origin: top center;
+                color: var(--color-accent);
+            }
+        }
+        h3{
+            margin-top: 2em;
+        }
+        .accentDivider{
+            background-color: var(--color-white);
+        }
+        li{
+          display: flex;
+          align-items: center;
+          gap: 5%;
+          img{
+            width: 20%;
+            height: 100%;
+            object-fit: contain;
+          }
+          p{
+            width: 80%;
+            height: fit-content;
+          }
+        }
+    }
+  }
+
+  #section__experiencias{
+    padding: 8% 10%;
+    background-color: #ECEBEA;
+    .column__1:first-child{
+      align-items: center;
+      margin-bottom: 5%;
+      .accentDivider{
+        background-color: var(--color-accent);
+      }
+      h2{
+        text-align: center;
+        strong{
+          transform-origin: top center;
+        }
+      }
+      .inner__p{
+        margin-top: 3%;
+        max-width: 50%;
+      }
+    }
+    .column__1:last-child{
+      .experiencia{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        img{
+          width: 100px;
+          height: auto;
+          margin-bottom: 30px;
+        }
+        h3{
+          text-align: center;
+        }
+        p{
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+  #section__banner{
+    padding: 10%;
+    overflow: hidden;
+    &::before{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 150%;
+      top: -25%;
+      left: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    img{
+      position: absolute;
+      width: 100%;
+      height: 150%;
+      top: -25%;
+      left: 0;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .column__1{
+      position: relative;
+      z-index: 2;
+      max-width: 40%;
+      align-items: center;
+      h3{
+        color: var(--color-white);
+        text-align: center;
+      }
+    }
+  }
+
+  #section__recentArticles{
+    background: url('../assets/img/bg_cream.jpg');
+    h2{
+      text-align: center;
+      strong{
+        transform-origin: top center;
+        width: 100%;
+      }
+    }
+    .recentRichText{
+        max-width: 500px;
+        text-align: center;
+    }
+    .recentblog__wrapper{
+      margin-top: 3%;
+    }
+    .splide{
+      margin-top: 2em;
+      -webkit-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      -moz-box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      box-shadow: 3px 3px 12px 0px rgba(0,0,0,0.25);
+      border: 20px solid white;
+    }
+    .splide, .splide__track, .splide__list{
+      background-color: white;
+    }
+    .btn{
+      margin-top: 2.5%;
+    }
+    .splide__pagination__page.is-active{
+      background: var(--color-accent) !important;
+    }
+    .splide__arrows--ttb .splide__arrow{
+      left: 96% !important;
+    }
+    .splide__pagination--ttb{
+      left: 92% !important;
+    }
+  }
+
+  #section__decidirHoy{
+    .column__1:first-child{
+      padding: 10%;
+      align-items: center;
+      position: relative;
+      margin-top: 5%;
+      h2 > strong{
+        transform-origin: top center;
+      }
+    }
+    .column__1:last-child{
+      position: relative;
+
+    }
+  }
+
+  #section__precios{
+    padding: 10%;
+    background: var(--bg-primary);
+    &::before{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 150px;
+      bottom: -75px;
+      left: 0;
+      background-image: url(/images/greca_dorada.svg);
+      background-repeat: repeat-x;
+      background-size: contain;
+      background-position: center;
+      z-index: 1;
+    }
+    .col__left{
+      padding-right: 5%;
+    }
+    .richTextH2{
+      h2{
+        color: var(--color-white);
+        display: flex;
+      }
+    }
+    h3, h2 > strong{
+      color: var(--color-accent);
+    }
+    .accentDivider{
+      background-color: var(--color-accent);
+    }
+    .precios__number{
+      font-size: 5vw;
+      font-weight: bold;
+      color: var(--color-white);
+    }
+    p, span{
+      color: var(--color-white);
+    }
+    span{
+      position: relative;
+      left: calc(100% - 155.19px);
+      justify-self: flex-end;
+    }
+  }
+
+  #section__discoverBenefits{
+    height: 100vh;
+    position: relative;
+    .blackDisplayOverlay{
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .accentDivider{
+      background-color: var(--color-accent) ;
+    }
+    .column__1{
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100px;
+        height: auto;
+        margin-bottom: 50px;
+      }
+      h2{
+        color: var(--color-white);
+        strong{
+          transform-origin: top center;
+        }
+      }
+      p{
+        text-align: center;
+        color: var(--color-white)
+      }
+    }
+    
+    picture{
+      z-index: -1;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+     }
+    }
+  }  

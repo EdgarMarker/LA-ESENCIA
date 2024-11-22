@@ -42,6 +42,55 @@ module.exports = async function() {
       "alt": asset->{altText}
     }
    },
+   experience{
+    h2,
+    desc,
+    list[]{
+      h3,
+      p,
+      img{
+        "media": asset -> {url},
+        "alt": asset -> {altText}
+      }
+    }
+   },
+   banner{
+    title,
+    img{
+     "media": asset->{url},
+     "alt": asset->{altText}
+    }
+   },
+   income{
+    h2,
+    desc,
+    list[]{
+      title,
+      img{
+        "media": asset -> {url},
+        "alt": asset -> {altText}
+      }
+    }
+   },
+   uFind{
+    h2,
+    list[]{
+      name
+    },
+    img{
+    "media": asset->{url},
+    "alt": asset->{altText}
+    }
+   },
+   model{
+    h2,
+    h3,
+    desc,
+    img{
+    "media": asset->{url},
+    "alt": asset->{altText}
+    }
+   }
   }`);
 
   await Promise.all(data.map(processContent)); // Procesa todo el contenido en cada objeto

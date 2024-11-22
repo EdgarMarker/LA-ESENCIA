@@ -33,7 +33,7 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="col__right width__55 img__hero">
         <video width="320" height="240" muted loop autoplay>
           <source
-            src="/images/inicio/esencia index hero.mp4"
+            src="/images/inicio/esencia_index_hero.mp4"
             type="video/mp4"
           />
           Tu navegador no soporta este video
@@ -131,99 +131,79 @@ permalink: "/{{ page.fileSlug }}/"
 
   <section id="section__experiencias" class="fadeInOut">
     <div class="column__1">
-      <h2>
-        Tu propiedad en un
-        <strong>icono turístico</strong>
-      </h2>
+      <div class="richTextH2">{{item.experience.h2 | safe}}</div>
       <div class="inner__p">
         <p>
-          Ya sea que vivas la experiencia mexicana, alquiles tu propiedad
-          para los turistas que busquen vivir una autentica aventura o que
-          vendas en el momento indicado, la esencia te brinda una gran
-          variedad de oportunidades para que tu inversión crezca.
+          {{item.experience.p}}
         </p>
       </div>
       <div class="accentDivider"></div>
     </div>
     <div class="column__1 listado__x3">
+      {% for item in item.experience.list %}
       <div class="experiencia">
-        <img src="/images/resorts/water_kids.svg" />
-        <h3>Vive y disfruta</h3>
-        <p>Convierte tu propiedad
-          en hogar que celebra
-          la cultura y el confort.</p>
+        <img src="{{item.img.url}}" />
+        <h3>{{item.h3}}</h3>
+        <p>
+          {{item.p}}
+        </p>
       </div>
-      <div class="experiencia">
-        <img src="/images/resorts/pabellones.svg" />
-        <h3>Renta y crece</h3>
-        <p>Genera ingresos consistentes
-          alquilando en un mercado
-          turístico perfecto.</p>
-      </div>
-      <div class="experiencia">
-        <img src="/images/resorts/chill_spots.svg" />
-        <h3>Vende tu propiedad</h3>
-        <p>Aprovecha el valor en alza y
-          capitaliza tu propiedad cuando
-          las condiciones sean ideales.</p>
-      </div>
-    </div>
+      {% endfor %}
   </section>
 
 
   <section id="section__banner">
-    <img src="/images/resorts/actividad2.jpg" data-speed="0.9"/>
+    <picture>
+      {% for format, images in item.banner.img %}
+      <source
+      srcset="{{ images | srcset }}"
+      sizes="(max-width: 1920px) 100vw, 1920px"
+      type="image/{{ format }}"
+      />
+      {% endfor %}
+      <img
+      src="{{ item.img.webp[0].url }}"
+      alt="{{ item.altText }}"
+      />
+    </picture>
     <div class="column__1">
       <h3>
-        Encárgarte de generar ganancias, nosotros
-        nos encargamos de todo lo demás.
+        {{item.banner.title}}
       </h3>
-      <a class="btn">
-        Conoce todas las posibilidades
-      </a>
+      <a class="btn"> Conoce todas las posibilidades </a>
     </div>
   </section>
 
 
   <section id="section__inversion" class="fadeInOut">
     <div class="column__1">
-      <h2>
-        Obtener ingresos con tu inversión
-        <strong>nunca fue tan fácil</strong>
-      </h2>
+      <div class="richTextH2">{{item.income.h2 | safe}}</div>
     </div>
     <div class="column__2">
       <div class="col__left">
-        <p>
-          Gracias a los beneficios exclusivos para
-          socios fundadores, podrás obtener ingresos
-          seguros y constantes.
-        </p>
-        <p>
-          Nos encargaremos de todo, asegurando el
-          flujo de turistas para maximizar la
-          rentabilidad de tu propiedad.
-        </p>
+        <div>{{item.income.desc | safe}}</div>
         <a class="btn">Detalles aquí</a>
       </div>
       <div class="col__right">
         <div class="listado__operaciones">
+          {% for item in item.income.list %}
           <div class="operacion">
-            <img src="/images/inicio/600x400.png" />
-            <h3>Operadora turística</h3>
+            <picture>
+              {% for format, images in item.img %}
+              <source
+              srcset="{{ images | srcset }}"
+              sizes="(max-width: 1920px) 100vw, 1920px"
+              type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+              src="{{ item.img.webp[0].url }}"
+              alt="{{ item.img.altText }}"
+              />
+            </picture>
+            <h3>{{item.title}}</h3>
           </div>
-          <div class="operacion">
-            <img src="/images/inicio/600x400.png" />
-            <h3>Gestor de rentas vacacionales</h3>
-          </div>
-          <div class="operacion">
-            <img src="/images/inicio/600x400.png" />
-            <h3>Administración inmobiliaria</h3>
-          </div>
-          <div class="operacion">
-            <img src="/images/inicio/600x400.png" />
-            <h3>Programa fractional</h3>
-          </div>
+          {%endfor%}
         </div>
       </div>
     </div>
@@ -233,24 +213,27 @@ permalink: "/{{ page.fileSlug }}/"
   <section id="section__encontraras" class="fadeInOut">
     <div class="column__2">
       <div class="col__left">
-        <h2>
-          Lo que
-          <strong>
-            encontrarás
-          </strong>
-        </h2>
+        <div class="richTextH2">{{item.uFind.h2 | safe}}</div>
         <ul role="list">
-          <li>Piscina</li>
-          <li>Wet bar</li>
-          <li>Caminos</li>
-          <li>Caseta de vigilancia</li>
-          <li>Terrazas para picnic</li>
-          <li>Cenote</li>
-          <li>Lago artificial</li>
+          {% for item in item.uFind.list %}
+          <li>{{item.name}}</li>
+          {%endfor%}
         </ul>
       </div>
       <div class="col__right">
-        <img src="/images/inicio/600x400.png" />
+        <picture>
+          {% for format, images in item.uFind.img %}
+          <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+          src="{{ item.uFind.img.webp[0].url }}"
+          alt="{{ item.uFind.img.altText }}"
+          />
+        </picture>
       </div>
     </div>
   </section>
@@ -259,7 +242,19 @@ permalink: "/{{ page.fileSlug }}/"
   <section id="section__oportunidades" class="fadeInOut">
     <div class="column__2">
       <div class="col__left">
-        <img src="/images/inicio/600x400.png" />
+        <picture>
+          {% for format, images in item.model.img %}
+          <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          type="image/{{ format }}"
+          />
+          {% endfor %}
+          <img
+          src="{{ item.model.img.webp[0].url }}"
+          alt="{{ item.model.img.altText }}"
+          />
+        </picture>
         <div class="diamondFigure">
           <div class="diamondImg"></div>
           <div class="diamondImg"></div>
@@ -267,18 +262,13 @@ permalink: "/{{ page.fileSlug }}/"
         </div>
       </div>
       <div class="col__right">
-        <h2>
-          Un modelo que crea
-          <strong>oportunidades</strong>
-        </h2>
+        <div class="richTextH2">{{item.model.h2 | safe}}</div>
         <div class="accentDivider"></div>
         <h3 class="post__title">
-          Y desarrollo local en armonía con el entorno
+          {{item.model.h3}}
         </h3>
         <p>
-          Gracias a la cercanía con Valladolid, La Esencia
-          ayudara a generar ingresos para los negocios
-          locales gracias al flujo constante de viajeros. 
+          {{item.model.desc | safe}}
         </p>
       </div>
     </div>

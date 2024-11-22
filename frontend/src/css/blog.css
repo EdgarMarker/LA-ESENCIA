@@ -1,0 +1,78 @@
+#section__hero {
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    height: 70vh;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0000006b;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .accentDivider {
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+    .flex__row {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex__column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .text__align__c {
+      text-align: center;
+    }
+    h1 {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+    }
+    h2,
+    h2 > strong {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+      font-size: var(--size-2xl);
+    }
+    .column__2__hero {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+    .btn__hero__container {
+      margin-top: 2em;
+      display: flex;
+      gap: 1px;
+      .btn:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+      .btn:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    .img__hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      video {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }

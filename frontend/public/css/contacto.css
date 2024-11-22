@@ -1,77 +1,148 @@
-#section__hero{
-    background-color: var(--color-secondary);
-    padding-top: calc(60px + 5%);
-    h1{
+#section__hero {
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0000006b;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .accentDivider {
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+    .flex__row {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex__column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    .text__align__c {
+      text-align: center;
+    }
+    h1 {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+    }
+    h2,
+    h2 > strong {
+      color: var(--color-white);
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+      font-size: var(--size-2xl);
+    }
+    .column__2__hero {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+    .btn__hero__container {
+      margin-top: 2em;
+      display: flex;
+      gap: 1px;
+      .btn:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+      .btn:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    .img__hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      video {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+#section__intro {
+    padding: 10%;
+    padding-top: 5%;
+    .column__2{
+        gap: 5%;
+    }
+    .intro__imgWrapper{
+        position: relative;
+    }
+    .richTextH2{
+        margin-top: 2em;
+        width: 100% !important;
+        text-align: center;
+        h2 > strong{
+            width: 100%;
+            transform-origin: top center;
+        }
+    }
+    .accentDivider{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .max500{ 
+        max-width: 500px;
+        text-align: center;
+        align-self: center;
+    }
+}
+
+#section__form{
+    padding: 10%;
+    .column__1{
+      width: 100%;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      h2{
+        color: var(--color-white);
+      }
+      h2 > strong{
+        width: 100%;
+        transform-origin: top center;
         color: var(--color-accent);
+      }
+      .form{
+        margin-top: 2em;
+        max-width: 1000px;
+        label{
+          color: var(--color-white);
+        }
+      }
     }
-    h2{
-        color: var(--color-white);
-    }
-    h2 strong{
-        color: var(--color-primary-light);
-        font-weight: unset;
-    }
-    p{
-        color: var(--color-white);
-        font-size: var(--size-md);
-    }
+      picture{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
 }
-
-#section__intro .col__left{
-    padding-right: 15%;
-}
-
-form{
-    width: 100%;
-    padding: 5%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    column-gap: 30px;
-    row-gap: 20px;
-    grid-auto-rows: auto;
-}
-
-form > div:nth-child(5){
-    grid-column: 2 span;
-}
-
-label{
-    margin-bottom: 5px;
-    font-size: var(--size-sm);
-}
-
-input{
-    outline: none;
-    border: 1px solid rgba(0,0,0,0.2);
-    font-size: var(--size-sm);
-    padding: 8px 10px;
-    width: 100%;
-    background-color: #fff;
-}
-
-textarea{
-    outline: none;
-    border: 1px solid rgba(0,0,0,0.2);
-    font-size: 18px;
-    padding: 8px 10px;
-    width: 100%;
-    background-color: #fff;
-}
-
-input:focus, textarea:focus{
-    border-color: var(--color-primary-light);
-}
-
-form button{
-    grid-column: 2 span;
-    margin: 0 auto;
-}
-
-
-
-
-
 
 /*  Tableta  */
 @media only screen and (max-width: 1024px) {

@@ -1,0 +1,52 @@
+---
+eleventyComputed:
+  title: "{{ blog[0].titleseo }}"
+  description: "{{ blog[0].descseo }}"
+  keywords: "{{ blog[0].keyseo }}"
+layout: "base.njk"
+#gsap: "blog.js"
+permalink: "/{{ page.fileSlug }}/"
+---
+
+<div
+  data-barba="container"
+  data-barba-namespace="blog"
+  data-css="blog"
+  data-js="blog"
+>
+  {% for item in blog%}
+  <section id="section__hero" class="pad__lr__5 pad__tb__5">
+    {% include 'header.njk' %}
+    <div class="column__2 column__2__hero flex__row flex__justify__c">
+      <div
+        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      >
+        <h1>{{ item.heroH1 }}</h1>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
+      </div>
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
+          <source
+            src="/images/inicio/esencia_index_hero.mp4"
+            type="video/mp4"
+          />
+          Tu navegador no soporta este video
+        </video>
+      </div>
+      <div class="blackDisplayOverlayGradient"></div>
+    </div>
+  </section>
+
+  <section id="section__articles">
+    <div class="column__1">
+        <ul>
+            <li>
+                
+            </li>
+        </ul>
+    </div>
+  </section>
+
+  {%endfor%}
+</div>
