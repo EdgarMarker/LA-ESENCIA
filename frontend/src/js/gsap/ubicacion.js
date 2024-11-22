@@ -71,4 +71,17 @@ function gsapSoloAnimations() {
         }
     })
 
+     // Imagen desfazada se mueve hacia la derecha
+  const cutRight = document.querySelector(".dual__img__wrapper picture:first-child");
+
+  gsap.to(cutRight, {
+    x: "-20%",
+    scrollTrigger: {
+      trigger:"#section__intro",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    }
+  })
+
 }

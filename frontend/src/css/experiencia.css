@@ -315,6 +315,12 @@
   #carousel-2{
     display: none;
   }
+  .splide__arrow--prev{
+    left: -8%  !important;
+  }
+  .splide__arrow--next{
+    right: 8%  !important;
+  }
 }
 
 #section__placeToBe{
@@ -449,14 +455,23 @@
     #carousel-3{
       display: none;
     }
+    .splide__arrow--next, .splide__arrow--prev{
+      top: 100%;
+    }
+    .splide__arrow--prev{
+      left: 0 !important;
+    }
+    .splide__arrow--next{
+      right: 0 !important;
+    }
     #carousel-2{
       display: block;
     }
   }
   #section__traditions{
     .traditionsImg1{
-      top: 80%;
-      left: 0%;
+      top: 55%;
+      left: 5%;
       transform: translateY(-50%);
       width: 15vw;
       min-width: 100px;

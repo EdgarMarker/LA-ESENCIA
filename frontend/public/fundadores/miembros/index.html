@@ -127,6 +127,7 @@
             transform: translateX(0px);
             z-index: 60;
             opacity: 1;
+            top: 0;
         }
     }
 </style>
@@ -163,6 +164,7 @@
         #isoType {
             transform: translateX(0px) !important;
             opacity: 1;
+            top: 0;
         }
     }
 </style>
@@ -183,7 +185,7 @@
     </div>
     <div class="nav">
       
-      <ul role="list" class="nav__ul nav__ul__left">
+      <!--<ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="" >
@@ -203,7 +205,7 @@
             </a>
         </li>
     
-</ul>
+</ul>-->
 
       <a id="logo__main" href="/">
         
@@ -212,7 +214,7 @@
         
       </a>
       
-        <ul role="list" class="nav__ul nav__ul__right">
+        <!--<ul role="list" class="nav__ul nav__ul__right">
     
         <li>
             <a href="/ubicacion/" class="" >
@@ -238,7 +240,7 @@
             </a>
         </li>
     
-</ul>
+</ul>-->
       
     </div>
     <div class="nav__secondary">
@@ -326,6 +328,7 @@
   .nav__secondary{
     justify-content: flex-start;
     align-items: center;
+    padding-left: 5%;
     width: 100%;
     height: 60px;
     background: var(--bg-primary);
@@ -342,11 +345,6 @@
   }
 
   @media (max-width: 1024px) {
-    header {
-      background: var(--bg-primary);
-      height: 60px;
-    }
-
     .nav,
     .mask {
       display: none !important;
@@ -381,7 +379,7 @@
     </div>
   </section>
 
-  <section id="section__happyPlace">
+  <section id="section__happyPlace" class="fadeInOut">
     <div class="column__1 happyPlace__richText">
       <div class="richTextH2"><h2>Beneficios exclusivos para miembros</h2><h2><strong>fundadores</strong></h2></div>
       <div class="accentDivider"></div>
@@ -524,7 +522,7 @@ gestionar tu propiedad será muy sencillo.</p></div>
   </section>
 
   <section id="section__banner">
-    <picture>
+    <picture >
       
       <source
       srcset="/images/UT8sE-GtRS-300.jpeg 300w, /images/UT8sE-GtRS-600.jpeg 600w, /images/UT8sE-GtRS-900.jpeg 900w"
@@ -539,11 +537,12 @@ gestionar tu propiedad será muy sencillo.</p></div>
       />
       
       <img
+      data-speed="1.1"
       src=""
       alt=""
       />
     </picture>
-    <div class="column__1">
+    <div class="column__1 fadeInOut">
       <h3>
         Encárgarte de generar ganancias, nosotros nos encargamos de todo lo demás.
       </h3>
@@ -730,9 +729,7 @@ asegurando una alta ocupación.</p></p>
     <div class="column__1">
       <div class="richTextH2"><h2>El poder de</h2><h2><strong>decidir hoy</strong></h2></div>
       <div class="accentDivider"></div>
-      <div>
         <p>Invertir ahora es más que una decisión financiera, es una afirmación de tu visión. Asegura un futuro con una inversión bien fundamentada, que te permita disfrutar de cada momento con la tranquilidad de saber que estás construyendo algo duradero.</p>
-      </div>
     </div>
     <div class="column__1">
       <picture>
@@ -916,7 +913,7 @@ asegurando una alta ocupación.</p></p>
                 
     
             
-                <a href="/0">Aviso de privacidad</a>
+                <a href="/aviso-de-privacidad">Aviso de privacidad</a>
             
         </div>
     </div>

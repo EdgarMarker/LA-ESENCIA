@@ -2,7 +2,7 @@ const client = require("../utils/sanityClient");
 const processContent = require("../utils/contentProcessor");
 
 module.exports = async function () {
-  const data = await client.fetch(`*[_type == "contact"]{
+  const data = await client.fetch(`*[_type == "contacto"]{
     titleseo,
     descseo,
     keyseo,

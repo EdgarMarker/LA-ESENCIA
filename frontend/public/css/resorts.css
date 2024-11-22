@@ -338,10 +338,11 @@
       background: var(--color-accent) !important;
     }
     .splide__arrows--ttb .splide__arrow{
-      left: 96% !important;
+      left: calc(100% - 70px);
+      transform: rotate(90deg) translateY(-50%);
     }
     .splide__pagination--ttb{
-      left: 92% !important;
+      left: calc(100% - 30px);
     }
   }
 
@@ -366,7 +367,7 @@
       h2{
         color: var(--color-white);
         strong{
-          transform-origin: top center;
+          transform-origin: center center;
         }
       }
       p{

@@ -535,11 +535,17 @@
   .splide__pagination__page.is-active{
     background: var(--color-accent) !important;
   }
+  .splide__arrow{
+    svg{
+      opacity: 1 !important;
+    }
+  }
   .splide__arrows--ttb .splide__arrow{
-    left: 96% !important;
+    left: calc(100% - 70px);
+    transform: rotate(90deg) translateY(-50%);
   }
   .splide__pagination--ttb{
-    left: 92% !important;
+    left: calc(100% - 30px);
   }
 }
 

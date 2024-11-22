@@ -92,7 +92,7 @@ export default {
         },
         {
           name: 'img1Left',
-          title: 'Imagen',
+          title: 'Imagen fondo',
           type: 'image',
           options: {
             hotspot: true,
@@ -120,7 +120,7 @@ export default {
         },
         {
           name: 'img1Right',
-          title: 'Imagen',
+          title: 'Imagen fondo',
           type: 'image',
           options: {
             hotspot: true,

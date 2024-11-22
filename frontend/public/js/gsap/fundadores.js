@@ -64,15 +64,39 @@ function gsapSoloAnimations() {
       "-=0.2"
     );
 
-    gsap.to(".greca", {
-      x: 0,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: ".greca",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-      }
-    })
+  gsap.to(".greca", {
+    x: 0,
+    ease: "linear",
+    scrollTrigger: {
+      trigger: ".greca",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
 
+  const leftImg = document.querySelector("#discoverPueblitoUl li:first-child");
+  const rightImg = document.querySelector("#discoverPueblitoUl li:last-child");
+
+  gsap.to(leftImg, {
+    y: "15%",
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: "#section__discoverPueblito",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+
+  gsap.to(rightImg, {
+    y: "-15%",
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: "#section__discoverPueblito",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
 }

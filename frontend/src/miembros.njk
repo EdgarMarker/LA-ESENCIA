@@ -36,7 +36,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
     </div>
   </section>
 
-  <section id="section__happyPlace">
+  <section id="section__happyPlace" class="fadeInOut">
     <div class="column__1 happyPlace__richText">
       <div class="richTextH2">{{ item.introH2 | safe }}</div>
       <div class="accentDivider"></div>
@@ -125,7 +125,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
   </section>
 
   <section id="section__banner">
-    <picture>
+    <picture >
       {% for format, images in item.banner.img %}
       <source
       srcset="{{ images | srcset }}"
@@ -134,11 +134,12 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
       />
       {% endfor %}
       <img
+      data-speed="1.1"
       src="{{ item.img.webp[0].url }}"
       alt="{{ item.altText }}"
       />
     </picture>
-    <div class="column__1">
+    <div class="column__1 fadeInOut">
       <h3>
         {{item.banner.title}}
       </h3>
@@ -206,9 +207,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
     <div class="column__1">
       <div class="richTextH2">{{item.decidir.h2 | safe}}</div>
       <div class="accentDivider"></div>
-      <div>
         {{item.decidir.desc | safe}}
-      </div>
     </div>
     <div class="column__1">
       <picture>

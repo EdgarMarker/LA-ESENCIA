@@ -276,10 +276,11 @@
       background: var(--color-accent) !important;
     }
     .splide__arrows--ttb .splide__arrow{
-      left: 96% !important;
+      left: calc(100% - 70px);
+      transform: rotate(90deg) translateY(-50%);
     }
     .splide__pagination--ttb{
-      left: 92% !important;
+      left: calc(100% - 30px);
     }
   }
 
@@ -289,13 +290,16 @@
       align-items: center;
       position: relative;
       margin-top: 5%;
+      p{
+        max-width: 50%;
+        text-align: center;
+      }
       h2 > strong{
         transform-origin: top center;
       }
     }
     .column__1:last-child{
       position: relative;
-
     }
   }
 
@@ -318,6 +322,9 @@
     }
     .col__left{
       padding-right: 5%;
+    }
+    .col__right{
+      width: fit-content;
     }
     .richTextH2{
       h2{

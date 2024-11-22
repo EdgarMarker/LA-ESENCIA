@@ -339,9 +339,11 @@
 
   .splide__arrow--prev{ 
     background-image: url(/images/prev_outline.svg);
+    left: -8%;
   }
   .splide__arrow--next{
     background-image: url(/images/next_outline.svg);
+    right: -8%;
   }
   
   #carousel-2{
@@ -370,6 +372,15 @@
     }
     #carousel-2{
       display: block;
+    }
+    .splide__arrow--prev, .splide__arrow--next{ 
+      top: 100%;
+    }
+    .splide__arrow--next{
+      right: 0;
+    }
+    .splide__arrow--prev{
+      left: 0;
     }
   }
 }

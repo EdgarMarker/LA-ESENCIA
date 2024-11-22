@@ -127,6 +127,7 @@
             transform: translateX(0px);
             z-index: 60;
             opacity: 1;
+            top: 0;
         }
     }
 </style>
@@ -163,6 +164,7 @@
         #isoType {
             transform: translateX(0px) !important;
             opacity: 1;
+            top: 0;
         }
     }
 </style>
@@ -189,7 +191,7 @@
     </div>
     <div class="nav">
       
-      <ul role="list" class="nav__ul nav__ul__left">
+      <!--<ul role="list" class="nav__ul nav__ul__left">
     
         <li>
             <a href="/" class="" >
@@ -209,7 +211,7 @@
             </a>
         </li>
     
-</ul>
+</ul>-->
 
       <a id="logo__main" href="/">
         
@@ -218,7 +220,7 @@
         
       </a>
       
-        <ul role="list" class="nav__ul nav__ul__right">
+        <!--<ul role="list" class="nav__ul nav__ul__right">
     
         <li>
             <a href="/ubicacion/" class="" >
@@ -244,7 +246,7 @@
             </a>
         </li>
     
-</ul>
+</ul>-->
       
     </div>
     <div class="nav__secondary">
@@ -332,6 +334,7 @@
   .nav__secondary{
     justify-content: flex-start;
     align-items: center;
+    padding-left: 5%;
     width: 100%;
     height: 60px;
     background: var(--bg-primary);
@@ -348,11 +351,6 @@
   }
 
   @media (max-width: 1024px) {
-    header {
-      background: var(--bg-primary);
-      height: 60px;
-    }
-
     .nav,
     .mask {
       display: none !important;
@@ -553,11 +551,12 @@
       />
       
       <img
+      data-speed="1.1"
       src=""
       alt=""
       />
     </picture>
-    <div class="column__1">
+    <div class="column__1 fadeInOut">
       <h3>
         Encárgarte de generar ganancias, nosotros nos encargamos de todo lo demás.
       </h3>
@@ -886,7 +885,7 @@
                 
     
             
-                <a href="/0">Aviso de privacidad</a>
+                <a href="/aviso-de-privacidad">Aviso de privacidad</a>
             
         </div>
     </div>

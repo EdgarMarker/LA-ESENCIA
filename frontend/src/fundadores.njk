@@ -162,11 +162,12 @@ permalink: "/{{ page.fileSlug }}/"
       />
       {% endfor %}
       <img
+      data-speed="1.1"
       src="{{ item.img.webp[0].url }}"
       alt="{{ item.altText }}"
       />
     </picture>
-    <div class="column__1">
+    <div class="column__1 fadeInOut">
       <h3>
         {{item.banner.title}}
       </h3>
