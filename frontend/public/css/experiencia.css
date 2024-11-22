@@ -166,6 +166,11 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      h2{
+        strong{
+          transform: scale(1);
+        }
+      }
       p{
         max-width: 80%;
       }
@@ -188,7 +193,7 @@
           }
           &:after{
             position: absolute;
-            right: -20px;
+            right: -18px;
             transform: rotate(45deg);
             content: "";
             width: 24px;
