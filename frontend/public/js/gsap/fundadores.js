@@ -78,25 +78,29 @@ function gsapSoloAnimations() {
   const leftImg = document.querySelector("#discoverPueblitoUl li:first-child");
   const rightImg = document.querySelector("#discoverPueblitoUl li:last-child");
 
-  gsap.to(leftImg, {
-    y: "15%",
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: "#section__discoverPueblito",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-    },
-  });
+  const mm = gsap.matchMedia();
+  mm.add("(min-width: 1024px)", () => { 
 
-  gsap.to(rightImg, {
-    y: "-15%",
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: "#section__discoverPueblito",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-    },
-  });
+    gsap.to(leftImg, {
+      y: "15%",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "#section__discoverPueblito",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      }
+    })
+    
+    gsap.to(rightImg, {
+      y: "-15%",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "#section__discoverPueblito",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      }
+    })
+  })
 }

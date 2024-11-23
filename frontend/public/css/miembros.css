@@ -126,7 +126,7 @@
       align-self: center;
     }
     .column__1:nth-child(3){
-      max-width: 40%;
+      max-width: 50%;
       padding-top: 8%;
     }
   }
@@ -306,6 +306,7 @@
   #section__precios{
     padding: 10%;
     background: var(--bg-primary);
+    min-height: 55vh;
     &::before{
       content: "";
       position: absolute;
@@ -397,3 +398,13 @@
      }
     }
   }  
+
+  @media screen and (max-width: 1024px) {
+    #section__banner{
+      .column__1{
+        .btn{
+          text-align: center;
+        }
+      }
+    }
+  }

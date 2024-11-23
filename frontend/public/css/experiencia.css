@@ -493,3 +493,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  #section__placeToBe{
+    height: 50vh;
+  }
+  #section__traditions{
+    .traditionsImg1{
+      top: 65%;
+      left: 2.5%;
+    }
+  }
+}

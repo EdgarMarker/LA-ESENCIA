@@ -541,8 +541,7 @@
     }
   }
   .splide__arrows--ttb .splide__arrow{
-    left: calc(100% - 70px);
-    transform: rotate(90deg) translateY(-50%);
+    left: calc(100% - 15px);
   }
   .splide__pagination--ttb{
     left: calc(100% - 30px);
@@ -635,6 +634,11 @@
       }
     }
   }
+  #section__intro{
+    picture:first-child {
+      height: 80%;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -650,7 +654,7 @@
     }
   }
   #section__intro{
-    padding: 0%;
+    padding: 5%;
     padding-top: 10%;
     .col__left{
       padding-right: 0;
@@ -683,7 +687,6 @@
   #carousel-1, #carousel-2{
     padding: 0 !important;
   }
-
   #section__location {
     .column__1{
       .map__wrapper{

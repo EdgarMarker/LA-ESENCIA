@@ -320,6 +320,7 @@
     }
     .recentblog__wrapper{
       margin-top: 3%;
+      align-items: center;
     }
     .splide{
       margin-top: 2em;
@@ -403,4 +404,14 @@
     #section__recentArticles{
       padding: 10% 5%;
     }
+    #section__happyPlace{
+      .column__1:nth-child(3) {
+        max-width: 100%;
+    }
+    }
   }
+@media (max-width: 768px) {
+  #section__actividades{
+    overflow: inherit;
+  }
+}
