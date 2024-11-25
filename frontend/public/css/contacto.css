@@ -145,19 +145,52 @@
       }
 }
 
+
+
+
+
+
+
 /*  Tableta  */
 @media only screen and (max-width: 1024px) {
 
-    #section__intro .col__left{
-        padding-right: 0%;
+  #section__hero{
+    height: 50vh;
+    h2{
+      font-size: var(--size-lg);
     }
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+      
+    }
+  }
 
-    form{
-        padding: 0%;
-        .col__left{
-          padding: 0;
-        }
+  #section__intro{
+    padding: 10% 5%;
+    .column__2{
+      .col__left{
+        padding-right: 0%;
+        padding-bottom: 10%;
+      }
+      .col__right{
+        padding-left: 0%;
+      }
     }
+  } 
+
+  #section__form {
+    padding: 10% 5%;
+  }
+
+  form{
+      padding: 0%;
+      .col__left{
+        padding: 0;
+      }
+  }
 
 }
 

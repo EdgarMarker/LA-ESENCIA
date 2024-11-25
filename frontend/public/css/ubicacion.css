@@ -364,7 +364,108 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
+
+  #section__hero{
+    height: 50vh;
+    h2{
+      font-size: var(--size-xl);
+    }
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+      
+    }
+  }
+
+  #section__intro{
+    padding: 10% 0%;
+    padding-top: 10%;
+    .column__2{
+      flex-direction: column-reverse;
+      .col__left{
+        padding: 0% 5%;
+        .diamondFigure{
+          right: calc(5% - 15px);
+        }
+        
+      }
+      .col__right{
+        padding-bottom: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
+        picture:last-child{
+          img{
+            position: absolute;
+          }
+        }
+        h2{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #section__haveAll{
+    padding: 10% 5%;
+    .column__2{
+      flex-direction: column;
+      .col__left{
+        width: 100%;
+        padding-right: 0px;
+      }
+      .col__right{
+        padding-top: 10%;
+        width: 100%;
+      }
+    }
+  }
+
+  #section__discoverBenefits{
+    height: 50vh;
+    .column__1{
+      h2{
+        font-size: var(--size-md);
+      }
+      .sello__wrapper{
+        img{
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  #section__map{
+    padding: calc(10% + 50px) 5% 0%;
+    &::before{
+      height: 100px;
+      top: -50px;
+    }
+    .column__2{
+      flex-direction: column;
+      .col__left{
+        width: 100%;
+        padding-right: 0px;
+        padding-bottom: 10%;
+      }
+      .col__right{
+        width: 100%;
+      }
+    }
+  }
+
   #section__adventureCarousel{
     padding: 10% 5%;
     #carousel-3{
@@ -383,4 +484,14 @@
       left: 0;
     }
   }
+
+  #section__gmap {
+    .column__1 {
+      #map {
+        height: 50vh;
+        width: 100%;
+      }
+    }
+  }
+
 }

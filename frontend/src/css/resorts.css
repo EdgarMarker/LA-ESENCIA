@@ -391,27 +391,163 @@
      }
     }
   }
+
+  #actividades{
+    display: block;
+  }
+  #actividades__m{
+    display: none;
+  }
+
+
+
+
+
+
+
+
   
-  @media (max-width: 1024px) {
-    #section__placeToBe {
-        ul, li{
-          gap: 10px;
-          picture{
-            border-radius:  5px;
-          }
-        }
+@media (max-width: 1024px) {
+
+  #section__hero{
+    height: 50vh;
+    h2{
+      font-size: var(--size-xl);
     }
-    #section__recentArticles{
-      padding: 10% 5%;
-    }
-    #section__happyPlace{
-      .column__1:nth-child(3) {
-        max-width: 100%;
-    }
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+      
     }
   }
+
+  #section__happyPlace{
+    padding: 10% 5%;
+  }
+
+  #section__experiencias {
+    padding: 10% 5%;
+    .column__1:last-child {
+      .experiencia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        p{
+          font-size: var(--size-sm);
+        }
+        img {
+          width: 80px;
+          height: auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  #section__actividades {
+    padding: 8% 5% calc(10% + 50px);
+    h2{
+      strong{
+        position: relative;
+        bottom: 5px;
+      }
+    }
+    .column__1:first-child {
+      padding: 0 5% 3%;
+    }
+    .column__1:last-child {
+      padding: 0 5% 5%;
+    }
+  }
+
+  #section__recentArticles{
+    padding: 10% 5%;
+  }
+  #section__happyPlace{
+    .column__1:nth-child(3) {
+      max-width: 100%;
+    }
+  }
+
+  #actividades{
+    display: none;
+  }
+  #actividades__m{
+    display: block;
+    .splide__arrows{
+      top: calc((5% + 40px)*-1) !important;
+    }
+  }
+
+  #section__placeToBe {
+    padding: calc(10% + 50px) 5% 10%;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: -50px;
+      left: 0;
+      z-index: 5;
+    }
+    ul{
+      grid-template-columns: repeat(3, 3fr);
+      grid-gap: 10px;
+      li{
+      gap: 10px;
+        h3 {
+          font-size: var(--size-md);
+          color: var(--color-secondary-light);
+          margin: 10px 0px;
+          line-height: 0px;
+        }
+        picture{
+          border-radius:  5px;
+          box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+        }
+        &:nth-child(3) {
+          & picture:nth-child(2) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #section__discoverBenefits {
+    height: 50vh;
+    position: relative;
+    .column__1{
+      img{
+        width: 70px;
+        margin-bottom: 30px;
+      }
+      h2{
+        font-size: var(--size-lg);
+      }
+    }
+  }
+
+}
+
+
+
 @media (max-width: 768px) {
   #section__actividades{
     overflow: inherit;
+    .splide__arrows{
+      position: absolute;
+      top: unset !important;
+      bottom: 0;
+      width: 100% !important;
+      height: 45px;
+      left: 0;
+    }
   }
+
+
 }

@@ -122,7 +122,34 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="accentDivider"></div>
   </div>
   <div class="column__1">
-    <div class="splide actividades" role="group">
+    <div id="actividades" class="splide actividades" role="group">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for item in item.activity.list %}
+          <li class="splide__slide">
+              {% if item.img %}
+              <picture >
+                {% for format, images in item.img %}
+                  <source
+                    srcset="{{ images | srcset }}"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/{{ format }}"
+                  />
+                {% endfor %}
+                <img
+                  src="{{ item.img.webp[0].url }}"
+                  alt="{{ item.img.altText }}"
+                />
+              </picture>
+              {% endif %}
+            <h3>{{item.title}}</h3>
+          </li>
+          {%endfor%}
+        </ul>
+      </div>
+    </div>
+
+    <div id="actividades__m" class="splide actividades" role="group">
       <div class="splide__track">
         <ul class="splide__list">
           {% for item in item.activity.list %}
@@ -264,7 +291,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 <script>
   document.addEventListener('DOMContentLoaded', function () {
 
-    var actividades = new Splide( '.actividades', {
+    var actividades = new Splide( '#actividades', {
       padding: '10%',
       perPage: 2,
       maxHeight: "50vh",
@@ -273,7 +300,17 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
       arrows: true,
     } );
 
+    var actividadesM = new Splide( '#actividades__m', {
+      padding: '0%',
+      perPage: 1,
+      maxHeight: "50vh",
+      gap: '2rem',
+      wheel: false,
+      arrows: true,
+    } );
+
     actividades.mount();
+    actividadesM.mount();
 
     let main3 = new Splide('#carousel-3', {
       direction: 'ttb', 

@@ -267,7 +267,7 @@
 }
 
 #section__adventureCarousel{
-  padding: 8% 10%;
+  padding: 8% calc(10% + 130px);
   background: var(--bg-primary);
   .column__1:nth-child(1){
     margin-bottom: 3%;
@@ -316,10 +316,10 @@
     display: none;
   }
   .splide__arrow--prev{
-    left: -8%  !important;
+    left: -60px;
   }
   .splide__arrow--next{
-    right: 8%  !important;
+    right: -60px;
   }
 }
 
@@ -417,10 +417,41 @@
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
+
+  #section__hero{
+    height: 50vh;
+    h2{
+      font-size: var(--size-xl);
+    }
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+      
+    }
+  }
+
   #section__happyPlace{
     padding: 10% 5%;
+    .column__1:nth-child(3) {
+      max-width: 80%;
+      padding-top: 8%;
+    }
   }
+
   #section__spaCarousel{
     padding: 0;
     .column__2{
@@ -450,58 +481,92 @@
       }
     }
   }
+  
   #section__adventureCarousel{
     padding: 10% 5%;
     #carousel-3{
       display: none;
     }
-    .splide__arrow--next, .splide__arrow--prev{
-      top: 100%;
-    }
-    .splide__arrow--prev{
-      left: 0 !important;
-    }
-    .splide__arrow--next{
-      right: 0 !important;
-    }
     #carousel-2{
       display: block;
+      width: 100%;
+      .splide__arrows{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        .splide__arrow--prev{
+          left: 0px;
+        }
+        .splide__arrow--next{
+          right: 0px;
+        }
+      }
     }
   }
+
+  #section__placeToBe{
+    height: 50vh;
+  }
+
   #section__traditions{
+    min-height: 85vh;
+    &::before {
+      content: "";
+      background: url('../assets/svg/greca_crema.svg');
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
     .traditionsImg1{
-      top: 55%;
-      left: 5%;
+      top: 80%;
+      left: 3%;
       transform: translateY(-50%);
-      width: 15vw;
+      width: 18vw;
       min-width: 100px;
       aspect-ratio: 2/3;
     }
     .traditionsImg2{
       top: 15%;
       right: 5%;
-      width: 14vw;
+      width: 20vw;
       min-width: 100px;
       aspect-ratio: 1/1;
     }
     .traditionsImg3{
-      bottom: 5%;
-      right: 15%;
-      width: 13vw;
+      bottom: 3%;
+      right: 2%;
+      width: 22vw;
       min-width: 150px;
       aspect-ratio: 4/3;
     }
   }
 }
 
-@media (max-width: 768px) {
-  #section__placeToBe{
-    height: 50vh;
-  }
-  #section__traditions{
-    .traditionsImg1{
-      top: 65%;
-      left: 2.5%;
+
+
+
+
+
+
+@media (max-width: 768px){
+
+  #section__hero {
+    & h2 {
+      font-size: var(--size-lg);
     }
   }
+
+  #section__traditions {
+    padding: calc(15% + 40px) 5% calc(15% + 40px);
+    & .column__1 {
+      & p {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
 }

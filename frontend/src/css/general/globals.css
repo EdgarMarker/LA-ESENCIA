@@ -715,6 +715,29 @@ section{
     text-align: center;
 }
 
+#carousel-3{
+    display: block;
+}
+
+#carousel-3b{
+    display: none;
+    padding-bottom: 60px;
+    .splide__arrows{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+}
+
+.splide__arrow{
+    opacity: 1;
+    font-size: 0px;
+}
+
+.splide__arrow:disabled{
+    opacity: 0.6;
+}
+
 
 
 
@@ -758,8 +781,8 @@ section{
     }
 
     .listado__x3{
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
     }
 
     .listado__x4{
@@ -778,6 +801,74 @@ section{
     }
     
     
+    .dual__img__wrapper {
+        height: 35vh;
+        picture:last-child {
+            position: relative;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+    }
+
+    .card__articulo {
+        .column__2{
+            .col__left {
+                padding-right: 0%;
+              }
+              .col__right{
+                padding-right: 0;
+                margin-top: 5%;
+              }
+        }
+        
+
+    }
+
+    #carousel-3{
+        display: none;
+    }
+
+    #carousel-3b{
+        display: block;
+    }
+
+    .splide__arrow--next{
+        width: 45px;
+    }
+    .splide__arrow--prev{
+        width: 45px;
+    }
+
+    .diamondFigure, .diamondFigureHorizon{
+        .diamondImg{
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .diamondFigure{
+        height: 150px;
+        top: calc(50% - 75px)
+    }
+
+    .diamondFigureHorizon{
+        width: 150px;
+        height: 16px;
+    }
+
+    .btn{
+        padding: 5px 15px;
+    }
+
+    .accentDivider{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .dualHorizon__img__wrapper{
+        padding-top: 40px;
+    }
+
 
 }
 
@@ -810,6 +901,14 @@ section{
         grid-template-columns: repeat(1, 1fr);
         column-gap: 0px;
         row-gap: 30px;
+    }
+
+    .dual__img__wrapper {
+        picture:first-child {
+            height: 110%;
+            width: 90%;
+            right: 0%;
+        }
     }
 
 

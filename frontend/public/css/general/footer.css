@@ -62,6 +62,14 @@ footer{
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
+    &:nth-child(4){
+        a{
+            img{
+                filter: drop-shadow(0px 4px 2px rgba(0,0,0,0.6));
+                max-width: 180px;
+            }
+        }
+    }
 }
 
 .footer__column h2{
@@ -192,10 +200,13 @@ footer{
     footer{
         background-color: var(--color-secondary);
         padding: 10% 5% 20px;
+        .column__1{
+            gap: 50px;
+        }
     }
 
-    footer .column__1{
-        gap: 50px;
-    }
+    
+
+    
 
 }

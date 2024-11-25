@@ -429,7 +429,7 @@
     h2{
       color: var(--color-white);
       strong{
-        transform-origin: top center;
+        transform-origin: center center;
       }
     }
     p{
@@ -455,8 +455,37 @@
 
 
 
+
+
+
+
+
+
   
 @media (max-width: 1024px) {
+
+  #section__hero{
+    height: 50vh;
+    h2{
+      font-size: var(--size-lg);
+    }
+    .img__hero, picture, img{
+      height: 100%;
+      img{
+        object-fit: cover;
+      }
+      
+    }
+  }
+
+  #section__happyPlace{
+    padding: 10% 5%;
+    .column__1:nth-child(3) {
+      max-width: 80%;
+      padding-top: 8%;
+    }
+  }
+
   #section__placeToBe {
       ul, li{
         gap: 10px;
@@ -468,21 +497,43 @@
   #section__recentArticles{
     padding: 10% 5%;
   }
-  #section__happyPlace{
-    .column__1:nth-child(3) {
-      max-width: 100%;
-  }
-  }
+  
   #section__discoverPueblito{
+    padding: 10% 5%;
     .column__2{
+      .col__left{
+        padding: 0% 0% 5%;
+      }
       .col__right{
-        padding: 5%;
-        .diamondFigure{
-          left: 5%;
+        padding: 0%;
+        .diamondFigure {
+          left: -8px;
         }
       }
     }
   }
+
+  #section__experiencias {
+    padding: 10% 5%;
+    .column__1:last-child {
+      .experiencia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        p{
+          font-size: var(--size-sm);
+        }
+        img {
+          width: 80px;
+          height: auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
   #section__banner{
     .column__1{
       .btn{
@@ -491,7 +542,13 @@
     }
   }
   #section__inversion{
+    padding: 10% 5% calc(10% + 50px);
+    &::before {
+      height: 100px;
+      bottom: -50px;
+    }
     .column__2{
+      flex-direction: column-reverse;
       .col__left{
         margin-top: 2.5%;
         width: 100%;
@@ -501,18 +558,30 @@
         margin-bottom: 2.5%;
         width: 100%;
         order: 1;
-        .operacion{
-          display: flex;
-          flex-direction: column-reverse;
+        .listado__operaciones{
+          grid-template-columns: repeat(2, 4fr);
+          grid-gap: 50px;
+          .operacion{
+            display: flex;
+            flex-direction: column;
+            picture{
+              width: 100%;
+              aspect-ratio: 1/1;
+            }
+          }
         }
       }
     }
   }
   #section__encontraras{
+    padding: calc(5% + 50px) 5% 10%;
     .column__2{
+      flex-direction: column-reverse;
       .col__left{
         width: 100%;
         margin-bottom: 5%;
+        padding-top: 5%;
+        padding-right: 0%;
       }
       .col__right{
         width: 100%;
@@ -520,31 +589,58 @@
     }
   }
   #section__oportunidades{
+    padding: 10% 5% 10%;
     .column__2{
+      padding: 0;
       .col__left{
         width: 100%;
-        padding: 5%;
+        padding: 0%;
         img{
-          max-height: 50vh;
+          max-height: 40vh;
         }
         .diamondFigure{
-          right: calc(5% - 33.94px / 2);
+          right: -14px;
         }
       }
       .col__right{
         width: 100%;
+        padding: 10% 0% 0%;
+      }
+    }
+  }
+
+  #section__discoverBenefits {
+    height: 50vh;
+    position: relative;
+    .column__1{
+      img{
+        width: 70px;
+        margin-bottom: 30px;
+      }
+      h2{
+        font-size: var(--size-lg);
       }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
   #section__inversion {
-    & .column__2 {
-        & .col__right {
-            .listado__operaciones {
-                grid-template-columns: repeat(2, 4fr);
-            }
+    .column__2 {
+      .col__right {
+        .listado__operaciones {
+          grid-gap: 20px;
         }
+      }
     }
-}
+  }
 }

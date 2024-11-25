@@ -67,7 +67,8 @@
             </a>
         </li>
     
-</ul> <ul role="list" class="nav__ul nav__ul__right">
+</ul>
+    <ul role="list" class="nav__ul nav__ul__right">
     
         <li>
             <a href="/ubicacion/" class="" >
@@ -98,9 +99,9 @@
     class="cta__msn"
     href="https://wa.me/521"
     target="_blank"
-    >Mensaje</a
+    >Mensaje</a>
     -->
-    >
+    
 </div>
 <div class="mobile__active"></div>
 
@@ -125,9 +126,15 @@
     @media (max-width: 1024px) {
         .mobile__trigger{
             transform: translateX(0px);
-            z-index: 60;
             opacity: 1;
-            top: 0;
+            top: 15px;
+        }
+    }
+    @media (max-width: 768px) {
+        .mobile__trigger{
+            transform: translateX(0px);
+            opacity: 1;
+            top: 10px;
         }
     }
 </style>
@@ -164,7 +171,16 @@
         #isoType {
             transform: translateX(0px) !important;
             opacity: 1;
-            top: 0;
+            top: 10px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        #isoType {
+            transform: translateX(0px) !important;
+            opacity: 1;
+            top: 10px;
+            width: 50px;
+            height: 50px;
         }
     }
 </style>
@@ -357,6 +373,13 @@
     .nav__secondary{
       display: flex;
     }
+    .nav__secondary{
+      height: 80px;
+      background: none;
+      img{
+        height: 55px !important;
+      }
+    }
   }
 </style>
   <div class="column__2 column__2__hero flex__row flex__justify__c">
@@ -496,7 +519,90 @@ Wet Bar
     <div class="accentDivider"></div>
   </div>
   <div class="column__1">
-    <div class="splide actividades" role="group">
+    <div id="actividades" class="splide actividades" role="group">
+      <div class="splide__track">
+        <ul class="splide__list">
+          
+          <li class="splide__slide">
+              
+              <picture >
+                
+                  <source
+                    srcset="/images/6HIBZHok1I-300.jpeg 300w, /images/6HIBZHok1I-600.jpeg 600w, /images/6HIBZHok1I-900.jpeg 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/jpeg"
+                  />
+                
+                  <source
+                    srcset="/images/6HIBZHok1I-300.webp 300w, /images/6HIBZHok1I-600.webp 600w, /images/6HIBZHok1I-900.webp 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/webp"
+                  />
+                
+                <img
+                  src="/images/6HIBZHok1I-300.webp"
+                  alt=""
+                />
+              </picture>
+              
+            <h3>Pabellones</h3>
+          </li>
+          
+          <li class="splide__slide">
+              
+              <picture >
+                
+                  <source
+                    srcset="/images/UT8sE-GtRS-300.jpeg 300w, /images/UT8sE-GtRS-600.jpeg 600w, /images/UT8sE-GtRS-900.jpeg 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/jpeg"
+                  />
+                
+                  <source
+                    srcset="/images/UT8sE-GtRS-300.webp 300w, /images/UT8sE-GtRS-600.webp 600w, /images/UT8sE-GtRS-900.webp 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/webp"
+                  />
+                
+                <img
+                  src="/images/UT8sE-GtRS-300.webp"
+                  alt=""
+                />
+              </picture>
+              
+            <h3>Chill Spots</h3>
+          </li>
+          
+          <li class="splide__slide">
+              
+              <picture >
+                
+                  <source
+                    srcset="/images/Ww9WsO0Nnd-300.jpeg 300w, /images/Ww9WsO0Nnd-600.jpeg 600w, /images/Ww9WsO0Nnd-900.jpeg 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/jpeg"
+                  />
+                
+                  <source
+                    srcset="/images/Ww9WsO0Nnd-300.webp 300w, /images/Ww9WsO0Nnd-600.webp 600w, /images/Ww9WsO0Nnd-900.webp 900w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    type="image/webp"
+                  />
+                
+                <img
+                  src="/images/Ww9WsO0Nnd-300.webp"
+                  alt=""
+                />
+              </picture>
+              
+            <h3>Water Kids</h3>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div id="actividades__m" class="splide actividades" role="group">
       <div class="splide__track">
         <ul class="splide__list">
           
@@ -1037,7 +1143,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 <script>
   document.addEventListener('DOMContentLoaded', function () {
 
-    var actividades = new Splide( '.actividades', {
+    var actividades = new Splide( '#actividades', {
       padding: '10%',
       perPage: 2,
       maxHeight: "50vh",
@@ -1046,7 +1152,17 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
       arrows: true,
     } );
 
+    var actividadesM = new Splide( '#actividades__m', {
+      padding: '0%',
+      perPage: 1,
+      maxHeight: "50vh",
+      gap: '2rem',
+      wheel: false,
+      arrows: true,
+    } );
+
     actividades.mount();
+    actividadesM.mount();
 
     let main3 = new Splide('#carousel-3', {
       direction: 'ttb', 
@@ -1149,7 +1265,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
             
                 
                 <a class="logo__footer" href="/">
-                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/c1869d9dcc26500ca5cfb9567fac0c38e94296ee-100x100.svg" alt=" - " />
+                    <img src="https://cdn.sanity.io/images/qf6rvplj/production/9770bba69030ebbc3ace756b14e2970c8696816d-100x100.svg" alt=" - " />
                 </a>
                 
     
