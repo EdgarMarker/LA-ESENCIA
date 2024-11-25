@@ -72,6 +72,12 @@ export default defineType({
       group: 'post'
     }),
     defineField({
+      name:  'heroImg',
+      title: 'Imagen de cabecera',
+      type: 'image',
+      group: 'post'
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Imagen principal del artículo',
       type: 'image',

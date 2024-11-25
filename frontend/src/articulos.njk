@@ -18,42 +18,41 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
   data-js="blog"
 >
   {% for item in blog %}
-  <section id="section__hero" class="pad__lr__5">
+  <section id="section__hero" class="pad__lr__5 pad__tb__5">
     {% include 'header.njk' %}
-    <div class="column__2">
-      <div class="col__left flex__justify__c pad__right__5 width__45">
+    <div class="column__2 column__2__hero flex__row flex__justify__c">
+      <div
+        class="col__left flex__justify__c width__45 flex__column flex__align__c"
+      >
         <h1>{{ item.heroH1 }}</h1>
-        <div>{{ item.heroH2 | safe }}</div>
-        <p>{{ item.heroP }}</p>
-        <a class="btn btn__hero">{{ item.heroBtn }}</a>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
       </div>
-      <div class="col__right width__55">
-        {% if item.heroImg %}
-        <picture>
-          {% for format, images in item.heroImg %}
+      <div class="col__right width__55 img__hero">
+        <video width="320" height="240" muted loop autoplay>
           <source
-            srcset="{{ images | srcset }}"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            type="image/{{ format }}"
+            src="/images/inicio/esencia_index_hero.mp4"
+            type="video/mp4"
           />
-          {% endfor %}
-          <img
-            src="{{ item.heroImg.jpeg[0].url }}"
-            alt="{{ item.heroImgAlt }}"
-          />
-        </picture>
-        {% endif %}
+          Tu navegador no soporta este video
+        </video>
       </div>
+      <div class="blackDisplayOverlayGradient"></div>
     </div>
   </section>
   {% endfor %}
 
   <section id="section__intro" class="pad__all__5">
     <div class="column__1">
-      <ul role="list" class="listado__x3 width__100">
-        {%- for item in pagination.items -%} {% include "post-card.njk" %} {%-
-        endfor %}
-      </ul>
+      <div class="grid-container fadeInOut">
+        {% if pagination.items|length > 0 %}
+          {% for item in pagination.items %}
+            <div class="grid-item">
+              {% include "post-card.njk" %}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
   </section>
 

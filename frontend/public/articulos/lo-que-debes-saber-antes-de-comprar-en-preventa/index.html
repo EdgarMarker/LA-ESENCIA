@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Esencia | </title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>La Esencia | Lo que debes saber antes de comprar en preventa</title>
+    <meta name="description" content="Lo que debes saber antes de comprar en preventa" />
+    <meta name="keywords" content="Lo que debes saber antes de comprar en preventa" />
     <meta name="author" content="La Esencia" />
     
     <meta property="”og:type”" content="website" />
-    <meta property="”og:title”" content="" />
-    <meta property="”og:description”" content="" />
+    <meta property="”og:title”" content="Lo que debes saber antes de comprar en preventa" />
+    <meta property="”og:description”" content="Lo que debes saber antes de comprar en preventa" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
@@ -190,17 +190,194 @@
           <div data-barba="container" data-barba-namespace="articulo" data-css="articulo" data-js="articulo">
 
   <section id="section__hero" class="pad__lr__5 pad__top__10">
-    <div class="column__1 max1400">
-      <span class="categoria_articulo">Categoría del artículo: <a href="/articulos/categorias/inversion-inmobiliaria">Inversión inmobiliaria</a></span>
-      <h1>Lo que debes saber antes de comprar en preventa</h1>
-      <p>Publicado el: 8 de noviembre, 2024</p>
+    <header id="header" class="">
+  
+  <div id="inner__header">
+    <div class="mask">
+      <div class="mask-left"></div>
+      <div class="circle-cut"></div>
+      <div class="mask-right"></div>
     </div>
-  </section>
-
-  <section id="section__main__image">
-    <div class="column__1 max1400">
+    <div class="nav">
       
-        <picture>
+      <!--<ul role="list" class="nav__ul nav__ul__left">
+    
+        <li>
+            <a href="/" class="" >
+                Inicio
+            </a>
+        </li>
+    
+        <li>
+            <a href="/experiencia/" class="" >
+                Experiencia mexicana
+            </a>
+        </li>
+    
+        <li>
+            <a href="/resort/" class="" >
+                Experiencia resort
+            </a>
+        </li>
+    
+</ul>-->
+
+      <a id="logo__main" href="/">
+        
+
+        <img src="https://cdn.sanity.io/images/qf6rvplj/production/f03f9d1f0236b5b0dc9eed70023b2ee13d9c2161-240x129.svg" alt="prueba" />
+        
+      </a>
+      
+        <!--<ul role="list" class="nav__ul nav__ul__right">
+    
+        <li>
+            <a href="/ubicacion/" class="" >
+                Ubicación
+            </a>
+        </li>
+    
+        <li>
+            <a href="/fundadores/" class="" >
+                Fundadores
+            </a>
+        </li>
+    
+        <li>
+            <a href="/articulos/1/" class="" >
+                Blog
+            </a>
+        </li>
+    
+        <li>
+            <a href="/contacto/" class="" >
+                Contacto
+            </a>
+        </li>
+    
+</ul>-->
+      
+    </div>
+    <div class="nav__secondary">
+      <div class="isoTypeRoom"></div>
+      
+      <img src="https://cdn.sanity.io/images/qf6rvplj/production/1ec71862c1ed9c0907c63ffdd4a2f0c75d263122-236x60.svg" alt="prueba" />
+      
+    </div>
+  </div>
+  
+</header>
+
+<style>
+  #inner__header {
+    background-color: transparent;
+    justify-content: space-between;
+    position: relative;
+
+    .mask {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 60px;
+      justify-content: space-between;
+
+      .mask-left,
+      .mask-right {
+        background: var(--bg-primary);
+        width: calc(50% - 125px);
+      }
+    }
+
+    .nav {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 5;
+    }
+
+    .nav__ul__left,
+    .nav__ul__right,
+    .mirrorNav {
+      width: calc(50% - 125px);
+      justify-content: space-evenly;
+    }
+
+    #logo__main {
+      position: absolute;
+      width: 250px;
+      aspect-ratio: 1/1;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .circle-cut {
+      --r: 135px;
+      width: 270px;
+      background: var(--bg-primary);
+      background-position: center;
+      mask: radial-gradient(var(--r) at 50% 240%, #0000 calc(100% - 1px), #000);
+    }
+  }
+
+  #logo__main {
+    position: relative;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .nav__secondary{
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-primary);
+    display: none;
+    img{
+      height: 60px;
+      width: auto;
+    }
+    .isoTypeRoom{
+      width: 50px;
+      aspect-ratio: 1/1;
+      margin: 5px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .nav,
+    .mask {
+      display: none !important;
+    }
+    .nav__secondary{
+      display: flex;
+    }
+    .nav__secondary{
+      height: 80px;
+      background: none;
+      img{
+        height: 55px !important;
+      }
+    }
+  }
+</style>
+    
+        <picture class="heroImg">
             
             <source srcset="/images/E-nvCuLMHe-300.jpeg 300w, /images/E-nvCuLMHe-600.jpeg 600w, /images/E-nvCuLMHe-900.jpeg 900w, /images/E-nvCuLMHe-1200.jpeg 1200w, /images/E-nvCuLMHe-1800.jpeg 1800w" sizes="(max-width: 1200px) 100vw, 1200px" type="image/jpeg">
             
@@ -209,6 +386,15 @@
             <img src="/images/E-nvCuLMHe-300.jpeg" alt="">
         </picture>
       
+      <div class="blackDisplayOverlayGradient"></div>
+  </section>
+
+  <section id="section__main__image">
+    <div class="column__1 max1400">
+      <span class="categoria_articulo">Categoría del artículo: <a href="/articulos/categorias/inversion-inmobiliaria">Inversión inmobiliaria</a></span>
+      <h1>Lo que debes saber antes de comprar en preventa</h1>
+      <p>Publicado el: 8 de noviembre, 2024</p>
+      <a href="" class="btn">continuar leyendo</a>
     </div> 
   </section>
 

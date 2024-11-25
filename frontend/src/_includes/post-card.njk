@@ -28,15 +28,14 @@
         {% for category in item.categories %}
         <a href="/articulos/categorias/{{ category | slugify }}"
           >{{ category }}{% if not loop.last %}, {% endif %}</a
-        >
-        / {% endfor %}
+        >{% endfor %}
       </span>
       {% else %}
       <span class="card__category">Sin categoría /</span>
       {% endif %}
       <span
         class="card__date"
-        >{{ item.publishedAt | date("MMMM d, yyyy") }}</span
+        >/ {{ item.publishedAt | date("MMMM d, yyyy") }}</span
       >
     </div>
 
@@ -48,7 +47,7 @@
 
     <p class="excerpt__p">{{ item.excerpt }}</p>
 
-    <a class="btn_post" href="/articulos/{{ item.slug.current }}">Leer Más</a>
+    <a class="btn_post btn" href="/articulos/{{ item.slug.current }}">Leer Más</a>
   </div>
 </div>
 <!--<li class="card__artículo">
