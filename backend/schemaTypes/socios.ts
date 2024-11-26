@@ -166,42 +166,6 @@ export default {
       ],
     },
     {
-      name: 'discoverBenefits',
-      title: 'Regístrate aquí',
-      type: 'object',
-      group: 'discoverBenefits',
-      fields: [
-        {
-          name: 'h2',
-          title: 'Título principal',
-          description:
-            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-          type: 'blockContent',
-        },
-        {
-          name: 'description',
-          title: 'Descripción',
-          type: 'blockContent',
-        },
-        {
-          name: 'img',
-          title: 'Imagen fondo',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        },
-        {
-          name: 'logo',
-          title: 'Logo',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
-    },
-    {
       name: 'experience',
       title: 'Sección de icono turístico',
       group: 'experience',
@@ -373,6 +337,42 @@ export default {
           name: 'img',
           title: 'Imagen de sección',
           type: 'image',
+        },
+      ],
+    },
+    {
+      name: 'discoverBenefits',
+      title: 'Regístrate aquí',
+      type: 'object',
+      group: 'discoverBenefits',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'img',
+          title: 'Imagen fondo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'logo',
+          title: 'Logo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },

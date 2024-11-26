@@ -44,10 +44,10 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
 
   <section id="section__intro" class="pad__all__5">
     <div class="column__1">
-      <div class="grid-container fadeInOut">
+      <div class="grid-container">
         {% if pagination.items|length > 0 %}
           {% for item in pagination.items %}
-            <div class="grid-item">
+            <div class="grid-item card">
               {% include "post-card.njk" %}
             </div>
           {% endfor %}

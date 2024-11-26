@@ -73,12 +73,13 @@ export default {
       description:
         '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
     },
+    /*
     {
       name: 'heroP',
       title: 'Descripción',
       type: 'text',
       group: 'hero',
-    },
+    },*/
     {
       name: 'heroBtn1',
       title: 'Texto del botón',

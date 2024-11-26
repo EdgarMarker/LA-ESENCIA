@@ -35,16 +35,16 @@ export default {
       title: 'Divisor galleria',
     },
     {
+      name: 'location',
+      title: 'Ubicación',
+    },
+    {
       name: 'discoverBenefits',
       title: 'Descubre los Beneficios',
     },
     {
       name: 'article',
       title: 'Artículos',
-    },
-    {
-      name: 'location',
-      title: 'Ubicación',
     },
 
 
@@ -122,15 +122,6 @@ export default {
       title: 'Texto del segundo botón',
       type: 'string',
       group: 'hero',
-    },
-    {
-      name: 'heroImg',
-      title: 'Imagen principal',
-      type: 'image',
-      group: 'hero',
-      options: {
-        hotspot: true,
-      },
     },
     {
       name: 'introH2',
@@ -284,6 +275,36 @@ export default {
         Rule.max(2).error('No se pueden agregar más de 2 imágenes'),
     },
     {
+      name: 'location',
+      title: 'Sección de ubicación',
+      group: 'location',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',  
+          type: 'blockContent',
+        },
+        {
+          name: 'h3',
+          title: 'Subtítulo indicador',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          title: 'Descripción',
+          type: 'blockContent',
+        },
+        {
+          name: 'url',
+          title: 'Url google',
+          type: 'string'
+        }
+      ]
+    },
+    {
       name: 'discoverBenefits',
       title: 'Beneficios',
       type: 'object',
@@ -345,40 +366,10 @@ export default {
         },
       ]
     },
-    {
-      name: 'location',
-      title: 'Sección de ubicación',
-      group: 'location',
-      type: 'object',
-      fields: [
-        {
-          name: 'h2',
-          title: 'Título principal',
-          description:
-            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',  
-          type: 'blockContent',
-        },
-        {
-          name: 'h3',
-          title: 'Subtítulo indicador',
-          type: 'string',
-        },
-        {
-          name: 'description',
-          title: 'Descripción',
-          type: 'blockContent',
-        },
-        {
-          name: 'url',
-          title: 'Url google',
-          type: 'string'
-        }
-      ]
-    },
 
 
 
-
+/*
     {
       name: 'activityH3',
       title: 'Subtítulo indicador para las actividades',
@@ -517,18 +508,6 @@ export default {
         },
       ],
     },
-    {
-      name: 'recentProdRef',
-      type: 'object',
-      group: 'prod',
-      fields: [
-        {
-          title: 'Productos recientes',
-          name: 'recentProducts',
-          type: 'array', // Cambiado de 'reference' a 'array'
-          of: [{type: 'reference', to: [{type: 'products'}]}], // Especifica que es un array de referencias
-        },
-      ],
-    },
+    */
   ],
 }

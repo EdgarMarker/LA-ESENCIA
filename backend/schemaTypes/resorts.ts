@@ -16,16 +16,16 @@ export default {
       title: 'Introducción',
     },
     {
-      name: 'toBe',
-      title: 'Divisor galleria',
-    },
-    {
       name: 'experience',
       title: 'Experiencias',
     },
     {
       name: 'activity',
       title: 'Actividades'
+    },
+    {
+      name: 'toBe',
+      title: 'Divisor galleria',
     },
     {
       name: 'article',
@@ -125,6 +125,88 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'experience',
+      title: 'Sección de experiencia',
+      group: 'experience',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'desc',
+          title: 'Descripción general',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de elementos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'h3',
+                  title: 'Titulo',
+                  type: 'string',
+                },
+                {
+                  name: 'p',
+                  title: 'Texto',
+                  type: 'text',
+                },
+                {
+                  name: 'img',
+                  title: 'Icono',
+                  type: 'image',
+                },
+              ],
+            },
+          ],
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
+        },
+      ],
+    },
+    {
+      name: 'activity',
+      title: 'Sección de actividades exclusivas',
+      group: 'activity',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
+          type: 'blockContent',
+        },
+        {
+          name: 'list',
+          title: 'Lista de imágenes',
+          type: 'array',
+          of: [{
+            type: 'object', fields: [
+              {
+                name: 'title',
+                title: 'Nombre de la actividad',
+                type: 'string'
+              },
+              {
+                name: 'img',
+                title: 'Imagen',
+                type: 'image'
+              }
+          ]}],
+        },
+      ],
     },
     {
       name: 'toBeH2',
@@ -229,88 +311,6 @@ export default {
           options: {
             hotspot: true,
           },
-        },
-      ],
-    },
-    {
-      name: 'experience',
-      title: 'Sección de experiencia',
-      group: 'experience',
-      type: 'object',
-      fields: [
-        {
-          name: 'h2',
-          title: 'Título principal',
-          description:
-            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-          type: 'blockContent',
-        },
-        {
-          name: 'desc',
-          title: 'Descripción general',
-          type: 'blockContent',
-        },
-        {
-          name: 'list',
-          title: 'Lista de elementos',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                {
-                  name: 'h3',
-                  title: 'Titulo',
-                  type: 'string',
-                },
-                {
-                  name: 'p',
-                  title: 'Texto',
-                  type: 'text',
-                },
-                {
-                  name: 'img',
-                  title: 'Icono',
-                  type: 'image',
-                },
-              ],
-            },
-          ],
-          validation: (rule: ArrayValidationRule) =>
-            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
-        },
-      ],
-    },
-    {
-      name: 'activity',
-      title: 'Sección de actividades exclusivas',
-      group: 'activity',
-      type: 'object',
-      fields: [
-        {
-          name: 'h2',
-          title: 'Título principal',
-          description:
-            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-          type: 'blockContent',
-        },
-        {
-          name: 'list',
-          title: 'Lista de imágenes',
-          type: 'array',
-          of: [{
-            type: 'object', fields: [
-              {
-                name: 'title',
-                title: 'Nombre de la actividad',
-                type: 'string'
-              },
-              {
-                name: 'img',
-                title: 'Imagen',
-                type: 'image'
-              }
-          ]}],
         },
       ],
     },
