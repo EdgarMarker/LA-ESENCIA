@@ -17,7 +17,7 @@ export default {
     },
     {
       name: 'experience',
-      title: 'Sección experiencia',
+      title: 'Sección beneficios',
     },
     {
       name: 'banner',
@@ -33,7 +33,7 @@ export default {
     },
     {
       name: 'discoverBenefits',
-      title: 'Planes de pago',
+      title: 'Sección de red fundadores',
     },
     {
       name: 'decidir',
@@ -135,10 +135,10 @@ export default {
       },
     },
     {
-      name: 'discoverBenefits',
-      title: 'Sección de planes',
+      name: 'privileges',
+      title: 'Privilegios',
       type: 'object',
-      group: 'discoverBenefits',
+      group: 'privileges',
       fields: [
         {
           name: 'h2',
@@ -148,27 +148,97 @@ export default {
           type: 'blockContent',
         },
         {
-          name: 'description',
-          title: 'Descripción',
+          name: 'h3',
+          title: 'Subtítulo principal',
+          type: 'string',
+        },
+        {
+          name: 'list',
+          title: 'Listado',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  title: 'Título',
+                  type: 'string',
+                },
+                {
+                  name: 'img',
+                  title: 'Imagen',
+                  type: 'image',
+                },
+              ],
+            },
+          ],
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(6).error('Se han rebasado los 6 elementos recomendados'),
+        },
+      ],
+    },
+    {
+      name: 'experience',
+      title: 'Sección de beneficios',
+      group: 'experience',
+      type: 'object',
+      fields: [
+        {
+          name: 'h2',
+          title: 'Título principal',
+          description:
+            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
           type: 'blockContent',
         },
         {
-          name: 'img',
-          title: 'Imagen fondo',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        },
-        {
-          name: 'logo',
-          title: 'Logo',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
+          name: 'list',
+          title: 'Lista de elementos',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'h3',
+                  title: 'Titulo',
+                  type: 'string',
+                },
+                {
+                  name: 'p',
+                  title: 'Texto',
+                  type: 'text',
+                },
+                {
+                  name: 'img',
+                  title: 'Icono',
+                  type: 'image',
+                },
+              ],
+            },
+          ],
+          validation: (rule: ArrayValidationRule) =>
+            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
         },
       ],
+    },
+    {
+      name: 'banner',
+      title: 'Banner',
+      group: 'banner',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Texto',
+          type: 'string'
+        },
+        {
+          name: 'img',
+          title: 'Imagen del banner',
+          type: 'image'
+        }
+      ]
     },
     {
       name: 'recentArticles',
@@ -219,50 +289,6 @@ export default {
           ],
           validation: (rule: ArrayValidationRule) =>
             rule.max(5).warning('Se han rebasado los 5 elementos recomendados'),
-        },
-      ],
-    },
-    {
-      name: 'privileges',
-      title: 'Privilegios',
-      type: 'object',
-      group: 'privileges',
-      fields: [
-        {
-          name: 'h2',
-          title: 'Título principal',
-          description:
-            '* agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
-          type: 'blockContent',
-        },
-        {
-          name: 'h3',
-          title: 'Subtítulo principal',
-          type: 'string',
-        },
-        {
-          name: 'list',
-          title: 'Listado',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                {
-                  name: 'title',
-                  title: 'Título',
-                  type: 'string',
-                },
-                {
-                  name: 'img',
-                  title: 'Imagen',
-                  type: 'image',
-                },
-              ],
-            },
-          ],
-          validation: (rule: ArrayValidationRule) =>
-            rule.max(6).error('Se han rebasado los 6 elementos recomendados'),
         },
       ],
     },
@@ -327,10 +353,10 @@ export default {
       ],
     },
     {
-      name: 'experience',
-      title: 'Sección de experiencia',
-      group: 'experience',
+      name: 'discoverBenefits',
+      title: 'Sección de red fundadores',
       type: 'object',
+      group: 'discoverBenefits',
       fields: [
         {
           name: 'h2',
@@ -340,58 +366,27 @@ export default {
           type: 'blockContent',
         },
         {
-          name: 'desc',
-          title: 'Descripción general',
+          name: 'description',
+          title: 'Descripción',
           type: 'blockContent',
         },
         {
-          name: 'list',
-          title: 'Lista de elementos',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              fields: [
-                {
-                  name: 'h3',
-                  title: 'Titulo',
-                  type: 'string',
-                },
-                {
-                  name: 'p',
-                  title: 'Texto',
-                  type: 'text',
-                },
-                {
-                  name: 'img',
-                  title: 'Icono',
-                  type: 'image',
-                },
-              ],
-            },
-          ],
-          validation: (rule: ArrayValidationRule) =>
-            rule.max(3).error('Se han rebasado los 3 elementos recomendados'),
+          name: 'img',
+          title: 'Imagen fondo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+        {
+          name: 'logo',
+          title: 'Logo',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },
-    {
-      name: 'banner',
-      title: 'Banner',
-      group: 'banner',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Texto',
-          type: 'string'
-        },
-        {
-          name: 'img',
-          title: 'Imagen del banner',
-          type: 'image'
-        }
-      ]
-    }
   ],
 }

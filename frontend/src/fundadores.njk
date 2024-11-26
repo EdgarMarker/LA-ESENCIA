@@ -27,7 +27,7 @@ permalink: "/{{ page.fileSlug }}/"
         {{ item.heroH2 | safe }}
         <div class="btn__hero__container">
           <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
-          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+          <a id="btn__hero2" class="btn btn__hero" href="/contacto/">{{ item.heroBtn2 }}</a>
         </div>
       </div>
       <div class="col__right width__55 img__hero">
@@ -102,9 +102,7 @@ permalink: "/{{ page.fileSlug }}/"
         <div class="accentDivider"></div>
         <h3>{{ item.discoverPueblito.h3 }}</h3>
         <div>{{ item.discoverPueblito.description | safe }}</div>
-        <!--
-          <a href="#" class="btn">Descubre Pueblito</a>
-          -->
+          <a href="/experiencia" class="btn">Conoce más</a>
       </div>
       <div class="col__right">
         <div class="diamondFigure">
@@ -149,7 +147,7 @@ permalink: "/{{ page.fileSlug }}/"
         </p>
       </div>
       {% endfor %}
-  </section>
+  </section>  
 
 
   <section id="section__banner">
@@ -171,7 +169,7 @@ permalink: "/{{ page.fileSlug }}/"
       <h3>
         {{item.banner.title}}
       </h3>
-      <a class="btn"> Conoce todas las posibilidades </a>
+      <a class="btn" href="/contacto"> Conoce todas las posibilidades </a>
     </div>
   </section>
 
@@ -183,7 +181,7 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="column__2">
       <div class="col__left">
         <div>{{item.income.desc | safe}}</div>
-        <a class="btn">Detalles aquí</a>
+        <a class="btn" href="/contact">Detalles aquí</a>
       </div>
       <div class="col__right">
         <div class="listado__operaciones">
@@ -283,7 +281,7 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="accentDivider"></div>
       <div class="max800">{{item.discoverBenefits.description | safe}}</div>
       
-        <a href="" class="btn">FORMULARIO SOCIOS FUNDADORES</a>
+        <a href="/contacto" class="btn">FORMULARIO SOCIOS FUNDADORES</a>
         
     </div>
     <div class="blackDisplayOverlay"></div>

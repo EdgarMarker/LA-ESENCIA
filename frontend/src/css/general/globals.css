@@ -415,7 +415,7 @@ section{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-column-gap: 50px;
-    grid-column-gap: 50px;
+    grid-row-gap: 100px;
     grid-auto-rows: auto;
 }
 
@@ -894,10 +894,6 @@ section{
         }
         
 
-    }
-
-    #carousel-3{
-        display: none;
     }
 
     #carousel-3b{

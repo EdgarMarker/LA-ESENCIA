@@ -518,6 +518,7 @@
   }
   .recentblog__wrapper{
     margin-top: 3%;
+    align-items: center;
   }
   .splide{
     margin-top: 2em;

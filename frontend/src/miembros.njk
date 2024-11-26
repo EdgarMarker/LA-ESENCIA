@@ -7,7 +7,7 @@ layout: "base.njk"
 permalink: "/fundadores/{{ page.fileSlug }}/"
 ---
 
-<div data-barba="container" data-barba-namespace="gracias" data-css="miembros">
+<div data-barba="container" data-barba-namespace="gracias" data-css="miembros" data-js="miembros">
   {% for item in gracias %}
   <section id="section__hero" class="pad__lr__5 pad__tb__5">
     {% include 'header.njk' %}
@@ -20,7 +20,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
         {{ item.heroH2 | safe }}
         <div class="btn__hero__container">
           <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
-          <a id="btn__hero2" class="btn btn__hero">{{ item.heroBtn2 }}</a>
+          <a id="btn__hero2" class="btn btn__hero" href="/contacto">{{ item.heroBtn2 }}</a>
         </div>
       </div>
       <div class="col__right width__55 img__hero">
@@ -143,7 +143,10 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
       <h3>
         {{item.banner.title}}
       </h3>
-      <a class="btn"> Conoce todas las posibilidades </a>
+      <a class="btn" href="/contacto"> Contacta a un asesor</a>
+      {% for item in empresa %}
+      <a href="https://wa.me/56{{item.brandPhone}}" class="banner__wa" target="_blank"><img src="/images/whatsapp--primary.svg" alt="Icono WhatsApp"></a>
+      {%endfor%}
     </div>
   </section>
 
@@ -248,7 +251,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
     <div class="accentDivider"></div>
     <div class="max800">{{ item.discoverBenefits.description | safe }}</div>
     
-    <a href="" class="btn">FORMULARIO SOCIOS FUNDADORES</a>
+    <a href="/contacto" class="btn">Contáctenos</a>
   </div>
   <div class="blackDisplayOverlay"></div>
   <picture class="discoverBenefits__img">
@@ -282,11 +285,6 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
       pagination: true,
       wheel: false,
       arrows: true,
-      breakpoints: {
-        768: {
-          height: "500px",
-        },
-      },
     });
     main3.mount();
   });
