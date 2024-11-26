@@ -78,10 +78,11 @@
   }
 
 #section__intro {
+  background-image: var(--bg-cream);
     padding: 10%;
     padding-top: 5%;
     .column__2{
-        gap: 5%;
+        gap: 10%;
     }
     .intro__imgWrapper{
         position: relative;

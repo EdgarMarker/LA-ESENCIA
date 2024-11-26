@@ -349,6 +349,9 @@
       width: 35%;
       padding-right: 5%;
       justify-content: center;
+      .richTextH2{
+        align-items: flex-start;
+      }
       ul{
         margin-top: 5%;
         li{
@@ -403,6 +406,9 @@
     .col__right{
       padding: 10%;
       justify-content: center;
+      .richTextH2{
+        align-items: flex-start;
+      }
     }
   }
 }

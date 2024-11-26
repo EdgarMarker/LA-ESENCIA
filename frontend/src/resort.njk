@@ -237,18 +237,34 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="column__1 recentblog__wrapper">
       <div class="splide" id="carousel-3">
         <div class="splide__track">
-          <ul class="splide__list">
+          <div class="splide__list">
             {% for item in item.recentArticles.articles %}
-            <li class="splide__slide">
-              <div class="card__articulo">
+            <div class="splide__slide">
+              <ul class="">
                 {% include "post-card.njk" %}
-              </div>
-            </li>
+              </ul>
+            </div>
             {% endfor %}
-          </ul>
+          </div>
         </div>
       </div>
+
+      <div class="splide" id="carousel-3b">
+        <div class="splide__track">
+          <div class="splide__list">
+            {% for item in item.recentArticles.articles %}
+            <div class="splide__slide">
+              <ul class="">
+                {% include "post-card.njk" %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <!--
         <a href="/blog" class="btn">Ver todos los artículos</a>
+        -->
     </div>
   </section>
 
@@ -312,16 +328,24 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
       height: '50vh',
       perPage: 1,
       gap: '2rem',
+      arrows: false,
       pagination: true,
       wheel: false,
       arrows: true,
-      breakpoints: {
-        768: {
-          height: '500px',
-        }
-      },
       })
 
       main3.mount();
+
+
+      let main4 = new Splide('#carousel-3b', {
+        perPage: 1,
+        gap: '2rem',
+        arrows: false,
+        pagination: true,
+        wheel: false,
+        arrows: true,
+      })
+
+      main4.mount();
   })
 </script>

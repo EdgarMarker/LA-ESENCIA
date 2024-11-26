@@ -332,29 +332,29 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="column__1 recentblog__wrapper">
       <div class="splide" id="carousel-3">
         <div class="splide__track">
-          <ul class="splide__list">
+          <div class="splide__list">
             {% for item in item.recentArticles.articles %}
-            <li class="splide__slide">
-              <div class="card__articulo">
+            <div class="splide__slide">
+              <ul class="">
                 {% include "post-card.njk" %}
-              </div>
-            </li>
+              </ul>
+            </div>
             {% endfor %}
-          </ul>
+          </div>
         </div>
       </div>
 
       <div class="splide" id="carousel-3b">
         <div class="splide__track">
-          <ul class="splide__list">
+          <div class="splide__list">
             {% for item in item.recentArticles.articles %}
-            <li class="splide__slide">
-              <div class="card__articulo">
+            <div class="splide__slide">
+              <ul class="">
                 {% include "post-card.njk" %}
-              </div>
-            </li>
+              </ul>
+            </div>
             {% endfor %}
-          </ul>
+          </div>
         </div>
       </div>
       <!--

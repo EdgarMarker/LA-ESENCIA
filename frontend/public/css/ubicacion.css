@@ -284,7 +284,7 @@
   }
 }
 #section__adventureCarousel{
-  padding: 5% 10%;
+  padding: 8% calc(10% + 130px);
   &::before{
     content:"";
     width: 70%;
@@ -339,11 +339,11 @@
 
   .splide__arrow--prev{ 
     background-image: url(/images/prev_outline.svg);
-    left: -8%;
+    left: -60px;
   }
   .splide__arrow--next{
     background-image: url(/images/next_outline.svg);
-    right: -8%;
+    right: -60px;
   }
   
   #carousel-2{

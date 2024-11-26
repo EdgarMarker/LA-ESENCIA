@@ -6,7 +6,7 @@ eleventyComputed:
 layout: base.njk
 pagination:
   data: collections.articulos
-  size: 20
+  size: 12
   alias: item
 permalink: "/articulos/{{pagination.pageNumber + 1}}/"
 ---
@@ -42,17 +42,19 @@ permalink: "/articulos/{{pagination.pageNumber + 1}}/"
   </section>
   {% endfor %}
 
-  <section id="section__intro" class="pad__all__5">
+  <section id="section__intro" class="">
     <div class="column__1">
-      <div class="grid-container">
+      <ul class="listado__x4">
+      <!--<div class="grid-container">-->
         {% if pagination.items|length > 0 %}
           {% for item in pagination.items %}
-            <div class="grid-item card">
+            <!--<div class="grid-item card">-->
               {% include "post-card.njk" %}
-            </div>
+            <!--</div>-->
           {% endfor %}
         {% endif %}
-      </div>
+      <!--</div>-->
+      </ul>
     </div>
   </section>
 
