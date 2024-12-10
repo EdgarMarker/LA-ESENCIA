@@ -26,7 +26,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
       <div class="col__right width__55 img__hero">
         <video width="320" height="240" muted loop autoplay>
           <source
-            src="/images/inicio/esencia_index_hero.mp4"
+            src="/images/miembros.mp4"
             type="video/mp4"
           />
           Tu navegador no soporta este video
@@ -144,9 +144,7 @@ permalink: "/fundadores/{{ page.fileSlug }}/"
         {{item.banner.title}}
       </h3>
       <a class="btn" href="/contacto"> Contacta a un asesor</a>
-      {% for item in empresa %}
-      <a href="https://wa.me/56{{item.brandPhone}}" class="banner__wa" target="_blank"><img src="/images/whatsapp--primary.svg" alt="Icono WhatsApp"></a>
-      {%endfor%}
+      
     </div>
   </section>
 
