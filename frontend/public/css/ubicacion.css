@@ -58,10 +58,10 @@
       display: flex;
       gap: 1px;
       .btn:first-child{
-        border-radius: 8px 0 0 8px;
+        border-radius: 8px;
       }
       .btn:last-child{
-        border-radius: 0 8px 8px 0;
+        border-radius: 8px;
       }
     }
     .img__hero {

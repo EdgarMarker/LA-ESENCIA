@@ -1,8 +1,9 @@
 // Btn ScrollTo:
-const heroBtn = document.querySelector('#section__hero .btn');
+
+/*const heroBtn = document.querySelector('#section__hero .btn');
 heroBtn.addEventListener('click', () => {
     gsap.to(window, { duration: 0.5, scrollTo: "#section__intro", ease: "power4.out"});
-});
+});*/
 
 gsapSoloAnimations();
 
@@ -31,12 +32,12 @@ function gsapSoloAnimations() {
         duration: 0.5,
         ease: "power1.out"
     }, "-=0.2")
-    .from("#section__hero .btn", {
+    /*.from("#section__hero .btn", {
         opacity: 0,
         x: -50,
         duration: 0.5,
         ease: "power1.out"
-    }, "-=0.2")
+    }, "-=0.2")*/
     .from("#section__hero picture", {
         opacity: 0,
         y: -50,

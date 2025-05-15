@@ -14,8 +14,33 @@ permalink: "/{{ page.fileSlug }}/"
   data-js="contacto"
 >
   {% for item in contacto %}
-  <section id="section__hero" class="pad__lr__5 pad__tb__5">
+  <section id="section__hero">
     {% include 'header.njk' %}
+
+    {% if item.form.img %}
+      <picture>
+        {% for format, images in item.form.img %}
+        <source
+          srcset="{{ images | srcset }}"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          type="image/{{ format }}"
+        />
+        {% endfor %}
+        <img src="{{ item.img.webp[0].url }}" alt="{{ item.img.altText }}" />
+      </picture>
+    {% endif %}
+
+    <div class="column__1">
+
+      <div class="hero__data">
+        <h1>{{ item.heroH1 }}</h1>
+        <div class="accentDivider"></div>
+        {{ item.heroH2 | safe }}
+      </div>
+    </div>
+
+
+    <!--
     <div class="column__2 column__2__hero flex__row flex__justify__c">
       <div
         class="col__left flex__justify__c width__45 flex__column flex__align__c"
@@ -39,9 +64,56 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
       <div class="blackDisplayOverlayGradient"></div>
     </div>
+    -->
+
   </section>
-  <section id="section__intro">
-    <div class="column__2">
+
+  <section id="section__intro" class="flex__align__c">
+    <div class="column__1 max1000">
+      
+      <div class="intro__imgWrapper">
+          <div class="dualHorizon__img__wrapper">
+            {% if item.intro.img2Right %}
+            <picture>
+              {% for format, images in item.intro.img2Right %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ item.img2Right.webp[0].url }}"
+                alt="{{ item.img2Right.altText }}"
+              />
+            </picture>
+            {% endif %} {% if item.intro.img1Right %}
+            <picture>
+              {% for format, images in item.intro.img1Right %}
+              <source
+                srcset="{{ images | srcset }}"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                type="image/{{ format }}"
+              />
+              {% endfor %}
+              <img
+                src="{{ item.img1Right.webp[0].url }}"
+                alt="{{ item.img1Right.altText }}"
+              />
+            </picture>
+            {% endif %}
+          </div>
+          <div class="diamondFigureHorizon">
+            <div class="diamondImg"></div>
+            <div class="diamondImg"></div>
+            <div class="diamondImg"></div>
+          </div>
+        </div>
+
+        <div class="richTextH2">{{ item.intro.h2Right | safe }}</div>
+        <div class="accentDivider"></div>
+        <div class=""><p>{{ item.intro.pRight }}</p></div>
+      <!--
       <div class="col__left">
         <div class="intro__imgWrapper">
           <div class="dualHorizon__img__wrapper">
@@ -87,57 +159,22 @@ permalink: "/{{ page.fileSlug }}/"
         <div class=""><p>{{ item.intro.pLeft }}</p></div>
       </div>
       <div class="col__right">
-        <div class="intro__imgWrapper">
-          <div class="dualHorizon__img__wrapper">
-            {% if item.intro.img2Right %}
-            <picture>
-              {% for format, images in item.intro.img2Right %}
-              <source
-                srcset="{{ images | srcset }}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                type="image/{{ format }}"
-              />
-              {% endfor %}
-              <img
-                src="{{ item.img2Right.webp[0].url }}"
-                alt="{{ item.img2Right.altText }}"
-              />
-            </picture>
-            {% endif %} {% if item.intro.img1Right %}
-            <picture>
-              {% for format, images in item.intro.img1Right %}
-              <source
-                srcset="{{ images | srcset }}"
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                type="image/{{ format }}"
-              />
-              {% endfor %}
-              <img
-                src="{{ item.img1Right.webp[0].url }}"
-                alt="{{ item.img1Right.altText }}"
-              />
-            </picture>
-            {% endif %}
-          </div>
-          <div class="diamondFigureHorizon">
-            <div class="diamondImg"></div>
-            <div class="diamondImg"></div>
-            <div class="diamondImg"></div>
-          </div>
-        </div>
-
-        <div class="richTextH2">{{ item.intro.h2Right | safe }}</div>
-        <div class="accentDivider"></div>
-        <div class=""><p>{{ item.intro.pRight }}</p></div>
+        
       </div>
+
+      -->
+
+
     </div>
   </section>
 
   <section id="section__form">
     <div class="column__1">
-      <div class="richTextH2">{{ item.form.h2 | safe}}</div>
+      <!--<div class="richTextH2">{{ item.form.h2 | safe}}</div>-->
       {% include 'form.njk' %}
     </div>
+
+    <!--
     {% if item.form.img %}
     <picture>
       {% for format, images in item.form.img %}
@@ -151,6 +188,8 @@ permalink: "/{{ page.fileSlug }}/"
     </picture>
     {% endif %}
     <div class="blackDisplayOverlay"></div>
+    -->
+
   </section>
 
   {% endfor %}
