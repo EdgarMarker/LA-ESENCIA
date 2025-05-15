@@ -51,7 +51,7 @@
 
 footer{
     background: var(--bg-primary);
-    padding: 10% 10% 50px;
+    padding: 8% 10% 50px;
     position: relative;
     z-index: 2;
 }
@@ -115,7 +115,7 @@ footer{
 
 .footer__column li a{
     color: var(--color-white);
-    font-size: var(--size-xs);
+    font-size: var(--size-sm);
     line-height: 1.6;
     text-transform: unset;
     margin-bottom: 0px;
@@ -148,12 +148,12 @@ footer{
 
 #inner__footer span{
     color: var(--color-white);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 #inner__footer a{
     color: var(--color-accent);
-    font-size: 14px;
+    font-size: inherit;
 }
 
 #inner__footer a:hover{

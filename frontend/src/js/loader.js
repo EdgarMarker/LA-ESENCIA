@@ -23,7 +23,7 @@
 				ovrl.style.display = "none";
 				gsap.to(".transition__top", { height: "0%", ease: "power1.out", duration: 0.7 });
 				gsap.to(".transition__bottom", { height: "0%", ease: "power1.out", duration: 0.7 });
-				gsap.from("#inner__header", { y: -100, ease: "power1.out", duration: 0.5, delay: 0.8 });
+				//gsap.from("#inner__header", { y: -100, ease: "power1.out", duration: 0.5, delay: 0.8 });
 			}, 500);/**/
 		}
 		for(var i=0; i<tot; i++) {

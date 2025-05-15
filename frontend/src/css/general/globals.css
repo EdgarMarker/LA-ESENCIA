@@ -6,6 +6,8 @@ body{
 }
 
 /*  Barba transition  */
+
+/*
 .transition__top{
     position: fixed;
     width: 100%;
@@ -32,7 +34,11 @@ body{
     opacity: 1;
 }
 
+*/
+
 /*	Loader	*/
+
+/*
 #overlay{
     position:fixed;
     z-index:102;
@@ -84,6 +90,8 @@ body{
     align-items:center;
     justify-content:center;
 }
+
+*/
 
 /*  Text globals  */
 .richTextH2{
