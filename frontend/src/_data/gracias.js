@@ -14,6 +14,9 @@ module.exports = async function () {
     introH3,
     introH2,
     introDesc,
+    brochure{
+      "url": asset->{url},
+    },
     introImg1{
       "media": asset->{url},
       "alt": asset->{altText}

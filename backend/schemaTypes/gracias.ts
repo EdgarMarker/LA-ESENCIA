@@ -105,6 +105,12 @@ export default {
         '*Agregar texto con formato H2. (Opcional: para resaltar palabras importantes se puede poner en negritas)',
     },
     {
+      name: 'brochure',
+      title: 'Subir brochure para socios fundadores',
+      type: 'file',
+      group: 'intro',
+    },
+    {
       name: 'introH3',
       title: 'Subtítulo indicador para la introducción',
       type: 'string',

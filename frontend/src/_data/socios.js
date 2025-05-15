@@ -10,6 +10,7 @@ module.exports = async function() {
     heroH2,
     heroBtn1,
     heroBtn2,
+    brochure,
     introH3,
     introH2,
     introDesc,
