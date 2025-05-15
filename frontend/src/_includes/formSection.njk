@@ -6,7 +6,16 @@
       <div class="col__left pad__all__10 fadeInOut">
         {{ item.form.h2 | safe }}
         {{ item.form.description | safe }}
-        {% include "form.njk"%}
+        
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            portalId: "50061502",
+            formId: "3ba35d68-d356-4723-9ea4-44b5ccb33f2f",
+            region: "na1"
+          });
+        </script>
+        
       </div>
 
       <div class="col__right">

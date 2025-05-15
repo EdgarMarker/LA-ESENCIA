@@ -5,6 +5,10 @@ body{
     min-height: 100dvh;
 }
 
+.hbspt-form{
+    width: 100%;
+}
+
 /*  Barba transition  */
 
 /*

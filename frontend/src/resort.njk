@@ -272,7 +272,7 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="accentDivider"></div>
       <div class="max800">{{item.discoverBenefits.description | safe}}</div>
       
-        <a href="/fundadores/" class="btn">Regístrate aquí</a>
+        <a id="btn__preFoot" class="btn">Regístrate aquí</a>
         
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -291,6 +291,9 @@ permalink: "/{{ page.fileSlug }}/"
     </picture>
   </section>
 {% endfor %}
+
+{% include 'formSection.njk' %}
+
 </div>
 <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js

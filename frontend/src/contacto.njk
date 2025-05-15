@@ -169,9 +169,18 @@ permalink: "/{{ page.fileSlug }}/"
   </section>
 
   <section id="section__form">
-    <div class="column__1">
+    <div class="column__1 max1000">
       <!--<div class="richTextH2">{{ item.form.h2 | safe}}</div>-->
-      {% include 'form.njk' %}
+      
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({
+          portalId: "50061502",
+          formId: "d9720a6b-28c4-4a40-aa85-8327a9f9eff5",
+          region: "na1"
+        });
+      </script>
+
     </div>
 
     <!--

@@ -25,10 +25,6 @@ permalink: "/{{ page.fileSlug }}/"
         <h1>{{ item.heroH1 }}</h1>
         <div class="accentDivider"></div>
         {{ item.heroH2 | safe }}
-        <div class="btn__hero__container">
-          <a id="btn__hero1" class="btn btn__hero">{{ item.heroBtn1 }}</a>
-          <a id="btn__hero2" class="btn btn__hero" href="/contacto/">{{ item.heroBtn2 }}</a>
-        </div>
       </div>
       <div class="col__right width__55 img__hero">
         <video width="320" height="240" muted loop autoplay>
@@ -90,7 +86,7 @@ permalink: "/{{ page.fileSlug }}/"
       </div>
     </div>
     <!---->
-    <div class="column__1">
+    <div class="column__1 flex__align__c">
       <div>{{ item.introDesc | safe }}</div>
     </div>
   </section>
@@ -102,7 +98,7 @@ permalink: "/{{ page.fileSlug }}/"
         <div class="accentDivider"></div>
         <h3>{{ item.discoverPueblito.h3 }}</h3>
         <div>{{ item.discoverPueblito.description | safe }}</div>
-          <a href="/experiencia" class="btn">Conoce más</a>
+        <a id="btnForm" class="btn">Quiero ser socio fundador</a>
       </div>
       <div class="col__right">
         <div class="diamondFigure">
@@ -169,7 +165,7 @@ permalink: "/{{ page.fileSlug }}/"
       <h3>
         {{item.banner.title}}
       </h3>
-      <a class="btn" href="/contacto"> Conoce todas las posibilidades </a>
+      <a id="conoce__btn" class="btn"> Conoce todas las posibilidades </a>
     </div>
   </section>
 
@@ -181,7 +177,7 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="column__2">
       <div class="col__left">
         <div>{{item.income.desc | safe}}</div>
-        <a class="btn" href="/contact">Detalles aquí</a>
+        <a id="detalles__btn" class="btn">Detalles aquí</a>
       </div>
       <div class="col__right">
         <div class="listado__operaciones">
@@ -281,7 +277,7 @@ permalink: "/{{ page.fileSlug }}/"
       <div class="accentDivider"></div>
       <div class="max800">{{item.discoverBenefits.description | safe}}</div>
       
-        <a href="/contacto" class="btn">FORMULARIO SOCIOS FUNDADORES</a>
+        <a id="btn__preFoot" class="btn">Quiero ser un socio fundador</a>
         
     </div>
     <div class="blackDisplayOverlay"></div>
@@ -300,4 +296,7 @@ permalink: "/{{ page.fileSlug }}/"
     </picture>
   </section>
   {%endfor%}
+
+  {% include 'formSection.njk' %}
+
 </div>

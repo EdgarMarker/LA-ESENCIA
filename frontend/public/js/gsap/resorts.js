@@ -4,6 +4,11 @@ heroBtn.addEventListener('click', () => {
     gsap.to(window, { duration: 0.5, scrollTo: "#section__happyPlace", ease: "power4.out"});
 });
 
+const preBtn = document.querySelector('#btn__preFoot');
+preBtn.addEventListener('click', () => {
+    gsap.to(window, { duration: 0.5, scrollTo: "#formSection", ease: "power4.out"});
+});
+
 gsapSoloAnimations();
 
 // GSAP:

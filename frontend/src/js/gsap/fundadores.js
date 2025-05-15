@@ -1,21 +1,26 @@
 // Btn ScrollTo:
-const heroBtn1 = document.querySelector("#btn__hero1");
-const heroBtn2 = document.querySelector("#btn__hero2");
-
+const heroBtn1 = document.querySelector("#btnForm");
 heroBtn1.addEventListener("click", () => {
-  gsap.to(window, {
-    duration: 0.5,
-    scrollTo: "#section__intro",
-    ease: "power4.out",
-  });
-});
-
-heroBtn2.addEventListener("click", () => {
   gsap.to(window, {
     duration: 0.5,
     scrollTo: "#formSection",
     ease: "power4.out",
   });
+});
+
+const preBtn = document.querySelector('#btn__preFoot');
+preBtn.addEventListener('click', () => {
+    gsap.to(window, { duration: 0.5, scrollTo: "#formSection", ease: "power4.out"});
+});
+
+const conoceBtn = document.querySelector('#conoce__btn');
+conoceBtn.addEventListener('click', () => {
+    gsap.to(window, { duration: 0.5, scrollTo: "#formSection", ease: "power4.out"});
+});
+
+const detallesBtn = document.querySelector('#detalles__btn');
+detallesBtn.addEventListener('click', () => {
+    gsap.to(window, { duration: 0.5, scrollTo: "#formSection", ease: "power4.out"});
 });
 
 gsapSoloAnimations();
